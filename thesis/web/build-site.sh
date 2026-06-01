@@ -15,6 +15,8 @@ pandoc _web.tex \
   --citeproc \
   --bibliography=references-biblatex.bib \
   --metadata reference-section-title="References" \
+  --metadata link-citations=true \
+  --metadata link-bibliography=true \
   --toc --toc-depth=2 \
   --number-sections \
   --split-level=1 \

@@ -72,8 +72,11 @@ reveal that the distribution of images generated per user (usage)
 follows an exponential pattern, and there is a negative correlation
 between expectations of text-image alignment and the Tolerance for
 Ambiguity (TA) personality trait <span class="citation"
-data-cites="Norton1975 Furnham2013 ZENASNI2008 Herman2010">(Norton 1975;
-Furnham and Marks 2013; Zenasni et al. 2008; Herman et al. 2010)</span>.
+data-cites="Norton1975 Furnham2013 ZENASNI2008 Herman2010">(<a
+href="-bibliography.html#ref-Norton1975">Norton 1975</a>; <a
+href="-bibliography.html#ref-Furnham2013">Furnham and Marks 2013</a>; <a
+href="-bibliography.html#ref-ZENASNI2008">Zenasni et al. 2008</a>; <a
+href="-bibliography.html#ref-Herman2010">Herman et al. 2010</a>)</span>.
 These findings constitute some preliminary evidence suggesting that the
 adoption pattern of this new technology is dependent on social factors.
 Additionally, the findings suggest that expectations regarding this
@@ -85,8 +88,9 @@ class="header-section-number">6.1</span> Scope</h2>
 computer vision since its inception. On Jan 6, 2021, OpenAI released
 CLIP, a model that was trained on 400 million image-text pairs, able to
 create a joint <em>latent space</em> combining visual and textual
-information <span class="citation" data-cites="Radford2021">(Radford et
-al. 2021)</span>. CLIP works in both directions, in the sense that it is
+information <span class="citation" data-cites="Radford2021">(<a
+href="-bibliography.html#ref-Radford2021">Radford et al.
+2021</a>)</span>. CLIP works in both directions, in the sense that it is
 not only capable of identifying objects in a picture, but also to guide
 the generation of images starting from text. Since the public release of
 CLIP, many open-source implementations of image generators based on its
@@ -156,23 +160,24 @@ style="width:42.0%" alt="image" /></p>
 </div>
 <p>After the release of CLIP, the ML community began exploring its
 capabilities in various directions. Ryan Murdock combined CLIP with
-BigGAN <span class="citation" data-cites="Brock2018">(Brock et al.
-2018)</span> to create BigSleep<a href="#fn1" class="footnote-ref"
-id="fnref1" role="doc-noteref"><sup>1</sup></a>, which was one of the
-first publicly available tools in this space. Katherine Crowson
-experimented with CLIP guidance in a novel method for image synthesis
-known as diffusion, as proposed by <span class="citation"
-data-cites="Dhariwal2021">(Dhariwal and Nichol 2021)</span>. As 2021
-drew to a close, numerous forums and user groups devoted to generative
-art began discussing image generation and their workflows as Python
-scripts that could be run on Google’s Colab, a platform that provides
-free (or nearly free) GPU computing time. Many of these Colab scripts
-utilized Crowson’s work, with Disco Diffusion<a href="#fn2"
-class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
-proving particularly popular among the pioneers. As the community
-continued to experiment with CLIP and its potential applications, its
-impact on the field of ML and beyond remained a topic of ongoing
-interest and discussion.</p>
+BigGAN <span class="citation" data-cites="Brock2018">(<a
+href="-bibliography.html#ref-Brock2018">Brock et al. 2018</a>)</span> to
+create BigSleep<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>, which was one of the first publicly
+available tools in this space. Katherine Crowson experimented with CLIP
+guidance in a novel method for image synthesis known as diffusion, as
+proposed by <span class="citation" data-cites="Dhariwal2021">(<a
+href="-bibliography.html#ref-Dhariwal2021">Dhariwal and Nichol
+2021</a>)</span>. As 2021 drew to a close, numerous forums and user
+groups devoted to generative art began discussing image generation and
+their workflows as Python scripts that could be run on Google’s Colab, a
+platform that provides free (or nearly free) GPU computing time. Many of
+these Colab scripts utilized Crowson’s work, with Disco Diffusion<a
+href="#fn2" class="footnote-ref" id="fnref2"
+role="doc-noteref"><sup>2</sup></a> proving particularly popular among
+the pioneers. As the community continued to experiment with CLIP and its
+potential applications, its impact on the field of ML and beyond
+remained a topic of ongoing interest and discussion.</p>
 <figure id="fig:procgenart" data-latex-placement="H">
 <img src="figures/procgenart.png" />
 <figcaption>Bar chart illustrating the number of posts per day in the
@@ -207,18 +212,19 @@ admins who were struggling to keep up with the moderation demands.</p>
 <h2 data-number="6.3" id="stable-diffusion"><span
 class="header-section-number">6.3</span> Stable Diffusion</h2>
 <p>On August 22nd 2022, Stability.ai released to the public Stable
-Diffusion (SD) v1.4 <span class="citation"
-data-cites="Rombach2021">(Rombach et al. 2021)</span>, a LDM that was
-trained on LAION-5B, a . While OpenAI, Google, Meta, and Microsoft have
-all made public releases of their research and development efforts, it
-is rare to see them share pre-trained models with the public. These
-companies defend their position by citing the potential dangers of
-unmanaged use, and at the same time safeguard their investments from the
-competition. Training models at large scale is undoubtedly a big expense
-that is hardly justifiable if it does not produce returns. Stability.ai,
-however, made the bold move of releasing their model to the public
-allowing anyone to use it without any cost. Since its release, SD has
-taken the creative industry by storm.</p>
+Diffusion (SD) v1.4 <span class="citation" data-cites="Rombach2021">(<a
+href="-bibliography.html#ref-Rombach2021">Rombach et al.
+2021</a>)</span>, a LDM that was trained on LAION-5B, a . While OpenAI,
+Google, Meta, and Microsoft have all made public releases of their
+research and development efforts, it is rare to see them share
+pre-trained models with the public. These companies defend their
+position by citing the potential dangers of unmanaged use, and at the
+same time safeguard their investments from the competition. Training
+models at large scale is undoubtedly a big expense that is hardly
+justifiable if it does not produce returns. Stability.ai, however, made
+the bold move of releasing their model to the public allowing anyone to
+use it without any cost. Since its release, SD has taken the creative
+industry by storm.</p>
 <p>SD outperforms the generation speed of other openly-available models
 by several orders of magnitude because it conducts the diffusion process
 in <em>latent space</em>, unlike previous solutions, such as Disco
@@ -281,8 +287,11 @@ interpreting keywords</p></li>
 <li><p><em>Expectation of Alignment</em> (EA) between images and
 text</p></li>
 <li><p><em>Tolerance for Ambiguity</em> (TA) scale <span
-class="citation" data-cites="Norton1975 Herman2010 Furnham2013">(Norton
-1975; Herman et al. 2010; Furnham and Marks 2013)</span></p></li>
+class="citation" data-cites="Norton1975 Herman2010 Furnham2013">(<a
+href="-bibliography.html#ref-Norton1975">Norton 1975</a>; <a
+href="-bibliography.html#ref-Herman2010">Herman et al. 2010</a>; <a
+href="-bibliography.html#ref-Furnham2013">Furnham and Marks
+2013</a>)</span></p></li>
 </ul>
 <p>The purpose of including these measures was to explore whether any of
 these factors was correlated with the usage patterns observed in the
@@ -398,8 +407,10 @@ understanding, intuition, expectation of human compatibility, and
 expectation of alignment.</figcaption>
 </figure>
 <p>Compared to earlier studies <span class="citation"
-data-cites="Herman2010 Furnham2013">(Herman et al. 2010; Furnham and
-Marks 2013)</span>, the TA scale was found to be slightly less reliable,
+data-cites="Herman2010 Furnham2013">(<a
+href="-bibliography.html#ref-Herman2010">Herman et al. 2010</a>; <a
+href="-bibliography.html#ref-Furnham2013">Furnham and Marks
+2013</a>)</span>, the TA scale was found to be slightly less reliable,
 which may be partly attributed to the impact of the COVID-19 pandemic.
 For instance, responses to certain items such as and may have deviated
 from the rest of the scale due to travel and gathering restrictions that
@@ -523,8 +534,9 @@ novel <em>misaligned</em> associations and combinations. In this sense,
 the non-analytic nature of <span class="math inline"><em>D</em>[]</span>
 can be considered an asset, echoing the hypothesis that <span
 class="math inline"><em>D</em>[]</span> is an inherently creative
-operator, as <span class="citation" data-cites="Hoorn2023">(Hoorn
-2023)</span> suggests.</p>
+operator, as <span class="citation" data-cites="Hoorn2023">(<a
+href="-bibliography.html#ref-Hoorn2023">Hoorn 2023</a>)</span>
+suggests.</p>
 <p>Moreover, the initial evidence discovered in this study suggesting
 the hypothesis of a socially driven adoption of this tool, remains
 inconclusive. The absence of correlation between number of images
