@@ -1,0 +1,13 @@
+# Normalize text to LF in the repo; let Git handle working-copy line endings.
+* text=auto eol=lf
+
+# Shell scripts must be LF so they run on the Linux CI runner.
+*.sh        text eol=lf
+scripts/build text eol=lf
+
+# Binary assets — never touch line endings.
+*.pdf  binary
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.mp3  binary
