@@ -1,0 +1,69 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+
+\documentclass[ddouble]{Dissertate}
+\setlength{\LTcapwidth}{\textwidth}
+
+
+\begin{document}
+
+% the front matter
+\input{frontmatter/personalize}
+%\maketitle
+%\copyrightpage
+\frontmatter
+%\abstractpage
+%\tableofcontents
+% %\authorlist
+%\listoffigures
+\setstretch{\dnormalspacing}
+%\dedicationpage
+%\acknowledgments
+
+\doublespacing
+%\renewcommand{\doitext}{}
+
+
+\DeclareCiteCommand{\citeyearpar}
+    {}
+    {\mkbibparens{\bibhyperref{\printfield{year}}}}
+    {\multicitedelim}
+    {}
+
+\newcommand{\transcite}[2][]{%
+
+	\vspace{-2mm}
+	\begin{flushright}
+	  (\citeauthor{#2}, trans. \citeyear{#2}%
+	  \ifx&#1&%
+	    % No page numbers provided
+	  \else
+	    , #1%
+	  \fi)
+	\end{flushright}
+	
+}
+
+
+
+\setlist[description]{leftmargin=\parindent,labelindent=\parindent}
+
+%% include each chapter...
+\setcounter{chapter}{0}  % start chapter numbering at 0
+\include{chapters/introduction}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
+\include{chapters/chapter4}
+\include{chapters/chapter5}
+\include{chapters/chapter6}
+\include{chapters/chapter7}
+\include{chapters/conclusion}
+
+\setstretch{\dnormalspacing}
+
+\backmatter
+
+
+
+\end{document}

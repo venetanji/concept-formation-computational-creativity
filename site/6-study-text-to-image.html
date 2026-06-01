@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Giovanni Lion" />
+  <title>Study: Text-to-image</title>
+  <style>
+    div.sitenav { display: flex; flex-direction: row; flex-wrap: wrap; }
+    span.navlink { flex: 1; }
+    span.navlink-label { display: inline-block; min-width: 4em; }
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="sitebar">
+  <a class="home" href="index.html">Concept Formation in Computational Creativity</a>
+  <a class="pdf" href="thesis.pdf">Download PDF</a>
+</div>
+<nav id="sitenav">
+<div class="sitenav">
+<span class="navlink">
+<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity-1.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
+</span>
+<span class="navlink">
+<span class="navlink-label">Top:</span> <a href="index.html" accesskey="t" rel="top">Concept Formation in Computational Creativity</a>
+</span>
+</div>
+<div class="sitenav">
+<span class="navlink">
+<span class="navlink-label">Next:</span> <a href="7-discussion.html" accesskey="n" rel="next">Discussion</a>
+</span>
+<span class="navlink">
+<span class="navlink-label">Previous:</span> <a href="5-study-images.html" accesskey="p" rel="previous">Study: Images</a>
+</span>
+</div>
+</nav>
+<h1 data-number="6" id="study-text-to-image"><span
+class="header-section-number">6</span> Study: Text-to-image</h1>
+<p>by providing an interface to visual content based on natural
+language. This study explores the usage patterns and creative
+interactions that field experts tend to have while using text-to-image
+technology. The study was conducted using a Discord server over the
+course of 4 months, gathering 76 participants ranging from different
+related fields such as graphic design, photography and digital
+illustration. The participants were presented with a text-to-image bot
+and given a private space to use the technology for their own purpose.
+Qualitative data, collected through interviews and meetings, was
+complemented by quantitative measures extracted from server-gathered
+interaction data, including usage, prompts used, and types of operations
+(text-to-image, image-to-image, prompt interpolation). The study results
+reveal that the distribution of images generated per user (usage)
+follows an exponential pattern, and there is a negative correlation
+between expectations of text-image alignment and the Tolerance for
+Ambiguity (TA) personality trait <span class="citation"
+data-cites="Norton1975 Furnham2013 ZENASNI2008 Herman2010">(Norton 1975;
+Furnham and Marks 2013; Zenasni et al. 2008; Herman et al. 2010)</span>.
+These findings constitute some preliminary evidence suggesting that the
+adoption pattern of this new technology is dependent on social factors.
+Additionally, the findings suggest that expectations regarding this
+technology could be linked to TA, potentially resulting from an
+individual’s attunement to a specific TOC.</p>
+<h2 data-number="6.1" id="scope-2"><span
+class="header-section-number">6.1</span> Scope</h2>
+<p>Text-to-image technology made a substantial impact in the field of
+computer vision since its inception. On Jan 6, 2021, OpenAI released
+CLIP, a model that was trained on 400 million image-text pairs, able to
+create a joint <em>latent space</em> combining visual and textual
+information <span class="citation" data-cites="Radford2021">(Radford et
+al. 2021)</span>. CLIP works in both directions, in the sense that it is
+not only capable of identifying objects in a picture, but also to guide
+the generation of images starting from text. Since the public release of
+CLIP, many open-source implementations of image generators based on its
+capabilities have been released, and their generated output has started
+to flood the internet.</p>
+<p>CLIP and, more generally, the idea that we can control a generative
+model by conditioning its output on text (or, more precisely, token
+embeddings) constitutes a dramatic interface improvement. As it should
+be evident from all the TOCs reviewed in Section <a
+href="2-Litreview.html#sec:concepts" data-reference-type="ref"
+data-reference="sec:concepts">2.1</a>, language seems to play central
+role when dealing with concepts. CLIP effectively provides a <em>latent
+space</em> that unifies <em>lexical</em> and <em>visual</em> concepts.
+This multi-modality binds the compositional elements of language to the
+visual domain, allowing the generation of novel content obtained through
+the sophisticated combination making capabilities afforded by the
+pre-trained token embeddings.</p>
+<p>Naturally, the limitations that neural networks generally encounter
+when dealing with analytical concepts are still in place. For example,
+study participants quickly find out that quantifiers have little effect
+on image generation: the prompt yields a random number of circles (see
+Figure <a href="#fig:twocircles" data-reference-type="ref"
+data-reference="fig:twocircles">6.1</a>). This should not be surprising,
+given the nature of the <span class="math inline"><em>D</em>[]</span>
+operator, yet the technological <em>opacity</em> might conceal the
+reasons of this behavior. Our habitual way of thinking about intelligent
+systems perhaps creates the expectation that they must be analytical,
+yet in this case we are dealing with something completely different.</p>
+<figure id="fig:twocircles">
+<img src="figures/twocircles.png" />
+<figcaption>A collection of images generated using Stable Diffusion v1.5
+and Automatic1111 UI, based on the prompt (Steps: 20, Sampler: Euler a,
+CFG scale: 7, Seed: 3828270218, Size: 512x512, and Model hash:
+cc6cb27103). Despite the prompt, the images display a random number of
+circles, indicating that the image generation model does not accurately
+capture cardinality. The figure reveals the limitations of LDMs in
+generating content that strictly adheres to prompts that contain
+analytic concepts such as numbers, highlighting the need for further
+improvements in understanding and representing cardinality in image
+generation models.</figcaption>
+</figure>
+<p>Referring back to the birth of <em>generative art</em> and the
+experiments with programmable plotters, it seems that <span
+class="math inline"><em>R</em>[<em>P</em><em>r</em><em>o</em><em>g</em><em>r</em><em>a</em><em>m</em>]</span>
+and <span
+class="math inline"><em>D</em>[<em>L</em><em>a</em><em>n</em><em>g</em><em>u</em><em>a</em><em>g</em><em>e</em>]</span>
+are very different, yet complementary, ways to manipulate visual
+concepts. Ultimately, both methods make use of randomness to generate
+variety, but in the former probabilities are defined by the programmer,
+whereas in the latter they are determined during training. For the sake
+of completeness, the post-phenomenological form of these two mediated
+interactions might be summarized as follows (from Section <a
+href="3-methodology.html#sec:technological-mediation"
+data-reference-type="ref"
+data-reference="sec:technological-mediation">3.1</a>):</p>
+<ul>
+<li><p>I → Plotter / (PlotterSoftware → <strong>R[Design]</strong>) (—
+Printed Design)</p></li>
+<li><p>I → Stable Diffusion / (CLIP → <strong>D[Image
+Description]</strong>) (— Generated Image)</p></li>
+</ul>
+<h2 data-number="6.2" id="a-clash-of-paradigms"><span
+class="header-section-number">6.2</span> A clash of paradigms</h2>
+<div class="wrapfigure">
+<p><span>r</span><span>0.42</span> <img src="figures/aiartcomplain.jpg"
+style="width:42.0%" alt="image" /></p>
+</div>
+<p>After the release of CLIP, the ML community began exploring its
+capabilities in various directions. Ryan Murdock combined CLIP with
+BigGAN <span class="citation" data-cites="Brock2018">(Brock et al.
+2018)</span> to create BigSleep<a href="#fn1" class="footnote-ref"
+id="fnref1" role="doc-noteref"><sup>1</sup></a>, which was one of the
+first publicly available tools in this space. Katherine Crowson
+experimented with CLIP guidance in a novel method for image synthesis
+known as diffusion, as proposed by <span class="citation"
+data-cites="Dhariwal2021">(Dhariwal and Nichol 2021)</span>. As 2021
+drew to a close, numerous forums and user groups devoted to generative
+art began discussing image generation and their workflows as Python
+scripts that could be run on Google’s Colab, a platform that provides
+free (or nearly free) GPU computing time. Many of these Colab scripts
+utilized Crowson’s work, with Disco Diffusion<a href="#fn2"
+class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>
+proving particularly popular among the pioneers. As the community
+continued to experiment with CLIP and its potential applications, its
+impact on the field of ML and beyond remained a topic of ongoing
+interest and discussion.</p>
+<figure id="fig:procgenart" data-latex-placement="H">
+<img src="figures/procgenart.png" />
+<figcaption>Bar chart illustrating the number of posts per day in the
+Facebook group (<a href="https://www.facebook.com/groups/procgenart"
+class="uri">https://www.facebook.com/groups/procgenart</a>), with a
+noticeable explosion of posts attributed to the trend of AI-generated
+images. The chart highlights the increase in group activity related to
+AI-generated images in April and May 2022, followed by an abrupt decline
+as moderators took countermeasures to direct this type of content to a
+dedicated group named . The figure demonstrates the impact of
+AI-generated images on the group’s activity and the moderation
+challenges faced by the online community.</figcaption>
+</figure>
+<p>As a member of the Facebook group , I witnessed first hand the wave
+of controversial <em>AI Art</em> that took over the group in the months
+of April and May 2022. Around that time, images generated with Disco
+Diffusion were pretty much the only content being posted in that group,
+to the point that some members started to complain about it vigorously
+(e.g. Figure <a href="#fig:aiartcomplain" data-reference-type="ref"
+data-reference="fig:aiartcomplain">[fig:aiartcomplain]</a>). Official
+statistics for the group are not available, but I was able to scrape the
+public posts and the trend is evident from the collected data, presented
+in Figure <a href="#fig:procgenart" data-reference-type="ref"
+data-reference="fig:procgenart">6.2</a>. The moderators of the group
+implemented a new strategy to handle the overwhelming volume of posts
+related to AI-generated images. They created a new dedicated group
+called and stopped publishing these types of images in the original
+group. As a result, there was a noticeable decrease in the number of
+posts around May, but this did not indicate a decline in interest.
+Rather, it was a deliberate effort to reduce the workload of the page
+admins who were struggling to keep up with the moderation demands.</p>
+<h2 data-number="6.3" id="stable-diffusion"><span
+class="header-section-number">6.3</span> Stable Diffusion</h2>
+<p>On August 22nd 2022, Stability.ai released to the public Stable
+Diffusion (SD) v1.4 <span class="citation"
+data-cites="Rombach2021">(Rombach et al. 2021)</span>, a LDM that was
+trained on LAION-5B, a . While OpenAI, Google, Meta, and Microsoft have
+all made public releases of their research and development efforts, it
+is rare to see them share pre-trained models with the public. These
+companies defend their position by citing the potential dangers of
+unmanaged use, and at the same time safeguard their investments from the
+competition. Training models at large scale is undoubtedly a big expense
+that is hardly justifiable if it does not produce returns. Stability.ai,
+however, made the bold move of releasing their model to the public
+allowing anyone to use it without any cost. Since its release, SD has
+taken the creative industry by storm.</p>
+<p>SD outperforms the generation speed of other openly-available models
+by several orders of magnitude because it conducts the diffusion process
+in <em>latent space</em>, unlike previous solutions, such as Disco
+Diffusion, that operate at pixel-level. It is able to do so because it
+uses a VAE to encode and decode images and token embeddings to and from
+<em>latent space</em><a href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a>. This significant speed increase,
+coupled with the large-scale dataset it was trained on, make SD one of
+the most exciting technologies that we have seen in this field<a
+href="#fn4" class="footnote-ref" id="fnref4"
+role="doc-noteref"><sup>4</sup></a>. Indeed, it is remarkable that such
+a small file (less than 4GB) can encode the information of almost 6
+billion images that humans have shared on the internet.</p>
+<p>The opportunities that this technology has opened up for the general
+public are immense. Many developers around the world have spontaneously
+developed user interfaces, extensions, performance improvements and also
+trained alternative models that can be used to generate specific
+subjects or in specific styles, all in less than a year since its public
+release.</p>
+<p>In September 2022, it became possible to observe this technology in
+action in a study that could accommodate a large group of participants
+simultaneously. Unfortunately, the popular interfaces of SD (official
+webui<a href="#fn5" class="footnote-ref" id="fnref5"
+role="doc-noteref"><sup>5</sup></a>, automatic1111 webui<a href="#fn6"
+class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>,
+invokeAI<a href="#fn7" class="footnote-ref" id="fnref7"
+role="doc-noteref"><sup>7</sup></a>) are not designed for group use.
+Projects in this space often use Discord as a platform to let users try
+the technology in a social context. For example, Midjourney, an image
+generation service based on SD, is a tool that existed only as Discord
+bot up until very recently (at the time of this writing, Midjourney’s
+API access was just announced). Discord’s interface enables programmatic
+interaction through <em>bots</em>, which can respond to predefined
+commands and execute arbitrary code. As SD was released, many open
+source solutions featuring image generation pipelines via Discord became
+available on GitHub<a href="#fn8" class="footnote-ref" id="fnref8"
+role="doc-noteref"><sup>8</sup></a> and with all these components ready,
+a study observing interactions with SD became possible at a larger
+scale.</p>
+<h2 data-number="6.4" id="method-2"><span
+class="header-section-number">6.4</span> Method</h2>
+<p>A Discord server named <strong>MediaBots</strong> was opened on
+September 2nd 2022 to host the study. Participants were selected among
+design visual arts practitioners, photographers and design students.
+They were invited to a 2-hour workshop, during which they had the
+opportunity to use text-to-image technology. During the study, 76 people
+from 5 different workshops accessed the server. The workshop and
+participant details are summarized in Table <a href="#tab:workshops"
+data-reference-type="ref"
+data-reference="tab:workshops">[tab:workshops]</a>.</p>
+<p>The server was setup so that participants would be required to join
+the study in order to see the content on the server. To join the study
+they were asked to confirm they have read the information sheet and then
+complete a questionnaire<a href="#fn9" class="footnote-ref" id="fnref9"
+role="doc-noteref"><sup>9</sup></a> measuring:</p>
+<ul>
+<li><p>General prior knowledge about text-to-image technology</p></li>
+<li><p><em>Expectations of Human Compatibility</em> (EHC) when
+interpreting keywords</p></li>
+<li><p><em>Expectation of Alignment</em> (EA) between images and
+text</p></li>
+<li><p><em>Tolerance for Ambiguity</em> (TA) scale <span
+class="citation" data-cites="Norton1975 Herman2010 Furnham2013">(Norton
+1975; Herman et al. 2010; Furnham and Marks 2013)</span></p></li>
+</ul>
+<p>The purpose of including these measures was to explore whether any of
+these factors was correlated with the usage patterns observed in the
+Discord server. In particular the TA scale is hypothesized to be a proxy
+for a participant’s affinity towards a non-analytical approach. The
+intuition is that ambiguity is more characteristic of <span
+class="math inline"><em>D</em>[]</span> than <span
+class="math inline"><em>R</em>[]</span> so this personality trait might
+have some influence in the way the tools are used and perceived.</p>
+<p>Once the participants completed the questionnaire, they were shown
+how to generate images through the bot’s <em>slashcommands</em>,
+essentially special messages that begin with a <strong>/</strong> that
+are recognized by the bot as structured instructions.</p>
+<p>The SD bot was named , a wordplay in homage of Sandro Botticelli
+which translates from Italian to roughly (much like Dall-E<a
+href="#fn10" class="footnote-ref" id="fnref10"
+role="doc-noteref"><sup>10</sup></a> is an homage to Salvador Dalí and
+the Pixar animation character Wall-E). Under the hood, Botticello is
+using <code>yasd-discord-bot</code><a href="#fn11" class="footnote-ref"
+id="fnref11" role="doc-noteref"><sup>11</sup></a> and
+<code>dalle-flow</code><a href="#fn12" class="footnote-ref" id="fnref12"
+role="doc-noteref"><sup>12</sup></a> to interpret the commands and
+handle the generation queue. The choice of this architecture was made
+because the <code>jina</code><a href="#fn13" class="footnote-ref"
+id="fnref13" role="doc-noteref"><sup>13</sup></a> interface offered by
+the back-end supports queuing, making it possible for several users to
+use the same bot simultaneously, a crucial feature in a workshop
+setting.</p>
+<figure id="fig:prompt" data-latex-placement="b">
+<img src="figures/prompt.png" style="width:70.0%" />
+<figcaption>An example of the <code>/image</code> <em>slashcommand</em>
+used in the interface.</figcaption>
+</figure>
+<figure id="fig:output" data-latex-placement="t">
+<img src="figures/output.png" />
+<figcaption>An example of the output generated by the
+<code>/image</code> command.</figcaption>
+</figure>
+<p>The commands offered by Botticello are:</p>
+<ul>
+<li><p><strong><code>/image</code></strong>: This is the first command
+presented to participants and, in its simplest form, it enables to
+generate an image based on a text prompt as shown in Figure <a
+href="#fig:prompt" data-reference-type="ref"
+data-reference="fig:prompt">6.3</a>. The user can also adjust other
+generation parameters, such as the image resolution, the strength of the
+text conditioning and number of iterations. Once the command is sent,
+the generated images are returned by the bot as shown in Figure <a
+href="#fig:output" data-reference-type="ref"
+data-reference="fig:output">6.4</a>.</p></li>
+<li><p><strong><code>/riff</code></strong>: This command is dedicated to
+image-to-image operations, that is, image generations that take an image
+as starting point. It can be used with or without a text prompt to
+generate variations from an image. For example, Figure <a
+href="#fig:rifforiginal" data-reference-type="ref"
+data-reference="fig:rifforiginal">[fig:rifforiginal]</a> is used as
+starting point for <code>/riff</code> in Figure <a href="#fig:riff"
+data-reference-type="ref" data-reference="fig:riff">[fig:riff]</a>. By
+adjusting the <em>strength</em> parameter it is possible to control how
+much of the original image will be included in the output. While the
+<code>/riff</code> command is available as a button below every output,
+it is also possible to run <code>/riff</code> on any image uploaded into
+the channel by referring to its assigned identifier.</p></li>
+<li><p><strong><code>/interpolate</code></strong>: This command can
+generate images that progressively shift between one prompt and another
+as demonstrated in Figure <a href="#fig:interpolate"
+data-reference-type="ref" data-reference="fig:interpolate">6.5</a>. This
+method can be used to experiment with visual conceptual blending as it
+provides combinations that span the whole range of ratios between two
+concepts.</p>
+<figure id="fig:interpolate" data-latex-placement="!t">
+<img src="figures/interpolate.png" />
+<figcaption>An example of the <code>/interpolate</code>
+<em>slashcommand</em> interpolating between <em>blackhole</em> and
+<em>machine</em>.</figcaption>
+</figure></li>
+</ul>
+<h2 data-number="6.5" id="sec:results-and-discussion"><span
+class="header-section-number">6.5</span> Results and discussion</h2>
+<p>The analysis relative to the data collected through the
+questionnaires during workshops and tool usage data logged by the bot is
+presented as follows:</p>
+<ol>
+<li><p>For general knowledge, intuition and expectation items,
+distribution bar charts are presented in Figure <a
+href="#fig:knowledgedesc" data-reference-type="ref"
+data-reference="fig:knowledgedesc">6.6</a>. As both
+<em>understanding</em> and <em>intuition</em> are skewed towards higher
+values, it appears that most participants have an idea of how this
+technology works or at least they can intuitively grasp it.</p></li>
+<li><p>TA scale shows good reliability when all items were included
+(<span class="math inline"><em>N</em> = 10</span>, Cronbach’s alpha =
+0.797). Constructed scale follows normal distribution (see Q-Q plot in
+Figure <a href="#fig:taqq" data-reference-type="ref"
+data-reference="fig:taqq">6.7</a>).</p></li>
+<li><p>Number of images generated per user (or <em>tool usage</em>) is
+not normally distributed. Q-Q plot and Kolmogorof-Smirnoff confirm
+exponential distribution (see <a href="#fig:usagedesc"
+data-reference-type="ref" data-reference="fig:usagedesc">6.8</a>). Two
+outlier cases visible in the charts have been removed with a filter on
+number of generated images with condition <span
+class="math inline"> &lt;  = 400</span>.</p></li>
+</ol>
+<figure id="fig:knowledgedesc" data-latex-placement="h">
+<p><img src="figures/UnderstandDesc.png" style="width:49.0%"
+alt="image" /> <img src="figures/ImagineDesc.png" style="width:49.0%"
+alt="image" /><br />
+<img src="figures/expectHumanDesc.png" style="width:49.0%"
+alt="image" /> <img src="figures/expectAlignDesc.png"
+style="width:49.0%" alt="image" /></p>
+<figcaption>In order from top to bottom, left to right: distribution of
+understanding, intuition, expectation of human compatibility, and
+expectation of alignment.</figcaption>
+</figure>
+<p>Compared to earlier studies <span class="citation"
+data-cites="Herman2010 Furnham2013">(Herman et al. 2010; Furnham and
+Marks 2013)</span>, the TA scale was found to be slightly less reliable,
+which may be partly attributed to the impact of the COVID-19 pandemic.
+For instance, responses to certain items such as and may have deviated
+from the rest of the scale due to travel and gathering restrictions that
+have been in place in recent years.</p>
+<p>The two outliers identified also reveal an interesting story. After
+an informal conversation with one of them, they explained the situation.
+They are a couple who run an Instagram page and the reason they had
+generated so many images was because they were posting content on social
+media and generating images on behalf of their friends.</p>
+<p>The discovery of the exponential distribution in user usage suggests
+that a small number of individuals are responsible for the majority of
+the interaction. Despite the diverse range of participants, it is
+noteworthy that the Q-Q plot appears as a near-perfect straight line, as
+depicted on the right side of Figure <a href="#fig:usagedesc"
+data-reference-type="ref" data-reference="fig:usagedesc">6.8</a>. The
+exact cause of this phenomenon is not entirely clear. However, one
+possible explanation, based on the observation of two outliers, is that
+network effects play a crucial role in predicting tool usage. The
+relationship between the <em>Person</em> and <em>Press</em> elements
+could provide added incentive for individuals who are well-connected in
+a social network. It is worth noting that there is no significant
+correlation between usage and any other measured variables in the data
+collected, indicating that external factors may be influencing
+participants’ use of the bot.</p>
+<figure id="fig:taqq" data-latex-placement="h!">
+<p><img src="figures/qqplotsTA.png" style="width:49.0%" alt="image" />
+<img src="figures/qqplotsTAe.png" style="width:49.0%" alt="image" /></p>
+<figcaption>Q-Q plots for tolerance for ambiguity. Left: normal
+distribution. Right (values adjusted to be in a positive range after
+recoding): exponential distribution.</figcaption>
+</figure>
+<figure id="fig:usagedesc" data-latex-placement="h!">
+<p><img src="figures/qqplotsusage.png" style="width:49.0%"
+alt="image" /> <img src="figures/qqplotusage.png" style="width:49.0%"
+alt="image" /></p>
+<figcaption>Q-Q plots for total number of generated images per user.
+Left: normal distribution. Right: exponential distribution.</figcaption>
+</figure>
+<p>The data reveals a significant correlation between the
+<em>Expectation of Alignment</em> item, , and the TA scale variable.
+Additionally, the <em>Expectation of Human Compatibility</em> item, ,
+exhibits a significant correlation with EA, but not with TA. This
+indicates that TA and EHC may exert independent effects on EA, a
+relationship that warrants further investigation. To evaluate this
+interaction, a linear regression analysis was conducted using SPSS, with
+the findings illustrated in Figure <a href="#fig:regression"
+data-reference-type="ref" data-reference="fig:regression">6.9</a>.</p>
+<figure id="fig:regression" data-latex-placement="h!">
+<div class="minipage">
+<img src="figures/regressCoeff.png" />
+</div>
+<div class="minipage">
+<img src="figures/regressRsquare.png" />
+</div>
+<figcaption>Results for linear regression on <em>Expectation of
+Alignment</em> with <em>Tolerance of Ambiguity</em> and <em>Expectation
+of Human Compatibility</em> as independent variables.</figcaption>
+</figure>
+<p>The negative coefficient attributed to TA is particularly noteworthy
+concerning the potential impact of this personality trait on the
+perception of text-to-image technology. A plausible interpretation of
+this result is that individuals with high TA may exhibit lower
+expectations regarding image alignment, as they already anticipate and
+accept the inherent ambiguity present in both language and images.
+Conversely, those who display intolerance to uncertainty are more likely
+to expect a clear alignment between language and images, projecting this
+expectation onto the technology. Nonetheless, none of the three
+variables exhibit a significant correlation with <span
+class="math inline"><em>l</em><em>o</em><em>g</em>(<em>u</em><em>s</em><em>a</em><em>g</em><em>e</em>)</span>,
+implying that these expectations do not ultimately influence the
+inclination to use the technology.</p>
+<p>In conclusion, we may summarize the findings according to the ACASIA
+modules as follows:</p>
+<ul>
+<li><p><strong>Association and combination</strong>. Both humans and the
+model play important roles in these components. As discussed in Chapter
+4, pre-trained models build a <em>latent space</em> during training,
+while humans interpret the generated output, which can lead to
+unexpected associations. Conditional generation based on token
+embeddings enables the integration of language compositionality with the
+visual domain. This integration allows the user to visualize new
+combinations that can potentially stimulate further associations. When
+this process is iterated, it leads to a virtuous creative cycle that is
+incredibly fast, thanks to the efficiency of <em>latent space</em>
+diffusion, creating a feedback loop that leads to constant improvement
+and increasingly complex outputs.</p></li>
+<li><p><strong>Abstraction</strong>. As highlighted before, SD is an
+outstanding example of compression of information, which arguably
+implies abstraction. Furthermore, a language interface provides fertile
+ground for human abstraction. Once again, the interplay between human
+and non-human joint efforts in this component leads to a virtuous cycle.
+Yet, the abstraction afforded by <span
+class="math inline"><em>D</em>[]</span> is not of the analytical kind,
+which may mislead users that have expectations of analyticity.</p></li>
+<li><p><strong>Selection</strong>. This component is primarily
+human-led. Ultimately, the users make the decisions of what images to
+keep or share with others. Of course, the model is making some form of
+selection beforehand, on behalf of humans, and arguably SD is more
+efficient than the previous models at selecting pixels combinations that
+are visually relevant to the token embeddings.</p></li>
+<li><p><strong>Integration and adaptation</strong>. Some aspects of
+these components are handled by the rule-based interaction with the
+Discord bot. Botticello affords a set of parameters that allow for
+creating small variations and minor adjustments. Ultimately, the final
+steps of integration and adaptation into finish product still need to be
+made by humans using traditional tools for graphic design and photo
+editing, such as Adobe Photoshop.</p></li>
+</ul>
+<h2 data-number="6.6" id="limitations-and-further-research"><span
+class="header-section-number">6.6</span> Limitations and further
+research</h2>
+<p>Overall, this study’s limitations are related primarily to the lack
+of a structured methodology to address this novel type of interaction.
+In fact, the concept of image <em>alignment</em> with prompts is unique
+to this new form of generation and calls for further investigation.
+<em>Alignment</em> in this context has both objective and subjective
+components and its operationalization is dependent on the TOC that a
+person might be attuned with. In a creative context, <em>Alignment</em>
+perhaps is not critical or even desirable. A user could be looking for
+novel <em>misaligned</em> associations and combinations. In this sense,
+the non-analytic nature of <span class="math inline"><em>D</em>[]</span>
+can be considered an asset, echoing the hypothesis that <span
+class="math inline"><em>D</em>[]</span> is an inherently creative
+operator, as <span class="citation" data-cites="Hoorn2023">(Hoorn
+2023)</span> suggests.</p>
+<p>Moreover, the initial evidence discovered in this study suggesting
+the hypothesis of a socially driven adoption of this tool, remains
+inconclusive. The absence of correlation between number of images
+generated per user (tool usage) and any of the measured variables
+appears to rule out factors related to personal aspects, such as
+technology acceptance (TA) and expectations (EHC and EA), as drivers of
+use. However, the qualitative evidence emerged from this study in
+support of <em>Press</em>-driven adoption is not definitive and can only
+indicate a direction for further research.</p>
+<p>In conclusion, the relationship between EA, TA and EHC constitutes an
+unexpected but relevant finding of this research. It points to a
+possible link between personality traits such as TA and expectations
+about the behavior of text-to-image technology. Further research is
+needed to investigate whether this connection is generalizable to all
+technologies adopting <span class="math inline"><em>D</em>[]</span>.
+This finding also suggest that there might be individual differences in
+how we expect concepts to behave, implying that humans develop an
+unconscious preference for a TOC, which they then tend to ascribe to the
+technology they use.</p>
+<div class="savequote">
+<p>is never a process that begins from scratch: to design is always to
+redesign. There is always something that exists first as a given, as an
+issue, as a problem.</p>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Source code available at: <a
+href="https://github.com/lucidrains/big-sleep"
+class="uri">https://github.com/lucidrains/big-sleep</a><a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Source code available at: <a
+href="https://github.com/alembics/disco-diffusion"
+class="uri">https://github.com/alembics/disco-diffusion</a><a
+href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>For an image of resolution 512x512, the pixel space is
+<span class="math inline">3 × 512 × 512</span>, which is then
+encoded/decoded by the VAE to a <span
+class="math inline">4 × 64 × 64</span> <em>latent space</em> where the
+diffusion process takes place more efficiently.<a href="#fnref3"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>At the time of this writing.<a href="#fnref4"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Project page: <a
+href="https://beta.dreamstudio.ai/generate"
+class="uri">https://beta.dreamstudio.ai/generate</a><a href="#fnref5"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Project page: <a
+href="https://github.com/AUTOMATIC1111/stable-diffusion-webui"
+class="uri">https://github.com/AUTOMATIC1111/stable-diffusion-webui</a><a
+href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>Project page: <a
+href="https://github.com/invoke-ai/InvokeAI"
+class="uri">https://github.com/invoke-ai/InvokeAI</a><a href="#fnref7"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8"><p>GitHub (<a href="https://github.com"
+class="uri">https://github.com</a>) is a web-based platform that
+provides version control and collaboration services using Git, a
+distributed version control system. It allows developers to create,
+manage, and collaborate on repositories (projects) that contain source
+code, documentation, and other files.<a href="#fnref8"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9"><p>See Appendix <a href="10-AppendixB.html#AppendixB"
+data-reference-type="ref" data-reference="AppendixB">10</a> for the full
+list of items in the questionnaire.<a href="#fnref9"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>DALL-E is a machine learning-based image generation
+system created by OpenAI.<a href="#fnref10" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn11"><p>Source code available at: <a
+href="https://github.com/AmericanPresidentJimmyCarter/yasd-discord-bot"
+class="uri">https://github.com/AmericanPresidentJimmyCarter/yasd-discord-bot</a><a
+href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn12"><p>Source code available at: <a
+href="https://github.com/jina-ai/dalle-flow"
+class="uri">https://github.com/jina-ai/dalle-flow</a><a href="#fnref12"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn13"><p>Source code available at: <a
+href="https://github.com/jina-ai/jina"
+class="uri">https://github.com/jina-ai/jina</a><a href="#fnref13"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>

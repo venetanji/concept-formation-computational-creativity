@@ -1,0 +1,164 @@
+/* ---------------------------------------------------------------------------
+   Concept Formation in Computational Creativity — web edition theme
+   A quiet, readable academic theme. Serif body, generous measure,
+   light/dark aware. Layered on top of pandoc's chunkedhtml output.
+--------------------------------------------------------------------------- */
+
+:root {
+  --measure: 40rem;
+  --ink: #1b1b1b;
+  --ink-soft: #555;
+  --paper: #fbfaf7;
+  --paper-2: #f1efe8;
+  --rule: #ddd9cf;
+  --accent: #7a1f1f;       /* muted oxblood */
+  --accent-soft: #a64b4b;
+  --link: #6b1f1f;
+  --code-bg: #f4f1ea;
+  font-size: 18px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e6e3dc;
+    --ink-soft: #a8a39a;
+    --paper: #16161a;
+    --paper-2: #1e1e24;
+    --rule: #34343c;
+    --accent: #e08f8f;
+    --accent-soft: #cf7878;
+    --link: #e6a3a3;
+    --code-bg: #23232a;
+  }
+}
+
+html {
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0 auto;
+  max-width: var(--measure);
+  padding: 0 1.5rem 6rem;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Charter,
+               Georgia, "Times New Roman", serif;
+  line-height: 1.65;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+}
+
+/* --- site banner (injected before body) --- */
+.sitebar {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.sitebar .home {
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.sitebar .home:hover { color: var(--accent); }
+.sitebar .pdf {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--paper);
+  background: var(--accent);
+  padding: 0.35em 0.8em;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.sitebar .pdf:hover { background: var(--accent-soft); }
+
+/* --- typography --- */
+h1, h2, h3, h4 {
+  font-family: "Iowan Old Style", Palatino, Georgia, serif;
+  line-height: 1.2;
+  color: var(--ink);
+  margin: 2.2em 0 0.6em;
+}
+h1 { font-size: 2.1rem; margin-top: 1.2em; letter-spacing: -0.01em; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+h1 .header-section-number,
+h2 .header-section-number,
+h3 .header-section-number { color: var(--accent-soft); font-weight: 600; }
+
+p { margin: 1em 0; }
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+/* --- chapter epigraphs (savequote) --- */
+blockquote {
+  margin: 1.5em 0;
+  padding-left: 1.1em;
+  border-left: 3px solid var(--rule);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* --- figures --- */
+figure { margin: 2em 0; text-align: center; }
+figure img, img { max-width: 100%; height: auto; }
+figcaption {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-top: 0.6em;
+  line-height: 1.45;
+  text-align: left;
+}
+
+/* --- tables --- */
+table { border-collapse: collapse; margin: 1.5em 0; width: 100%; font-size: 0.92rem; }
+th, td { border: 1px solid var(--rule); padding: 0.4em 0.6em; text-align: left; }
+thead th { background: var(--paper-2); }
+
+/* --- code --- */
+code, pre { font-family: "SF Mono", "Cascadia Code", Consolas, monospace; }
+code { background: var(--code-bg); padding: 0.1em 0.3em; border-radius: 3px; font-size: 0.88em; }
+pre { background: var(--code-bg); padding: 1em; border-radius: 6px; overflow-x: auto; font-size: 0.8rem; line-height: 1.5; }
+pre code { background: none; padding: 0; }
+
+/* --- footnotes & references --- */
+.csl-bib-body, #refs { font-size: 0.92rem; line-height: 1.5; }
+.csl-entry { margin-bottom: 0.7em; padding-left: 1.5em; text-indent: -1.5em; }
+section.footnotes { font-size: 0.85rem; color: var(--ink-soft); border-top: 1px solid var(--rule); margin-top: 3em; padding-top: 1em; }
+.citation a { text-decoration: none; }
+
+/* --- contents (index page) --- */
+nav#TOC, #toc { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+nav#TOC ul, #toc ul { list-style: none; padding-left: 1.1em; }
+nav#TOC > ul { padding-left: 0; }
+nav#TOC a { text-decoration: none; }
+nav#TOC a:hover { text-decoration: underline; }
+
+/* --- prev/next site navigation (pandoc chunkedhtml) --- */
+nav#sitenav {
+  margin: 3em 0 0;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--rule);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 0.82rem;
+}
+div.sitenav { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.5em 1.5em; margin-bottom: 0.4em; }
+span.navlink { flex: 1; min-width: 11em; }
+span.navlink-label { color: var(--ink-soft); display: inline-block; min-width: 4.5em; }
+nav#sitenav a { text-decoration: none; color: var(--link); }
+nav#sitenav a:hover { text-decoration: underline; }
+
+/* the document title shown in the page header */
+header#title-block-header h1.title { margin-top: 0.6em; }
+header#title-block-header p.author,
+header#title-block-header p.date { color: var(--ink-soft); font-family: system-ui, sans-serif; font-size: 0.95rem; margin: 0.2em 0; }

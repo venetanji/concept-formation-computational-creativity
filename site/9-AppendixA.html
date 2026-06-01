@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Giovanni Lion" />
+  <title>Supplement to the literature review </title>
+  <style>
+    div.sitenav { display: flex; flex-direction: row; flex-wrap: wrap; }
+    span.navlink { flex: 1; }
+    span.navlink-label { display: inline-block; min-width: 4em; }
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="sitebar">
+  <a class="home" href="index.html">Concept Formation in Computational Creativity</a>
+  <a class="pdf" href="thesis.pdf">Download PDF</a>
+</div>
+<nav id="sitenav">
+<div class="sitenav">
+<span class="navlink">
+<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity-1.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
+</span>
+<span class="navlink">
+<span class="navlink-label">Top:</span> <a href="index.html" accesskey="t" rel="top">Concept Formation in Computational Creativity</a>
+</span>
+</div>
+<div class="sitenav">
+<span class="navlink">
+<span class="navlink-label">Next:</span> <a href="10-AppendixB.html" accesskey="n" rel="next">Questionnaire items and details</a>
+</span>
+<span class="navlink">
+<span class="navlink-label">Previous:</span> <a href="8-conclusions.html" accesskey="p" rel="previous">Conclusions</a>
+</span>
+</div>
+</nav>
+<h1 data-number="9" id="AppendixA"><span
+class="header-section-number">9</span> Supplement to the literature
+review </h1>
+<p>This appendix contains the code used to fetch the literature review
+data using scopus API as well as the prompt used to categorize the
+papers.</p>
+<h2 data-number="9.1" id="scopus-search-retrieval"><span
+class="header-section-number">9.1</span> Scopus search retrieval</h2>
+<pre><code>
+require &#39;typhoeus&#39;
+require &#39;json&#39;
+require &#39;bibtex&#39;
+require &#39;active_support&#39;
+require &#39;active_support/core_ext&#39;
+
+
+API_KEY = &quot;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&quot;
+API_URL = &quot;https://api.elsevier.com/&quot;
+DOI_BASE  = &quot;https://doi.org/&quot;
+
+DEFAULT_OPTIONS = {
+  method: :get,
+  headers: {
+    &#39;Accept&#39;: &#39;application/json&#39;,
+    &#39;X-ELS-APIKey&#39;: API_KEY
+  }
+}
+
+BIBTEX_TYPES = {
+  &quot;Conference Paper&quot; =&gt; :inproceedings,
+  &quot;Article&quot; =&gt; :article,
+  &quot;Editorial&quot; =&gt; :article,
+  &quot;Note&quot; =&gt; :article,
+  &quot;Review&quot; =&gt; :article,
+  &quot;Chapter&quot; =&gt; :inbook,
+  &quot;Article in Press&quot; =&gt; :article,
+  &quot;Short Survey&quot; =&gt; :article,
+  &quot;Book&quot; =&gt; :book
+}
+
+@search_string = &#39;KEY (&quot;computational creativity&quot;)&#39;
+@bib = BibTeX::Bibliography.new
+@urls = []
+
+def make_keyword_request(sstring, cursor = 0)
+  options = DEFAULT_OPTIONS.dup
+  options[:params] = {
+    query: sstring,
+    field: &quot;prism:url&quot;,
+    count: 25,
+    start: cursor
+  }
+  request = Typhoeus::Request.new(api(&quot;content/search/scopus&quot;), options)
+  request.on_complete do |response|
+    if response.success?
+      parsed_response = JSON.parse(response.body)[&quot;search-results&quot;]
+      if parsed_response[&quot;entry&quot;]
+        parsed_response[&quot;entry&quot;].each do |result|
+          puts result[&quot;prism:url&quot;]
+          @urls.push result[&quot;prism:url&quot;]
+        end
+        make_keyword_request(sstring, cursor + 25).run
+      end
+    elsif response.timed_out?
+      # aw hell no
+      puts &quot;got a time out&quot;
+    elsif response.code == 0
+      # Could not get an http response, something&#39;s wrong.
+      puts response.return_message
+    else
+      # Received a non-successful http response.
+      puts &quot;HTTP request failed: &quot; + response.code.to_s
+      puts response.body
+    end
+  end
+  request
+end
+
+def api(path)
+  API_URL + path
+end
+
+
+def make_abstract_request(url)
+  puts url
+  options = DEFAULT_OPTIONS.dup
+  options[:params] = {
+    view: &quot;META_ABS&quot;,
+    apiKey: API_KEY
+  } 
+  request = Typhoeus::Request.new(url, options)
+  request.on_complete do |response|
+    if response.success?
+      parsed_response = JSON.parse(response.body)[&quot;abstracts-retrieval-response&quot;]
+      coredata = parsed_response[&quot;coredata&quot;]
+      puts &quot;Found #{coredata[&quot;subtypeDescription&quot;]}&quot; 
+      puts coredata 
+      if is_valid_record(coredata)
+        puts &quot;Valid record&quot;
+        entry = {}
+        entry[:bibtex_type] = BIBTEX_TYPES[coredata[&quot;subtypeDescription&quot;]]
+        entry[:issn] = coredata[&quot;prism:issn&quot;]
+        entry[:journal] = coredata[&quot;prism:publicationName&quot;]
+        entry[:author] = format_authors(coredata[&quot;dc:creator&quot;][&quot;author&quot;])
+        entry[:abstract] = coredata[&quot;dc:description&quot;]
+        date = Date.parse(coredata[&quot;prism:coverDate&quot;])
+        entry[:year] = date.year
+        entry[:month] = date.month
+        entry[:title] = coredata[&quot;dc:title&quot;]
+        entry[:volume] = coredata[&quot;prism:volume&quot;]
+        entry[:number] =  coredata[&quot;issueIdentifier&quot;]
+        entry[:pages] = &quot;#{coredata[&quot;prism:startingPage&quot;]}--#{coredata[&quot;prism:endingPage&quot;]}&quot;
+        entry[:citedby] = coredata[&quot;citedby-count&quot;]
+        if coredata[&quot;prism:doi&quot;]
+          entry[:doi] = coredata[&quot;prism:doi&quot;]
+          entry[:url] = DOI_BASE + coredata[&quot;prism:doi&quot;]
+        end
+        entry[:eid] = coredata[&quot;eid&quot;]
+        
+        entry[:publisher] = coredata[&quot;dc:publisher&quot;]
+        
+        #entry[:file] = build_file_url(coredata[&quot;dc:identifier&quot;])
+        if parsed_response[&quot;authkeywords&quot;]
+          if parsed_response[&quot;authkeywords&quot;][&quot;author-keyword&quot;].instance_of? Array
+            entry[:keywords] =  parsed_response[&quot;authkeywords&quot;][&quot;author-keyword&quot;].map {|key| key[&quot;$&quot;].titlecase.strip }.join(&quot;, &quot;)
+          else
+            entry[:keywords] =  parsed_response[&quot;authkeywords&quot;][&quot;author-keyword&quot;][&quot;$&quot;].titlecase.strip
+          end
+        end
+        @bib &lt;&lt; BibTeX::Entry.new(entry)
+      else
+        puts &quot;Invalid record!&quot;
+        puts url
+        puts &quot;Continuing&quot;
+      end
+        
+    elsif response.timed_out?
+      # aw hell no
+      puts &quot;got a time out&quot;
+    elsif response.code == 0
+      # Could not get an http response, something&#39;s wrong.
+      puts response.return_message
+    else
+      # Received a non-successful http response.
+      puts &quot;major fail&quot;
+      puts response.body
+      puts &quot;HTTP request failed: &quot; + response.code.to_s
+    end
+  end
+  request
+end
+
+def format_authors(authors)
+  authors.map do |author|
+    &quot;#{author[&#39;ce:surname&#39;]}, #{author[&#39;ce:given-name&#39;]}&quot;
+  end.join(&quot; and &quot;)
+end
+
+def is_valid_record(data)
+  data[&quot;dc:creator&quot;] &amp;&amp; BIBTEX_TYPES[data[&quot;subtypeDescription&quot;]]
+end
+
+make_keyword_request(@search_string).run
+
+#urls = File.open(&quot;artificial_creativity.txt&quot;).read
+@urls.each_with_index do | url , i |
+  puts &quot;Querying #{i+1} of #{@urls.length}&quot;
+  make_abstract_request(url.strip).run
+end
+
+#make_abstract_request(&quot;https://api.elsevier.com/content/abstract/scopus_id/84900523833&quot;).run
+#print @bib.to_s
+File.write(&quot;#{@search_string.remove(&#39;&quot;&#39;).squish}.bib&quot;, @bib.to_s)
+
+</code></pre>
+<h2 data-number="9.2" id="gpt-categorization-prompt"><span
+class="header-section-number">9.2</span> GPT categorization prompt</h2>
+<pre><code>
+A media is intended as the field of application addressed by the paper in question.
+The theoretical scope of a paper is intended as the focus of the paper&#39;s research question.
+The computational approach is intended as the broad category of algorithms and implementations discussed in the paper.
+I need your help identifying the domain of this paper:
+
+Title: {title}
+
+Abstract: {abstract}
+
+Journal: {journal}
+
+Please assign it to one of the following media:
+
+  - No medium
+  - Visual, images and movies
+  - Culinary recipes
+  - Design, Urban Design, Architecture
+  - Writing, narrative and language
+  - Music and musical composition
+  - Game design
+  - Concepts
+  - Multi-modal
+
+Please also help me assign this paper to one of the following theoretical scopes based on the
+research question that the paper is addressing:
+  - Evaluation: the paper discusses the evaluation of creative artifacts
+  - Theory: the paper discusses a particular theory or hypothesis about creativity
+  - System: the paper presents a technical implementation of a specific system or algorithm developed by the authors
+  - Other: the scope of the paper does not fit any of the other categories
+
+Please also assign one of these computational approaches:
+  - Rule based: these are non-data driven methods that follow deterministic rules and definitions, such as expert systems
+  - Evolutionary algorithms: genetic algorithms and other evolutionary methods
+  - Data driven: this includes Deep learning, machine learing and other methods that are based on datasets
+  - Other: does not belong to any of the above or the approach is not clearly specified
+
+
+Return the domain and the explanation of your choice in this format:
+[ the media of the paper] | [ the theoretical scope ] | [the computational approach] | [ your explanation]
+
+for example:
+
+Multi-modal | Evaluation of creativity | Data driven | This paper discusses [...] so it belongs to [...]
+
+Follow this format strictly and do not add any other words or prefix such as &quot;Scope:&quot; or &quot;Medium:&quot; before the domain and category you pick.
+</code></pre>
+<h2 data-number="9.3"
+id="top-cited-paper-and-their-research-question"><span
+class="header-section-number">9.3</span> Top cited paper and their
+research question</h2>
+<p>The following table displays the 25 papers with most citations in the
+corpus. The number of citations was not considered in the systematic
+literature review, because of the possible bias it may introduce. All
+topics have been considered as a equally important regardless of whether
+the paper was cited or not. Citations also are depended on publication
+date, which may yield further bias in the analysis.</p>
+<table>
+<caption>A list of the 25 most cited paper found in the corpus of used
+for the literature review and their research questions extracted by
+GPT3.5</caption>
+<tbody>
+<tr>
+<td style="text-align: left;">Author (Year)</td>
+<td style="text-align: left;">Paper Title</td>
+<td style="text-align: left;">Citations</td>
+<td style="text-align: left;">Research Question</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Ritchie2007">(Ritchie 2007)</span></td>
+<td style="text-align: left;">Some empirical criteria for attributing
+creativity to a computer program</td>
+<td style="text-align: left;">193</td>
+<td style="text-align: left;">Is it possible to empirically assess
+whether a computer program is capable of creative activity?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Jordanous2012">(Jordanous 2012)</span></td>
+<td style="text-align: left;">A Standardised Procedure for Evaluating
+Creative Systems: Computational Creativity Evaluation Based on What it
+is to be Creative</td>
+<td style="text-align: left;">129</td>
+<td style="text-align: left;">How can we evaluate the creativity of
+computational systems?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Wiggins2006">(Wiggins 2006a)</span></td>
+<td style="text-align: left;">Searching for computational
+creativity</td>
+<td style="text-align: left;">110</td>
+<td style="text-align: left;">How can traditional AI search methods be
+used to explore the relationship between Boden’s account of creativity
+and Wiggins’ formalisation of it?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Machado2002">(Machado 2002)</span></td>
+<td style="text-align: left;">All the truth about NEvAr</td>
+<td style="text-align: left;">109</td>
+<td style="text-align: left;">How can Evolutionary Art Tools, such as
+NEvAr, be used to generate images and what are the benefits of using
+such tools?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Boden2009">(Boden 2009)</span></td>
+<td style="text-align: left;">What is generative art?</td>
+<td style="text-align: left;">91</td>
+<td style="text-align: left;">What are the major categories of
+generative art, and what are the appropriate aesthetic criteria and
+locus of creativity for each category?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Neves2007">(Neves et al. 2007)</span></td>
+<td style="text-align: left;">The halt condition in genetic
+programming</td>
+<td style="text-align: left;">79</td>
+<td style="text-align: left;">What is the role of divergence and
+convergence in creative processes, and how can they be implemented
+within creativity programs in the Genetic or Evolutionary Programming
+paradigm to address the Halt Condition in Genetic Programming?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Jennings2010">(Jennings 2010)</span></td>
+<td style="text-align: left;">Developing creativity: Artificial barriers
+in artificial intelligence</td>
+<td style="text-align: left;">55</td>
+<td style="text-align: left;">How can developers of creative artificial
+intelligence systems convincingly argue that their software is more than
+just an extension of their own creativity?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Davis2016">(Davis 2016)</span></td>
+<td style="text-align: left;">Empirically studying participatory
+sense-making in abstract drawing with a co-creative cognitive agent</td>
+<td style="text-align: left;">54</td>
+<td style="text-align: left;">How can participatory sense-making be used
+to model and understand open-ended collaboration between humans and
+computers in the context of abstract drawing?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Kowaliw2012">(Kowaliw 2012)</span></td>
+<td style="text-align: left;">Promoting creative design in interactive
+evolutionary computation</td>
+<td style="text-align: left;">52</td>
+<td style="text-align: left;">How can creative design be promoted in
+interactive evolutionary computation?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Eppe2018">(Eppe 2018)</span></td>
+<td style="text-align: left;">A computational framework for conceptual
+blending</td>
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">How can modern answer set programming
+methods and optimality principles be used to develop a computational
+framework for conceptual blending?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Chen2019a">(Chen 2019)</span></td>
+<td style="text-align: left;">An artificial intelligence based
+data-driven approach for design ideation</td>
+<td style="text-align: left;">49</td>
+<td style="text-align: left;">How can artificial intelligence and data
+mining techniques be used to enhance design ideation?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Peinado2006">(Peinado 2006)</span></td>
+<td style="text-align: left;">Evaluation of automatic generation of
+basic stories</td>
+<td style="text-align: left;">47</td>
+<td style="text-align: left;">How can the utility of an automatic story
+generation system be measured in terms of quality and originality of the
+generated artifact?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Olteteanu2015">(Olteţeanu 2015)</span></td>
+<td style="text-align: left;">ComRAT-C: A computational compound Remote
+Associates Test solver based on language data and its comparison to
+human performance</td>
+<td style="text-align: left;">44</td>
+<td style="text-align: left;">Can a computational compound Remote
+Associates Test solver based on language data be used to solve RAT
+queries and how does it compare to human performance?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Yang2020">(Yang 2020)</span></td>
+<td style="text-align: left;">On the evaluation of generative models in
+music</td>
+<td style="text-align: left;">43</td>
+<td style="text-align: left;">How can generative music systems be
+evaluated and compared in a reliable, valid, and reproducible way?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Sturm2019">(Sturm 2019)</span></td>
+<td style="text-align: left;">Machine learning research that matters for
+music creation: A case study</td>
+<td style="text-align: left;">41</td>
+<td style="text-align: left;">How can machine learning be applied to
+music creation in a way that is useful and impactful for real-world
+practitioners?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Olteteanu2016">(Olteţeanu 2016)</span></td>
+<td style="text-align: left;">Object replacement and object composition
+in a creative cognitive system. Towards a computational solver of the
+Alternative Uses Test</td>
+<td style="text-align: left;">41</td>
+<td style="text-align: left;">How can object replacement and object
+composition be used to create a creative cognitive system that can solve
+the Alternative Uses Test?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Liapis2019">(Liapis 2019)</span></td>
+<td style="text-align: left;">Orchestrating game generation</td>
+<td style="text-align: left;">39</td>
+<td style="text-align: left;">How can a computational process
+orchestrate the various computational creators of different creative
+domains in order to generate a digital game with desired functional and
+aesthetic characteristics?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Colton2008">(Colton 2008)</span></td>
+<td style="text-align: left;">Emotionally aware automated portrait
+painting</td>
+<td style="text-align: left;">38</td>
+<td style="text-align: left;">How can a machine vision system and a
+non-photorealistic rendering (NPR) system be combined to automatically
+produce portraits which heighten the emotion of the sitter?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Cook2017a">(Cook 2017)</span></td>
+<td style="text-align: left;">The ANGELINA videogame design system-part
+i</td>
+<td style="text-align: left;">37</td>
+<td style="text-align: left;">How can cooperative coevolution be used to
+automate game design and produce content that complements each
+other?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Grace2015">(Grace 2015)</span></td>
+<td style="text-align: left;">Data-intensive evaluation of design
+creativity using novelty, value, and surprise</td>
+<td style="text-align: left;">37</td>
+<td style="text-align: left;">How can data-intensive methods be used to
+evaluate the creativity of a new design in terms of novelty, value, and
+surprise?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="AlRifaie2012">(<span class="nocase">al-Rifaie</span>
+2012)</span></td>
+<td style="text-align: left;">Creativity and Autonomy in Swarm
+Intelligence Systems</td>
+<td style="text-align: left;">37</td>
+<td style="text-align: left;">How can swarm intelligence algorithms be
+used to create novel drawings of an input image, and what implications
+does this have for creativity and autonomy?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Jordanous2016">(Jordanous 2016)</span></td>
+<td style="text-align: left;">Four PPPPerspectives on computational
+creativity in theory and in practice</td>
+<td style="text-align: left;">34</td>
+<td style="text-align: left;">How can the Four Ps of creativity
+(Person/Producer, Product, Process and Press/Environment) be used to
+take a broader perspective on computational creativity in theory and in
+practice?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Koebis2021">(Köbis 2021)</span></td>
+<td style="text-align: left;">Artificial intelligence versus Maya
+Angelou: Experimental evidence that people cannot differentiate
+AI-generated from human-written poetry</td>
+<td style="text-align: left;">33</td>
+<td style="text-align: left;">Can people distinguish and prefer
+algorithm-generated versus human-written text?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Saunders2012">(Saunders 2012)</span></td>
+<td style="text-align: left;">Towards Autonomous Creative Systems: A
+Computational Approach</td>
+<td style="text-align: left;">32</td>
+<td style="text-align: left;">How can autonomous computational
+creativity be developed to model personal motivations, social
+interactions, and the evolution of domains?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="DeNicola2019">(De Nicola 2019)</span></td>
+<td style="text-align: left;">Creative design of emergency management
+scenarios driven by semantics: An application to smart cities</td>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;">How can semantics-based techniques be used
+to support the creative design of emergency management scenarios in
+smart cities?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Smith2017">(Smith 2017)</span></td>
+<td style="text-align: left;">Harnessing A.I. for augmenting creativity:
+Application to movie trailer creation</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">How can Artificial Intelligence (AI) be
+used to augment creativity in the context of movie trailer
+creation?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Pasquier2016">(Pasquier 2016)</span></td>
+<td style="text-align: left;">An introduction to musical
+metacreation</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">What are the challenges and opportunities
+for the field of musical metacreation?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Carnovalini2020">(Carnovalini 2020)</span></td>
+<td style="text-align: left;">Computational Creativity and Music
+Generation Systems: An Introduction to the State of the Art</td>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">What are the current state-of-the-art
+systems for Computational Creativity and Music Generation, and what open
+challenges remain to be addressed?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Lamb2018">(Lamb 2018)</span></td>
+<td style="text-align: left;">Evaluating computational creativity: An
+interdisciplinary tutorial</td>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">How can computational creativity be
+evaluated using interdisciplinary theories of creativity?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="citation"
+data-cites="Deterding2017">(Deterding 2017)</span></td>
+<td style="text-align: left;">Mixed-initiative creative interfaces</td>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">How can mixed-initiative creative
+interfaces be designed to broaden and amplify creative capacity for
+all?</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

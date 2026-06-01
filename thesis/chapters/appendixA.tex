@@ -1,0 +1,284 @@
+%!TEX root = ../dissertation.tex
+\chapter{Supplement to the literature review }
+\label{AppendixA}
+
+This appendix contains the code used to fetch the literature review data using scopus API as well as the prompt used to categorize the papers.
+
+
+\section{Scopus search retrieval}
+\singlespace
+
+\begin{lstlisting}
+
+require 'typhoeus'
+require 'json'
+require 'bibtex'
+require 'active_support'
+require 'active_support/core_ext'
+
+
+API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+API_URL = "https://api.elsevier.com/"
+DOI_BASE  = "https://doi.org/"
+
+DEFAULT_OPTIONS = {
+  method: :get,
+  headers: {
+    'Accept': 'application/json',
+    'X-ELS-APIKey': API_KEY
+  }
+}
+
+BIBTEX_TYPES = {
+  "Conference Paper" => :inproceedings,
+  "Article" => :article,
+  "Editorial" => :article,
+  "Note" => :article,
+  "Review" => :article,
+  "Chapter" => :inbook,
+  "Article in Press" => :article,
+  "Short Survey" => :article,
+  "Book" => :book
+}
+
+@search_string = 'KEY ("computational creativity")'
+@bib = BibTeX::Bibliography.new
+@urls = []
+
+def make_keyword_request(sstring, cursor = 0)
+  options = DEFAULT_OPTIONS.dup
+  options[:params] = {
+    query: sstring,
+    field: "prism:url",
+    count: 25,
+    start: cursor
+  }
+  request = Typhoeus::Request.new(api("content/search/scopus"), options)
+  request.on_complete do |response|
+    if response.success?
+      parsed_response = JSON.parse(response.body)["search-results"]
+      if parsed_response["entry"]
+        parsed_response["entry"].each do |result|
+          puts result["prism:url"]
+          @urls.push result["prism:url"]
+        end
+        make_keyword_request(sstring, cursor + 25).run
+      end
+    elsif response.timed_out?
+      # aw hell no
+      puts "got a time out"
+    elsif response.code == 0
+      # Could not get an http response, something's wrong.
+      puts response.return_message
+    else
+      # Received a non-successful http response.
+      puts "HTTP request failed: " + response.code.to_s
+      puts response.body
+    end
+  end
+  request
+end
+
+def api(path)
+  API_URL + path
+end
+
+
+def make_abstract_request(url)
+  puts url
+  options = DEFAULT_OPTIONS.dup
+  options[:params] = {
+    view: "META_ABS",
+    apiKey: API_KEY
+  } 
+  request = Typhoeus::Request.new(url, options)
+  request.on_complete do |response|
+    if response.success?
+      parsed_response = JSON.parse(response.body)["abstracts-retrieval-response"]
+      coredata = parsed_response["coredata"]
+      puts "Found #{coredata["subtypeDescription"]}" 
+      puts coredata 
+      if is_valid_record(coredata)
+        puts "Valid record"
+        entry = {}
+        entry[:bibtex_type] = BIBTEX_TYPES[coredata["subtypeDescription"]]
+        entry[:issn] = coredata["prism:issn"]
+        entry[:journal] = coredata["prism:publicationName"]
+        entry[:author] = format_authors(coredata["dc:creator"]["author"])
+        entry[:abstract] = coredata["dc:description"]
+        date = Date.parse(coredata["prism:coverDate"])
+        entry[:year] = date.year
+        entry[:month] = date.month
+        entry[:title] = coredata["dc:title"]
+        entry[:volume] = coredata["prism:volume"]
+        entry[:number] =  coredata["issueIdentifier"]
+        entry[:pages] = "#{coredata["prism:startingPage"]}--#{coredata["prism:endingPage"]}"
+        entry[:citedby] = coredata["citedby-count"]
+        if coredata["prism:doi"]
+          entry[:doi] = coredata["prism:doi"]
+          entry[:url] = DOI_BASE + coredata["prism:doi"]
+        end
+        entry[:eid] = coredata["eid"]
+        
+        entry[:publisher] = coredata["dc:publisher"]
+        
+        #entry[:file] = build_file_url(coredata["dc:identifier"])
+        if parsed_response["authkeywords"]
+          if parsed_response["authkeywords"]["author-keyword"].instance_of? Array
+            entry[:keywords] =  parsed_response["authkeywords"]["author-keyword"].map {|key| key["$"].titlecase.strip }.join(", ")
+          else
+            entry[:keywords] =  parsed_response["authkeywords"]["author-keyword"]["$"].titlecase.strip
+          end
+        end
+        @bib << BibTeX::Entry.new(entry)
+      else
+        puts "Invalid record!"
+        puts url
+        puts "Continuing"
+      end
+        
+    elsif response.timed_out?
+      # aw hell no
+      puts "got a time out"
+    elsif response.code == 0
+      # Could not get an http response, something's wrong.
+      puts response.return_message
+    else
+      # Received a non-successful http response.
+      puts "major fail"
+      puts response.body
+      puts "HTTP request failed: " + response.code.to_s
+    end
+  end
+  request
+end
+
+def format_authors(authors)
+  authors.map do |author|
+    "#{author['ce:surname']}, #{author['ce:given-name']}"
+  end.join(" and ")
+end
+
+def is_valid_record(data)
+  data["dc:creator"] && BIBTEX_TYPES[data["subtypeDescription"]]
+end
+
+make_keyword_request(@search_string).run
+
+#urls = File.open("artificial_creativity.txt").read
+@urls.each_with_index do | url , i |
+  puts "Querying #{i+1} of #{@urls.length}"
+  make_abstract_request(url.strip).run
+end
+
+#make_abstract_request("https://api.elsevier.com/content/abstract/scopus_id/84900523833").run
+#print @bib.to_s
+File.write("#{@search_string.remove('"').squish}.bib", @bib.to_s)
+
+
+\end{lstlisting}
+
+
+\section{GPT categorization prompt}
+
+\begin{lstlisting}
+
+A media is intended as the field of application addressed by the paper in question.
+The theoretical scope of a paper is intended as the focus of the paper's research question.
+The computational approach is intended as the broad category of algorithms and implementations discussed in the paper.
+I need your help identifying the domain of this paper:
+
+Title: {title}
+
+Abstract: {abstract}
+
+Journal: {journal}
+
+Please assign it to one of the following media:
+
+  - No medium
+  - Visual, images and movies
+  - Culinary recipes
+  - Design, Urban Design, Architecture
+  - Writing, narrative and language
+  - Music and musical composition
+  - Game design
+  - Concepts
+  - Multi-modal
+
+Please also help me assign this paper to one of the following theoretical scopes based on the
+research question that the paper is addressing:
+  - Evaluation: the paper discusses the evaluation of creative artifacts
+  - Theory: the paper discusses a particular theory or hypothesis about creativity
+  - System: the paper presents a technical implementation of a specific system or algorithm developed by the authors
+  - Other: the scope of the paper does not fit any of the other categories
+
+Please also assign one of these computational approaches:
+  - Rule based: these are non-data driven methods that follow deterministic rules and definitions, such as expert systems
+  - Evolutionary algorithms: genetic algorithms and other evolutionary methods
+  - Data driven: this includes Deep learning, machine learing and other methods that are based on datasets
+  - Other: does not belong to any of the above or the approach is not clearly specified
+
+
+Return the domain and the explanation of your choice in this format:
+[ the media of the paper] | [ the theoretical scope ] | [the computational approach] | [ your explanation]
+
+for example:
+
+Multi-modal | Evaluation of creativity | Data driven | This paper discusses [...] so it belongs to [...]
+
+Follow this format strictly and do not add any other words or prefix such as "Scope:" or "Medium:" before the domain and category you pick.
+
+\end{lstlisting}
+
+
+\section{Top cited paper and their research question}
+
+The following table displays the 25 papers with most citations in the corpus. The number of citations was not considered in the systematic literature review, because of the possible bias it may introduce. All topics have been considered as a equally important regardless of whether the paper was cited or not. Citations also are depended on publication date, which may yield further bias in the analysis. 
+
+{\renewcommand{\arraystretch}{2}
+
+	\small
+	\singlespacing
+	\begin{longtable}{ 
+			p{\dimexpr.17\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 1
+			p{\dimexpr.27\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 2
+			p{\dimexpr.12\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 2
+			p{\dimexpr.44\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 3
+	 	}
+	Author (Year) & Paper Title & Citations & Research Question \\
+	
+\cite{Ritchie2007} & Some empirical criteria for attributing creativity to a computer program & 193 &  Is it possible to empirically assess whether a computer program is capable of creative activity? \\ 
+\cite{Jordanous2012} & A Standardised Procedure for Evaluating Creative Systems: Computational Creativity Evaluation Based on What it is to be Creative & 129 &  How can we evaluate the creativity of computational systems? \\ 
+\cite{Wiggins2006} & Searching for computational creativity & 110 &  How can traditional AI search methods be used to explore the relationship between Boden's account of creativity and Wiggins' formalisation of it? \\ 
+\cite{Machado2002} & All the truth about NEvAr & 109 &  How can Evolutionary Art Tools, such as NEvAr, be used to generate images and what are the benefits of using such tools? \\ 
+\cite{Boden2009} & What is generative art? & 91 &  What are the major categories of generative art, and what are the appropriate aesthetic criteria and locus of creativity for each category? \\ 
+\cite{Neves2007} & The halt condition in genetic programming & 79 &  What is the role of divergence and convergence in creative processes, and how can they be implemented within creativity programs in the Genetic or Evolutionary Programming paradigm to address the Halt Condition in Genetic Programming? \\ 
+\cite{Jennings2010} & Developing creativity: Artificial barriers in artificial intelligence & 55 &  How can developers of creative artificial intelligence systems convincingly argue that their software is more than just an extension of their own creativity? \\ 
+\cite{Davis2016} & Empirically studying participatory sense-making in abstract drawing with a co-creative cognitive agent & 54 &  How can participatory sense-making be used to model and understand open-ended collaboration between humans and computers in the context of abstract drawing? \\ 
+\cite{Kowaliw2012} & Promoting creative design in interactive evolutionary computation & 52 &  How can creative design be promoted in interactive evolutionary computation? \\ 
+\cite{Eppe2018} & A computational framework for conceptual blending & 51 &  How can modern answer set programming methods and optimality principles be used to develop a computational framework for conceptual blending? \\ 
+\cite{Chen2019a} & An artificial intelligence based data-driven approach for design ideation & 49 &  How can artificial intelligence and data mining techniques be used to enhance design ideation? \\ 
+\cite{Peinado2006} & Evaluation of automatic generation of basic stories & 47 &  How can the utility of an automatic story generation system be measured in terms of quality and originality of the generated artifact? \\ 
+\cite{Olteteanu2015} & ComRAT-C: A computational compound Remote Associates Test solver based on language data and its comparison to human performance & 44 &  Can a computational compound Remote Associates Test solver based on language data be used to solve RAT queries and how does it compare to human performance? \\ 
+\cite{Yang2020} & On the evaluation of generative models in music & 43 &  How can generative music systems be evaluated and compared in a reliable, valid, and reproducible way? \\ 
+\cite{Sturm2019} & Machine learning research that matters for music creation: A case study & 41 &  How can machine learning be applied to music creation in a way that is useful and impactful for real-world practitioners? \\ 
+\cite{Olteteanu2016} & Object replacement and object composition in a creative cognitive system. Towards a computational solver of the Alternative Uses Test & 41 &  How can object replacement and object composition be used to create a creative cognitive system that can solve the Alternative Uses Test? \\ 
+\cite{Liapis2019} & Orchestrating game generation & 39 &  How can a computational process orchestrate the various computational creators of different creative domains in order to generate a digital game with desired functional and aesthetic characteristics? \\ 
+\cite{Colton2008} & Emotionally aware automated portrait painting & 38 &  How can a machine vision system and a non-photorealistic rendering (NPR) system be combined to automatically produce portraits which heighten the emotion of the sitter? \\ 
+\cite{Cook2017a} & The ANGELINA videogame design system-part i & 37 &  How can cooperative coevolution be used to automate game design and produce content that complements each other? \\ 
+\cite{Grace2015} & Data-intensive evaluation of design creativity using novelty, value, and surprise & 37 &  How can data-intensive methods be used to evaluate the creativity of a new design in terms of novelty, value, and surprise? \\ 
+\cite{AlRifaie2012} & Creativity and Autonomy in Swarm Intelligence Systems & 37 &  How can swarm intelligence algorithms be used to create novel drawings of an input image, and what implications does this have for creativity and autonomy? \\ 
+\cite{Jordanous2016} & Four PPPPerspectives on computational creativity in theory and in practice & 34 &  How can the Four Ps of creativity (Person/Producer, Product, Process and Press/Environment) be used to take a broader perspective on computational creativity in theory and in practice? \\ 
+\cite{Koebis2021} & Artificial intelligence versus Maya Angelou: Experimental evidence that people cannot differentiate AI-generated from human-written poetry & 33 &  Can people distinguish and prefer algorithm-generated versus human-written text? \\ 
+\cite{Saunders2012} & Towards Autonomous Creative Systems: A Computational Approach & 32 &  How can autonomous computational creativity be developed to model personal motivations, social interactions, and the evolution of domains? \\ 
+\cite{DeNicola2019} & Creative design of emergency management scenarios driven by semantics: An application to smart cities & 31 &  How can semantics-based techniques be used to support the creative design of emergency management scenarios in smart cities? \\ 
+\cite{Smith2017} & Harnessing A.I. for augmenting creativity: Application to movie trailer creation & 30 &  How can Artificial Intelligence (AI) be used to augment creativity in the context of movie trailer creation? \\ 
+\cite{Pasquier2016} & An introduction to musical metacreation & 30 &  What are the challenges and opportunities for the field of musical metacreation? \\ 
+\cite{Carnovalini2020} & Computational Creativity and Music Generation Systems: An Introduction to the State of the Art & 29 &  What are the current state-of-the-art systems for Computational Creativity and Music Generation, and what open challenges remain to be addressed? \\ 
+\cite{Lamb2018} & Evaluating computational creativity: An interdisciplinary tutorial & 29 &  How can computational creativity be evaluated using interdisciplinary theories of creativity? \\ 
+\cite{Deterding2017} & Mixed-initiative creative interfaces & 29 &  How can mixed-initiative creative interfaces be designed to broaden and amplify creative capacity for all? \\ 
+		\caption[25 most cited papers in the systematic literature review]{A list of the 25 most cited paper found in the corpus of used for the literature review and their research questions extracted by GPT3.5}
+	\end{longtable}
+
+}

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Giovanni Lion" />
+  <title>Study: Images</title>
+  <style>
+    div.sitenav { display: flex; flex-direction: row; flex-wrap: wrap; }
+    span.navlink { flex: 1; }
+    span.navlink-label { display: inline-block; min-width: 4em; }
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="sitebar">
+  <a class="home" href="index.html">Concept Formation in Computational Creativity</a>
+  <a class="pdf" href="thesis.pdf">Download PDF</a>
+</div>
+<nav id="sitenav">
+<div class="sitenav">
+<span class="navlink">
+<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity-1.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
+</span>
+<span class="navlink">
+<span class="navlink-label">Top:</span> <a href="index.html" accesskey="t" rel="top">Concept Formation in Computational Creativity</a>
+</span>
+</div>
+<div class="sitenav">
+<span class="navlink">
+<span class="navlink-label">Next:</span> <a href="6-study-text-to-image.html" accesskey="n" rel="next">Study: Text-to-image</a>
+</span>
+<span class="navlink">
+<span class="navlink-label">Previous:</span> <a href="4-study-music.html" accesskey="p" rel="previous">Study: Music</a>
+</span>
+</div>
+</nav>
+<h1 data-number="5" id="study-images"><span
+class="header-section-number">5</span> Study: Images</h1>
+<p>The invention of cameras and the subsequent development of
+photography revolutionized the way we relate to visual content. Unlike
+human-drawn paintings, photographs could capture an instant of reality
+with remarkable speed and accuracy. This new form of image-making was a
+significant departure from traditional art forms that relied on
+subjective interpretation and representation. Through a camera, we can
+fix a moment in time, providing an illusion of objectivity <span
+class="citation" data-cites="Batchen1997">(Batchen 1997)</span>.</p>
+<h2 data-number="5.1" id="scope-1"><span
+class="header-section-number">5.1</span> Scope</h2>
+<p>From a post-phenomenological perspective, the use of a camera
+introduces a certain degree of technological <em>opacity</em> <span
+class="citation" data-cites="Eede2010">(Eede 2010)</span> (see Section
+<a href="3-methodology.html#sec:technological-mediation"
+data-reference-type="ref"
+data-reference="sec:technological-mediation">3.1</a>), which conceals
+elements of interaction that bring about a subjective bias. The intimate
+relationship that photographers develop with their favorite cameras, or
+the habits that they unconsciously form through daily use, are
+inevitably reflected in the output they produce. As Flusser put it,
+Furthermore, the social ecosystem around photography informs about the
+ways the technology can and should be used, subtly influencing the act
+of taking photos.</p>
+<p>Vilém Flusser was a Czech-Brazilian philosopher and media theorist
+who is best known for his work on communication, technology, and
+culture. He wrote extensively about the impact of new media technologies
+on human perception and understanding of reality. According to <span
+class="citation" data-cites="Flusser2000">(Flusser 2000)</span>, a
+photograph is not simply an image captured by a camera, but rather the
+result of a complex set of programs that determine how the camera
+operates and how the resulting image is produced. These programs are
+embedded within what he calls the photographic <em>apparatus</em> - a
+system that includes not only cameras and film, but also printing
+processes, distribution networks, and cultural institutions that shape
+our understanding of photographic images.</p>
+<p><em>Relationality</em> is a key factor in Flusser’s understanding of
+the photographic <em>apparatus</em>. He argues that the
+<em>apparatus</em> is not simply a technological system, but rather a
+social and cultural one that shapes our relationships with each other
+and with the world around us <span class="citation"
+data-cites="Flusser2000">(Flusser 2000)</span>. Flusser suggests that
+the photographic <em>apparatus</em> creates a network of relationships
+between photographers, subjects, viewers, and cultural institutions.
+These relationships are shaped by the programs embedded within the
+apparatus - for example, by determining what kinds of images are
+considered valuable or meaningful. Once again we see elements of
+<em>Press</em> governing the selection module of the creative
+process.</p>
+<p>Using the post-phenomenological framework, we can compare traditional
+image-making technologies to photography by formalizing them as
+different forms of mediation:</p>
+<ul>
+<li><p>(I — Brush) → Painting</p></li>
+<li><p>I → Camera / Apparatus (— Photo)</p></li>
+</ul>
+<p>With the advent of digital cameras and mobile phones, the
+<em>apparatus</em> has grown to include social media and communication
+platforms, creating a vast ecosystem that could produce and distribute
+visual content at exponentially growing rates. The selection displayed
+through these channels is often the result of algorithms that suggest
+visual content based on what is most to the user, based on previous
+data. Generative imaging tools, might expand the <em>apparatus</em> to a
+whole new level, redefining the conceptual boundaries of photographs and
+digital images.</p>
+<p>Image generation with ML is a relatively recent field, which emerged
+from the progress made in computer vision (see Section <a
+href="2-Litreview.html#sec:deep-learning" data-reference-type="ref"
+data-reference="sec:deep-learning">2.2.7</a>). One of the first examples
+of DL tools for image generation is the Generative Adversarial Networks
+(GAN) architecture developed by <span class="citation"
+data-cites="Goodfellow2014">(Goodfellow et al. 2014)</span>. Similarly
+to the collaboration presented in Chapter 4, the purpose of this study
+is to understand how the process of image-making changes when we
+introduce <span class="math inline"><em>D</em>[]</span> in the mediating
+relation. We could describe the technological mediation offered by this
+type of technology in this form:</p>
+<ul>
+<li><p><strong>Generation:</strong> <span
+class="math inline"><em>I</em> → <em>G</em><em>A</em><em>N</em>/(<em>M</em><em>o</em><em>d</em><em>e</em><em>l</em> → <em>D</em><sub><em>g</em></sub>[<em>s</em><em>e</em><em>e</em><em>d</em>])(−<em>I</em><em>m</em><em>a</em><em>g</em><em>e</em>)</span></p></li>
+<li><p><strong>Training:</strong> <span
+class="math inline"><em>I</em> → <em>G</em><em>A</em><em>N</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em><em>i</em><em>n</em><em>g</em></sub>/(<em>R</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em><em>i</em><em>n</em><em>g</em></sub>[<em>D</em><sub><em>d</em></sub>, <em>D</em><sub><em>g</em></sub>] → <em>D</em><em>a</em><em>t</em><em>a</em><em>S</em><em>e</em><em>t</em>)(−<em>D</em><sub><em>g</em></sub>)</span></p></li>
+</ul>
+<p>where <span
+class="math inline"><em>D</em><sub><em>g</em></sub></span> is the
+generator component of a GAN that has been trained against a
+discriminator <span
+class="math inline"><em>D</em><sub><em>d</em></sub></span>, <span
+class="math inline"><em>s</em><em>e</em><em>e</em><em>d</em></span> is a
+variable intended as the random seed that guarantees a specific output
+image in a deterministic way, and <span
+class="math inline"><em>R</em><sub><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em><em>i</em><em>n</em><em>g</em></sub></span>
+is the training script. Building on the experience gained while working
+with DL tools in the previous study, our focus in this exploratory
+practice is shifted towards the act of building <span
+class="math inline"><em>D</em><sub><em>g</em></sub></span> as context
+for self-reflection.</p>
+<h2 data-number="5.2" id="collaboration-in-practice-1"><span
+class="header-section-number">5.2</span> Collaboration in practice</h2>
+<p>The insight gained from the collaboration in the music domain had
+revealed the difficulties of working with <em>small datasets</em>. After
+sharing the insights from the first study with a fellow PhD researcher,
+we looked at what was the smallest amount of images that would
+constitute a viable dataset for image generation. We found that FastGAN
+<span class="citation" data-cites="Liu2021">(Liu et al. 2021)</span>
+claimed it was able to produce coherent output using datasets of as
+little as 100 images. This discovery inspired us to lead investigation
+into dataset curation utilizing reflective practices.</p>
+<p>Our intuition was that curating our own dataset could reveal our
+inherent biases in defining a coherent visual concept. In order to do so
+we identified a unique, locally-specific feature and compiled a dataset
+of 50 images that attempted to capture its essence. Our objective was to
+observe the output produced by FastGAN after training it with these
+photos and engage in a reflective exercise.</p>
+<p>As theoretical framework of reference we adopted Schön’s theory of
+reflection <span class="citation" data-cites="Schoen1991">(Schön
+1983)</span>. According to Schön, reflection <em>on</em> action refers
+to the process of reflecting on past experiences after they have
+occurred. This type of reflection involves looking back at what
+happened, analyzing it, and drawing conclusions that can be applied to
+future situations. Reflection <em>on</em> action is often used as a tool
+for learning from experience and improving performance over time. On the
+other hand, reflection <em>in</em> action refers to the process of
+reflecting while engaged in an activity or task. This type of reflection
+involves being aware of one’s own thought processes and actions as they
+are happening, and making adjustments based on this awareness.</p>
+<p>We performed two iterations of photo-taking, model-training and
+output evaluation. After the first iteration, we had a session dedicated
+to reflection <em>on</em> action. During this which set us in motion for
+the second iteration, with increased self-awareness about how and what
+we were choosing to include in the dataset.</p>
+<h2 data-number="5.3" id="method-1"><span
+class="header-section-number">5.3</span> Method</h2>
+<p>The first dataset was composed of images that my collaborator deemed
+to be representing of a specific type of storefront in Sham Shui Po, a
+local Hong Kong neighborhood (Figure <a href="#fig:store1"
+data-reference-type="ref" data-reference="fig:store1">5.1</a>). The
+images were then cropped to 1:1 ratio for the training process. We
+generated intermediate steps and checkpoints every 1000 learning
+iterations to check the progress. We sampled images from different
+checkpoints: 15,000, 25,000, 50,000 iterations (Figure <a
+href="#fig:training" data-reference-type="ref"
+data-reference="fig:training">5.2</a>). After joint evaluation of the
+output we identified that 25,000 iteration was the ideal value for our
+purposes. We noticed that checkpoints with more iterations were
+over-fitting the data and simply regenerated almost exactly a few
+training examples.</p>
+<figure id="fig:store1" data-latex-placement="!ht">
+<img src="figures/store1.png" />
+<figcaption>Photograph of a storefront in Sham Shui Po, chosen as the
+inspiration for the dataset used in the study. The image captures the
+unique aesthetic and atmosphere of the location. The choice of this
+particular storefront showcases the importance of selecting meaningful
+and contextually relevant stimuli in research. Originally published in
+<span class="citation" data-cites="Miller2022">(Miller and Lion
+2022)</span>.</figcaption>
+</figure>
+<figure id="fig:training" data-latex-placement="!ht">
+<img src="figures/training.jpg" />
+<figcaption>A photo of the training process for the model, showing the
+progress as it nears completion. The image documents our reflection
+<em>in</em> action as we are engaged in the act of training the model.
+Originally published in <span class="citation"
+data-cites="Miller2022">(Miller and Lion 2022)</span>.</figcaption>
+</figure>
+<p>After this first iteration of training and evaluation we performed a
+reflection <em>on</em> action. We looked back at our process, paying
+attention to particular aspects of the photo-taking identified by our
+reflection <em>in</em> action and how they were linked the results. We
+noticed that FastGAN had picked up on the visual similarity across some
+the photos in the first set due to the specific type of framing that my
+colleague had used: the majority of the generated images of storefronts
+would have a darker element in the center, highlighting a pattern that
+was originally overlooked. Most shops photographed indeed portrayed a
+dark corridor at the center of the shot, which was a characteristic
+element in our set due to both the choice of shops and the type of
+framing that was habitual to the photographer.</p>
+<figure id="fig:storegen1">
+<p><img src="figures/storegen1.jpg" style="width:32.0%" alt="image" />
+<img src="figures/storegen2.jpg" style="width:32.0%" alt="image" /> <img
+src="figures/storegen3.jpg" style="width:32.0%" alt="image" /> <img
+src="figures/storegen4.jpg" style="width:32.0%" alt="image" /> <img
+src="figures/storegen5.jpg" style="width:32.0%" alt="image" /> <img
+src="figures/storegen6.jpg" style="width:32.0%" alt="image" /> <img
+src="figures/storegen7.jpg" style="width:32.0%" alt="image" /> <img
+src="figures/storegen8.jpg" style="width:32.0%" alt="image" /> <img
+src="figures/storegen9.jpg" style="width:32.0%" alt="image" /></p>
+<figcaption>A collection of sample images generated from the first
+iteration of the model, revealing the influence of photo-taking biases
+and framing habits on the training data. The majority of the generated
+images of storefronts exhibit a darker central element, reflecting a
+pattern that was initially overlooked in the dataset.</figcaption>
+</figure>
+<p>By observing this recurrent characteristic of the generated images we
+were able to gain some insight about how our own biases were reflected
+in the selection of images for our dataset. Enriched by this reflective
+experience, we then proceeded to our second iteration. We first
+identified images that were not matching the typical emerging pattern
+and removed them from the set. For example, we took out a few images of
+closed shops which we identified as not helpful for generation. Next, we
+integrated the original 50 images with another set that was taken after
+our reflective session. The set used for the second iteration was
+ultimately composed of 100 images selected among all the images taken
+during his two sessions.</p>
+<p>After running the training script again, we evaluated the generated
+pictures after 25,000 iterations. We found that the images had more
+variety and they all contained visual elements typical of the shops we
+used as input. The central corridor, the many items hanging on display
+on both sides, cluttered shelves and white neon lights (see Figure <a
+href="#fig:storegen2" data-reference-type="ref"
+data-reference="fig:storegen2">5.4</a>).</p>
+<figure id="fig:storegen2">
+<p><img src="figures/1.png" style="width:32.0%" alt="image" /> <img
+src="figures/2.png" style="width:32.0%" alt="image" /> <img
+src="figures/3.png" style="width:32.0%" alt="image" /> <img
+src="figures/4.png" style="width:32.0%" alt="image" /> <img
+src="figures/5.png" style="width:32.0%" alt="image" /> <img
+src="figures/6.png" style="width:32.0%" alt="image" /> <img
+src="figures/7.png" style="width:32.0%" alt="image" /> <img
+src="figures/8.png" style="width:32.0%" alt="image" /> <img
+src="figures/9.png" style="width:32.0%" alt="image" /></p>
+<figcaption>A collection of sample images generated from the second
+iteration of the model, after refining the dataset and addressing the
+identified biases. The images exhibit more variety while retaining
+visual elements typical of the input shops, such as the central
+corridor, items hanging on display, cluttered shelves, and white neon
+lights. The figure demonstrates the improvement in the model’s
+performance in generating diverse and visually interesting content that
+reflects the characteristics of the input dataset.</figcaption>
+</figure>
+<p>In our final reflection <em>on</em> action, we focused on identifying
+which elements of our process affected the creation of the dataset and
+its coherence. In addition to what emerged from the first iteration in
+relation to the act of photo-taking, we recognized how our criteria of
+selecting the images that would go into the dataset had changed after we
+had experienced its output. What became clear to us is that the
+algorithm was primarily concerned with pixel-based visual similarity
+rather than the more abstract conceptualization of similarity that we
+had in mind. This realization made us change the way we took and
+selected photos for our second iteration in order to figuratively .</p>
+<h2 data-number="5.4" id="results-and-discussion-1"><span
+class="header-section-number">5.4</span> Results and discussion</h2>
+<p>In terms of ACASIA modules, this collaboration might be described as
+follows:</p>
+<ul>
+<li><p><strong>Association and selection as dataset curation</strong>.
+In this study we took charge of directing the association making
+component of ACASIA by assembling a dataset according to our own
+selection of images, which was governed by our on our own definition of
+<em>similarity</em>.</p></li>
+<li><p><strong>Combination and abstraction through GAN training and
+generation</strong>. The abstraction component is mediated through the
+GAN algorithm, which, once trained, performs the combination making step
+accordingly. Our reflection sessions uncovered the differences between
+our notion of <em>similarity</em> and the algorithm’s one, which is
+based on quantifiable measures utilizing pixel information, rather than
+conceptual interpretation.</p></li>
+<li><p><strong>Integration and adaptation</strong>. The integration and
+adaptation components of ACASIA did not come into play during this
+study. We observed the generated images as they came out from the
+generator without any additional step. Given the objective of this study
+was to understand more in depth the process of dataset curation, these
+components were not considered relevant to our goal.</p></li>
+</ul>
+<p>As a result of our exploratory practice, we gained valuable insight
+regarding how our notion of <em>similarity</em> might include subjective
+elements which the algorithm did not pick up on. In fact, the loss
+function used by FastGAN deals with quantifiable measures purely based
+on perceptual qualities of pixels in the images, rather than on the
+conceptual elements which our mind habitually abstracts to. For this
+reason, the algorithm exposed our own bias towards what constitutes the
+<em>similarity</em> found in our dataset, a fact that became evident in
+our reflective sessions.</p>
+<p>The insights gained through this study could be summarized as
+follows:</p>
+<ul>
+<li><p><strong>Dataset curation as reflective practice</strong>. We have
+shown that the act of creating and curating a dataset can be conducive
+to fruitful self-reflection. By observing the generated output we were
+able to reflect on our own bias regarding the properties of a coherent
+set of photos representing a concept.</p></li>
+<li><p><strong>GAN similarity measures operate at pixel-level</strong>.
+Our choice of tool, FastGAN, revealed that the primary distinction in
+the algorithm’s image interpretation is its focus on pixel-level
+representation rather than a conceptual one. Although this has provided
+insights into our understanding of <em>similarity</em>, it also raises
+the question of whether this method aligns with how humans form
+associations based on <em>similarity</em>.</p></li>
+<li><p><strong>A balance between coherence and variations.</strong> In
+our evaluation sessions we identified a very clear trade-off between the
+amount of training and the <em>novelty</em> of output produced. There is
+an optimal point during training that maximizes both coherence and
+originality of generated images. Before that point, the model tends to
+be incoherent, while further training beyond that point causes the
+generated images to look exactly like the ones in the dataset, due to
+over-fitting. It seems impossible to predict where this point is <em>a
+priori</em>, the only way that we could identify the ideal balance was
+through observation. It is possible that this tipping point is fully
+dependent on the subject chosen.</p></li>
+</ul>
+<p>Overall, this collaboration proved productive, as it generated
+valuable insights into dataset curation within the context of small
+sample sets. Most GANs typically require a minimum of 10,000 images;
+however, assembling such datasets can be challenging for non-experts.
+FastGAN has enabled us to experiment with image generation on a smaller
+scale, which was previously unattainable. This opportunity has allowed
+us to delve deeply into understanding the concept of visual similarity
+from a human perspective and compare it with machine-based
+computations.</p>
+<p>The results of this study also highlight the limitations of
+probabilistic approaches when dealing with concepts that are very local
+and specific. As pointed out for PT in Section <a
+href="2-Litreview.html#sec:the-missing-prototypes-problem"
+data-reference-type="ref"
+data-reference="sec:the-missing-prototypes-problem">[sec:the-missing-prototypes-problem]</a>,
+humans are indeed able to apply concepts even with few or no examples
+available. In this study, the similarity space is defined solely in
+terms of visual aspects within the concept and does not cover the
+extensive scope needed for comparisons with other concepts.</p>
+<p>Furthermore, as in the previous study, we had no way to guide the
+generation towards a desired location in <em>latent space</em>. The
+technology simply does not provide a means to control the output, other
+than curating the training dataset. This mirrors the discussion in
+Section <a href="2-Litreview.html#sec:the-problem-of-compositionality"
+data-reference-type="ref"
+data-reference="sec:the-problem-of-compositionality">[sec:the-problem-of-compositionality]</a>
+regarding the challenges PT faces when dealing with compositionality. To
+understand an image and its representation, it may be necessary to break
+it down into smaller components and their relationships. The type of
+compositionality found in the visual domain is not entirely analytical
+(unless we use a plotter, for example), making it suitable for
+representation by a probabilistic model. GANs, however, only decompose
+images at pixel-level, rather than at a conceptual level, which makes it
+more difficult for humans to relate to. As the themes explored in the
+next study will demonstrate, language appears to be the ideal medium for
+connecting humans with visual concepts.</p>
+<div class="savequote">
+<p>The individual human subject simply did not exist anymore, once he or
+she had set the boundary conditions for the image to be computed.</p>
+</div>
+</body>
+</html>

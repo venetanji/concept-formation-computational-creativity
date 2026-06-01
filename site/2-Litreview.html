@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Giovanni Lion" />
+  <title>Literature review</title>
+  <style>
+    div.sitenav { display: flex; flex-direction: row; flex-wrap: wrap; }
+    span.navlink { flex: 1; }
+    span.navlink-label { display: inline-block; min-width: 4em; }
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="sitebar">
+  <a class="home" href="index.html">Concept Formation in Computational Creativity</a>
+  <a class="pdf" href="thesis.pdf">Download PDF</a>
+</div>
+<nav id="sitenav">
+<div class="sitenav">
+<span class="navlink">
+<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity-1.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
+</span>
+<span class="navlink">
+<span class="navlink-label">Top:</span> <a href="index.html" accesskey="t" rel="top">Concept Formation in Computational Creativity</a>
+</span>
+</div>
+<div class="sitenav">
+<span class="navlink">
+<span class="navlink-label">Next:</span> <a href="3-methodology.html" accesskey="n" rel="next">Methodology</a>
+</span>
+<span class="navlink">
+<span class="navlink-label">Previous:</span> <a href="1-introduction.html" accesskey="p" rel="previous">Introduction</a>
+</span>
+</div>
+</nav>
+<h1 data-number="2" id="Litreview"><span
+class="header-section-number">2</span> Literature review</h1>
+<p>together with the literature stream discussing technology in relation
+to human cognition and creativity. In the first part, it reviews the
+existing hypotheses about what concepts are and how these concept
+ontologies model our creative process. In the second part, it addresses
+how different technologies embed different Theories of Concepts (TOCs)
+and how this affects the creative process. From this view point, it will
+be possible to formulate a methodology of inquiry to understand where
+the current trend towards a probabilistic interpretation of concepts may
+lead us to.</p>
+<p>Because of its trans-disciplinary nature, this literature review
+spans several fields. The review of concept ontologies lies at the
+intersection between philosophy, psychology and cognitive science, while
+the discussion about the relationship between technology and creativity
+touches upon design, philosophy of technology and creativity
+literature.</p>
+<h2 data-number="2.1" id="sec:concepts"><span
+class="header-section-number">2.1</span> Concepts</h2>
+<p>There is no consensus on a single theory of concepts as of today, in
+spite of the thousands of years of philosophical discussions about the
+nature of ideas that have been ongoing since the pre-Socratics. The two
+fundamental questions that a TOC must provide an answer to are: (1) how
+do concepts form in our mind (2) how they relate to one another. In this
+section several competing hypotheses are presented as discussed by <span
+class="citation" data-cites="Laurence1999">(Laurence and Margolis
+1999)</span>:</p>
+<ul>
+<li><p><strong>The Classical Theory of concepts (CT)</strong>. CT is
+based on definitions. It relies on presence/absence of given properties
+to establish reference to the world. CT has been criticized for its
+rigidity and for its inability to explain evidence emerging from
+psychological experiments.</p></li>
+<li><p><strong>Prototype Theory (PT)</strong>. <span class="citation"
+data-cites="Rosch1978">(Rosch 1978)</span> and <span class="citation"
+data-cites="Smith1981">(Smith and Medin 1981)</span> developed PT to
+explain the results of their experiments involving typicality effects.
+PT adopts probability and fuzzy logic to formalize the categorization
+process.</p></li>
+<li><p><strong>Theory-Theory (TT)</strong>. <span class="citation"
+data-cites="Murphy1985">(Murphy and Medin 1985)</span> and <span
+class="citation" data-cites="Carey1991 Carey2009">(Carey 1991,
+2009)</span> developed TT based on the intuition that concepts rely on
+theories about the world that we formulate, assimilating concept
+formation to the scientific method.</p></li>
+<li><p><strong>Neo-classical Theory (NT)</strong>. <span
+class="citation" data-cites="Jackendoff1989">(Jackendoff 1989)</span>
+proposed that concepts have partial definitions which are necessary to
+identify their extension. NT is however primarily concerned with lexical
+concepts.</p></li>
+<li><p><strong>Conceptual Atomism (CA)</strong>. <span class="citation"
+data-cites="Fodor2008">(Fodor 2008)</span> proposes that concepts have
+no structure and highlights compositionality as a necessary component of
+concepts.</p></li>
+</ul>
+<p>Each theory is discussed in a separate subsection, highlighting along
+the way the potential fallacies and weaknesses. Some of these issues are
+shared across more than one theory and serve as guide for the
+theoretical framework. The summary descriptions for each theory are
+taken verbatim from <span class="citation"
+data-cites="Laurence1999">(Laurence and Margolis 1999)</span>.</p>
+<h3 data-number="2.1.1" id="classical-theory-of-concepts"><span
+class="header-section-number">2.1.1</span> Classical Theory of
+Concepts</h3>
+<div class="mycolorbox">
+<p>Most concepts are structured mental representations that encode a set
+of necessary and sufficient conditions for their application, if
+possible, in sensory or perceptual terms.</p>
+</div>
+<p>Classical Theory (CT) holds that most concepts have definitional
+structure. According to this view, the concept <span
+class="smallcaps">bird</span> might be composed of a set of properties
+an object must have in order to count as a bird, such as <span
+class="smallcaps">has wings</span>, <span class="smallcaps">can
+fly</span>, <span class="smallcaps">lays eggs</span> and so on. This
+implies that concepts must have a hierarchical structure, in that
+concepts are effectively composed by other structurally simpler
+representations. Following this hierarchical structure, new concepts can
+be formed using existing concepts combined in a new definition.</p>
+<p>Albeit its simplistic approach and numerous problems, CT has been
+around since antiquity and stood undisputed until the 1950s because of
+its explanatory power. Here is a list of different aspects of concepts
+and their corresponding explanation according to CT <span
+class="citation" data-cites="Laurence1999">(Laurence and Margolis
+1999)</span>:</p>
+<ul>
+<li><p><strong>Concept Acquisition</strong>. Learning a concept is just
+a matter of learning the simpler individual components that form its
+definition.</p></li>
+<li><p><strong>Categorization</strong>. The process of applying a
+concept to a particular instance is as trivial as checking the
+properties of that object.</p></li>
+<li><p><strong>Epistemic Justification</strong>. We can justify a belief
+we have about the world by determining whether its defining properties
+are satisfied.</p></li>
+<li><p><strong>Analyticity and Analytical Inferences</strong>. The
+definitional structure of concepts guarantees that certain statements
+can be inferred from others without empirical evidence.</p></li>
+<li><p><strong>Reference Determination</strong>. Concepts are
+semantically evaluable by their definition, which means that every
+statement can either be true or false.</p></li>
+</ul>
+<p>In spite of the obvious merits of CT, numerous critiques were raised
+by philosophers and psychology scholars over the years. In the
+forthcoming paragraphs are highlighted six major ones.</p>
+<h4 class="unnumbered" id="sec:platosproblem">Plato’s problem</h4>
+<p>In Meno, <span class="citation" data-cites="Plato1998">Plato
+(1998)</span> provides one of the first critiques to CT. In this
+dialogue, Meno begins by asking Socrates how (in Greek ἀρετή) is
+acquired and Socrates replies that he does not know how to define it and
+asks Meno to help. Meno at first suggests that virtuous actions depend
+on the person’s age, gender, role in society and so on, but Socrates is
+looking for some quality that is common to all, something more general.
+Meno then suggest that there are some common quality to all virtuous men
+such as justice and temperance, but Socrates is not satisfied because
+Meno did not provide a full list and he does not know what is common
+among these qualities. Meno is understandably confused and frustrated.
+The exchange continues:</p>
+<blockquote>
+<p><strong>Meno:</strong> But in what way will you look for it,
+Socrates, this thing that you don’t know at all what it is? What sort of
+thing, among the things you don’t know, will you propose to look for? Or
+even if you should meet right up against it, how will you know that this
+is the thing you didn’t know?</p>
+<p><strong>Socrates:</strong> Do you see what a contentious debater’s
+argument you’re bringing up—that it seems impossible for a person to
+seek either what he knows or what he doesn’t know? He couldn’t seek what
+he knows, because he knows it, and there’s no need for him to seek it.
+Nor could he seek what he doesn’t know, because he doesn’t know what to
+look for.</p>
+<p><span class="citation" data-cites="Plato1998">(Plato 1998, Meno,
+80d-e)</span></p>
+</blockquote>
+<p>Plato is suggesting here through Socrates’ words that if we subscribe
+to a definitional structure of concepts, we end up in a paradox as it
+seems that for most concepts a definition is very hard to find. It also
+becomes very problematic to justify how we recognize something we have
+no definition for. Very few examples of defined concepts exist, mostly
+mathematical, such as <span class="smallcaps">Prime Number</span>. Other
+rather fundamental concepts like <span class="smallcaps">Event</span>,
+<span class="smallcaps">Object</span> or <span
+class="smallcaps">Cause</span> do not have clear definitions, yet we use
+them all the time. This is a fundamental problem of CT as there seems to
+be no need for a definition to exist in order to apply concepts. For
+this reason, ascribing definitional structure to concepts creates the
+epistemological paradox highlighted by Plato.</p>
+<h4 class="unnumbered" id="sec:the-problem-of-analyticity">The problem
+of analyticity</h4>
+<p>The idea that some statements are true by virtue of meaning alone has
+fascinated many, but we owe a great deal to <span class="citation"
+data-cites="Kant1998">(Kant 1998)</span> for discussing at length the
+distinction between analytic and synthetic propositions in his .
+Analytic judgments are those deemed to be true only by virtue of
+definition, a typical example would be: . Synthetic judgments, on the
+other hand, are statements that must be verified through experience, for
+example: . The essential difference, according to Kant, is that the
+truth value of analytic statements does not depend on the state of the
+world, while the opposite is true for synthetic propositions.</p>
+<p>This line that Kant drew has been subject of debate for centuries. On
+one hand, the distinction has been the foundation of the empiricist
+paradigm, which, in an attempt to get rid of metaphysics altogether,
+radically stated that all knowledge comes from experience. Problematic
+knowledge for this agenda such as mathematics and logic could be placed
+in the box of analytic <em>a priori</em>.</p>
+<p>On the other hand, the empiricist view has been criticized for being
+too reductionist, as it implies that knowledge is limited to what can be
+determined through the senses and that all knowledge must come from
+experience. This view has been challenged by other more metaphysical
+approaches such as idealism, which hold that there is knowledge that
+cannot be acquired by experience, and that some knowledge can be
+accessed through pure thought (<em>a priori</em>).</p>
+<p>Kant’s cleavage between analytic <em>a priori</em> and synthetic
+<em>a posteriori</em> is still relevant today and is the basis of many
+debates in philosophy, which continue to this day, with no clear
+consensus on the correct approach. Among the critics, Quine questioned
+the notion of analyticity itself, arguing that self-contradiction and
+analyticity are the</p>
+<blockquote>
+<p>two sides of a single dubious coin</p>
+<p><span class="citation" data-cites="Quine1951">(Quine 1951)</span></p>
+</blockquote>
+<p>Quine suggested that such distinction</p>
+<blockquote>
+<p>is an unempirical dogma of empiricists, a metaphysical article of
+faith</p>
+<p><span class="citation" data-cites="Quine1951">(Quine 1951)</span></p>
+</blockquote>
+<p>, primarily by claiming that there is no such thing as analytic
+statements. Firstly because there is no definition of similarity or
+analyticity that is <em>analytic</em> and second, because individual
+statements are never confirmed in isolation.</p>
+<h4 class="unnumbered" id="the-problem-of-typicality-effects">The
+problem of typicality effects</h4>
+<p>The typicality effect is the finding that people are quicker to make
+category judgments about typical members of a category than they are to
+make such judgments about atypical members. For example, they are more
+quickly able to judge that a dog is a mammal than they are able to judge
+that a whale is a mammal. The study conducted by <span class="citation"
+data-cites="Rosch1975">(Rosch and Mervis 1975)</span>, highlights one of
+the most influential arguments against CT. According to CT all instances
+of a concept should be equally good examples as long as they match the
+definition, but prototypical judgments provide evidence against this
+claim as people seem to rank certain members of a category as more
+representative than others. The studies on typicality effect demanded
+for a revision of CT to match the empirical data, which pushed the
+development of alternative theories of concepts able to accommodate for
+typicality effects, as well as some of the other fundamental issues of
+CT discussed so far.</p>
+<h4 class="unnumbered" id="the-problem-of-psychological-reality">The
+problem of psychological reality</h4>
+<p>The advent of experimental psychology led to many of the critiques to
+CT. One particular implication about the hierarchical structure has been
+shown to be incompatible with the definitional hypothesis. If concepts
+have complex structure, then one would expect the definitional
+complexity to affect the psychological complexity, but the evidence
+collected by <span class="citation" data-cites="Foss1969">(Foss
+1969)</span> demonstrates that . There seems to be no significant
+difference in cognitive effort when applying concepts that are more
+complex than others, such as in the case of <span
+class="smallcaps">believe</span> and <span
+class="smallcaps">convince</span> (which is defined as the combination
+of <span class="smallcaps">cause to</span> and <span
+class="smallcaps">believe</span>). This line of research suggests that
+all concepts are equally <em>expensive</em> to apply, a finding that
+does not support the hypothesis of a hierarchical structure of concepts,
+a foundational aspect CT.</p>
+<h4 class="unnumbered" id="the-problem-of-ignorance-and-error">The
+problem of ignorance and error</h4>
+<p>It is possible to have a concept in spite of massive ignorance and/or
+error, so concept possession cannot be a matter of knowing the
+definition <span class="citation"
+data-cites="Kripke1980 Putnam1970 Putnam1975">(Kripke 1980; Putnam 1970,
+1975)</span>. For example, the concept associated with the disease <span
+class="smallcaps">smallpox</span> may have been erroneously defined in
+the past as divine punishment, whereas now we understand it as something
+rather different. This does not imply the concept of <span
+class="smallcaps">smallpox</span> refers to a different disease now, yet
+there is substantial difference in its definition. It seems that it is
+indeed .</p>
+<h4 class="unnumbered" id="the-problem-of-conceptual-fuzziness">The
+problem of conceptual fuzziness</h4>
+<p><span class="citation" data-cites="Medin1989">(Medin 1989)</span>
+suggests that . There are abundant examples of this phenomenon. Medin
+asks, are carpets part of the furniture? This problem can be reduced to
+the first issue, that is most concepts lack of a definition.</p>
+<h3 data-number="2.1.2" id="prototype-theory"><span
+class="header-section-number">2.1.2</span> Prototype Theory</h3>
+<div class="mycolorbox">
+<p>Most concepts are structured mental representation that encode the
+properties that objects in their extension tend to possess</p>
+</div>
+<p>In Prototype Theory (PT), concepts have no definitions. According to
+PT, a concept , following the idea of family resemblance by <span
+class="citation" data-cites="Wittgenstein1953">(Wittgenstein
+1953)</span>. PT is developed as an alternative to fix the shortcomings
+of CT exposed by Psychology in the 1970’s, primarily the evidence of
+typicality effect discussed earlier in this chapter. For <span
+class="citation" data-cites="Wittgenstein1953">(Wittgenstein
+1953)</span>, as for <span class="citation"
+data-cites="Rosch1975">(Rosch and Mervis 1975)</span>, . The whole set
+of properties that overlap in games forms a similarity space: .</p>
+<p>PT is also able to effectively describe concept acquisition:
+acquiring a concept is as simple as assembling its features.
+Effectively, this mechanism embodies a statistical procedure, rather
+than a logical one as described by CT. Following from the categorization
+model, this procedure consists of identifying a new region in the
+similarity space. Because similarity is such a central aspect in the
+theory, PT advocates developed a number of psychological measures for
+it. <span class="citation" data-cites="Tversky1977">(Tversky
+1977)</span> proposed a similarity measure known as <em>Contrast
+Principle</em> which is widely used in psychology, which is based on the
+presence and absence of features. Another popular method is to define
+properties as geometrical dimensions and use measures of distance within
+this space to describe similarity between two items (see Section <a
+href="2-Litreview.html#sec:hybrid-theories" data-reference-type="ref"
+data-reference="sec:hybrid-theories">2.2.6</a>). Furthermore, PT is well
+suited to sidestep conceptual fuzziness as it allows to formally
+describe ambiguity using the mathematical construct of fuzzy sets. There
+are, however, significant shortcomings also for PT.</p>
+<h4 class="unnumbered" id="the-problem-of-prototypical-primes">The
+problem of prototypical primes</h4>
+<p>Experimental psychology has shown that typicality effects occur even
+in well-defined concepts, i.e. concepts that people can immediately
+provide a definition for, such as <span class="smallcaps">prime
+number</span> or <span class="smallcaps">female</span> <span
+class="citation" data-cites="Armstrong1983">(Armstrong et al.
+1983)</span>. Interestingly, this study would be considered
+controversial today given that the binary notion of gender has been
+obsoleted. However, the argument for mathematically defined concepts
+still stands, so the results of this study suggest that typicality
+effects cannot be counted as strong evidence supporting PT.</p>
+<h4 class="unnumbered" id="sec:the-problem-of-ignorance-and-error">The
+problem of ignorance and error</h4>
+<p>Ignorance and error is as much a problem for PT as it is for CT.
+Indeed, . There is essentially no way to account for misapplied concepts
+in PT. The <span class="smallcaps">Swan</span> concept would encode that
+the prototypical instance is white based on the most frequent
+occurrences, but black swans are still swans. Penguins lack one of the
+most typical properties of birds, yet they are considered birds.</p>
+<h4 class="unnumbered" id="sec:the-missing-prototypes-problem">The
+missing prototypes problem</h4>
+<p>Just as many concepts lack definitions, many concepts also lack
+prototypes. One can easily construct such concepts as <span
+class="smallcaps">Objects longer than 1 centimeter</span> or <span
+class="smallcaps">41<sup>st</sup> century technology</span>, that are
+either too broad or simply have an empty extension and therefore cannot
+have prototypical instances. This aspect of concept combination making
+is where CT seems to have an edge over PT. Crisp concepts with formal
+rules of interaction among them can generate new concepts that may or
+may not have an extension.</p>
+<h4 class="unnumbered" id="sec:the-problem-of-compositionality">The
+problem of compositionality</h4>
+<p>PT does not have an adequate account for compositionality, since the
+properties of complex concepts are not generally a function of the
+prototype of their constituent concepts. For example, the prototype for
+<span class="smallcaps">pet fish</span> would have properties such as
+<span class="smallcaps">small</span>, <span
+class="smallcaps">colorful</span> and <span class="smallcaps">living in
+bowls or tanks</span> which hardly relate to the qualities of neither a
+prototypical <span class="smallcaps">pet</span>, a dog or a cat would be
+<span class="smallcaps">furry</span> and <span
+class="smallcaps">affectionate</span>, nor a prototypical <span
+class="smallcaps">fish</span>, a trout or a sea bass would be <span
+class="smallcaps">gray</span> and <span class="smallcaps">living in the
+wild</span> <span class="citation" data-cites="Osherson1981">(Osherson
+and Smith 1981)</span>.</p>
+<p>The role of compositionality is central to language and meaning. This
+idea is already present in Frege’s work,</p>
+<blockquote>
+<p>Über Sinn und Bedeutung</p>
+</blockquote>
+<p>(On Sense and Reference), where he argued that the meaning of complex
+expressions is determined by the meanings of its parts and the rules of
+its composition <span class="citation" data-cites="Frege1892">(Frege
+1892)</span>. It is echoed by Fodor in</p>
+<blockquote>
+<p>The Language of Thought</p>
+</blockquote>
+<p>, where Fodor argues against definitions (critiquing CT), exposing
+them as too vague and general to be of any use <span class="citation"
+data-cites="Fodor1975">(Fodor 1975)</span>. Fodor pointed out that
+instead of relying on definitions, we should focus on understanding the
+context in which words are used, and more specifically in understanding
+the compositionality of language <span class="citation"
+data-cites="Fodor2008">(Fodor 2008)</span>. Without a proper account for
+how compositionality is achieved in PT, the framework cannot explain how
+concepts relate to one another in order to form new meanings.</p>
+<h3 data-number="2.1.3" id="theory-theory"><span
+class="header-section-number">2.1.3</span> Theory-Theory</h3>
+<div class="mycolorbox">
+<p>Concepts are representations whose structure consists in their
+relations to other concepts as specified by a mental theory</p>
+</div>
+<p>According to Theory-Theory (TT) cognition is similar to theory
+construction and scientific reasoning. The main appeal of TT is that it
+provides an explanation for , where a theory is replaced with a better
+one to explain the same data. TT provides an account of how conceptual
+change is driven by a combination of rational and empirical processes,
+allowing for the development of more sophisticated concepts that are
+better suited to the environment. TT also provides a unified explanation
+of the development of core cognitive abilities such as language and
+counting <span class="citation" data-cites="Carey1991 Carey2009">(Carey
+1991, 2009)</span>.</p>
+<p>TT suggests that cognition is driven by a process of hypothesizing,
+experimentation, and revision. As new information is gathered and
+existing concepts are modified, more sophisticated concepts emerge. This
+process is driven by the desire to make sense of the world and to
+predict future events. As a result, TT can account for both conceptual
+development and the transfer of knowledge across domains <span
+class="citation" data-cites="Murphy1985">(Murphy and Medin
+1985)</span>.</p>
+<p>TT also provides an account of how knowledge and conceptual
+understanding are acquired and retained. Knowledge is acquired by
+actively engaging with the environment, gathering information, and
+testing hypotheses. This process allows for the development of more
+sophisticated concepts as knowledge is accumulated and understood. In
+addition, TT suggests that knowledge is retained through a process of
+encoding and recall. This means that knowledge is stored in a form that
+can be retrieved when needed.</p>
+<p>In spite of the appeal that this framework might have there are
+several unanswered questions summarized below.</p>
+<h4 class="unnumbered" id="the-problem-of-ignorance-and-error-1">The
+problem of ignorance and error</h4>
+<p>It is possible to have a concept in spite of its being tied up with a
+deficient or erroneous mental theory, but according to TT concepts do
+not inform us about the properties of the objects in their extension.
+The <span class="smallcaps">smallpox</span> argument still holds against
+TT as different mental theories do not imply a different disease.</p>
+<h4 class="unnumbered" id="the-problem-of-stability">The problem of
+stability</h4>
+<p>. Imagine two people have slightly different theories about the
+concept <span class="smallcaps">animal</span>, for example person A
+believes that all animals are physical entities and person B believes
+instead that some species also have a non-physical soul. These theories
+are similar, but they are not the same, so TT fails to explain how</p>
+<h4 class="unnumbered" id="the-problem">The problem</h4>
+<p>. There is no account for how scientific theories transition other
+than the</p>
+<blockquote>
+<p>the mysterious logic of discovery</p>
+<p><span class="citation" data-cites="Gopnik1997">(Gopnik and Meltzoff
+1997, 40)</span></p>
+</blockquote>
+<p>so claiming the similarity to the scientific method does not provide
+any additional insight about how concepts shift.</p>
+<h3 data-number="2.1.4" id="neoclassical-theory"><span
+class="header-section-number">2.1.4</span> Neoclassical Theory</h3>
+<div class="mycolorbox">
+<p>Concepts have partial definitions in that their structure encodes a
+set of necessary conditions that must be satisfied by things in their
+extension.</p>
+</div>
+<p>According to Neo-classical Theory (NT), most concepts are structured
+mental representations . NT claims that certain aspects of linguistic
+phenomena can be explained by conceptual structure. The fact that causal
+constructs have a clear distributional pattern serves as Jackendoff’s
+starting point:</p>
+<ol>
+<li><p><span class="math inline"><em>x</em></span> killed <span
+class="math inline"><em>y</em> → <em>y</em></span> died</p></li>
+<li><p><span class="math inline"><em>x</em></span> lifted <span
+class="math inline"><em>y</em> → <em>y</em></span> rose</p></li>
+<li><p><span class="math inline"><em>x</em></span> gave <span
+class="math inline"><em>z</em></span> to <span
+class="math inline"><em>y</em> → <em>y</em></span> received <span
+class="math inline"><em>z</em></span></p></li>
+<li><p><span class="math inline"><em>x</em></span> persuaded <span
+class="math inline"><em>y</em></span> that <span
+class="math inline">𝒫 → <em>y</em></span> came to believe that <span
+class="math inline">𝒫</span></p></li>
+</ol>
+<p>All of these inferences might be viewed as being unrelated to one
+another, . According to Jackendoff, the definition of a causative
+implicates the occurrence of a specific event. On the basis of this
+supposition, a single rule that applies to all of these circumstances
+may be introduced to explain this pattern:</p>
+<ul>
+<li><p><span class="math inline">𝒳</span> cause <span
+class="math inline">ℰ</span> to occur <span
+class="math inline"> → ℰ</span> occur</p></li>
+</ul>
+<p>For example, (1) could be analyzed as</p>
+<blockquote>
+<p><span class="math inline"><em>x</em></span> cause [<span
+class="math inline"><em>y</em></span> died] to occur</p>
+</blockquote>
+<p>, and similarly for (2),(3) and (4). Causatives are only one of the
+aspects in which NT finds supports, others include polysemy, syntactic
+alterations, and lexical acquisition.</p>
+<p>Jackendoff tackles the issue of compositionality, which he refers to
+as the</p>
+<blockquote>
+<p>creativity of language</p>
+</blockquote>
+<p>, assessing that concepts cannot just be the encoding of all the
+encountered instances. Therefore he deduces that there must be a</p>
+<blockquote>
+<p>potential degree of indeterminacy either in the lexical concept
+itself, or in the procedure for comparing it with mental representations
+of novel objects, or in both</p>
+<p><span class="citation" data-cites="Jackendoff1989">(Jackendoff
+1989)</span></p>
+</blockquote>
+<p>He suggests that the words and ideas we hold in our vocabulary are
+built from a natural set of potential concepts, influenced by both
+language and non-language experiences.</p>
+<p>NT does not intend to explain everything about concepts and is more
+focused on the semantic and lexical patterns that emerge in language.
+For this reason, some of the issues found in previous theories of
+concepts are not addressed and remain unresolved.</p>
+<h4 class="unnumbered" id="the-problem-of-completing-definitions">The
+problem of completing definitions</h4>
+<p>Definitions are still problematic for NT. In fact, if incomplete
+definitions are expanded into complete definitions then NT has all the
+problems that are associated with CT. If, instead, they are left
+incomplete, then NT has no account of how concepts are applied to their
+instances. NT is not concerned with how lexical concepts are applied to
+the entities they refer to, so this aspect of concepts is simply not
+explained.</p>
+<h4 class="unnumbered" id="the-problem-of-ignorance-and-error-2">The
+problem of ignorance and error</h4>
+<p>The introduction of partial definitions does not help with the
+problem of ignorance and error, much like in PT. Because NT effectively
+does not provide a theory for reference determination, it is still
+unclear how we can have a concept in spite of having erroneous
+information about its definitions (<span class="smallcaps">Small
+pox</span> argument still applies). Jackendoff proposes that for lexical
+concepts that refer to physical objects incorporate a 3D model of them.
+However, it is also possible that an animal that closely resembles a
+duck is not actually one, and vice versa, that a duck may not appear to
+be one for whatever reason.</p>
+<h4 class="unnumbered"
+id="sec:the-regress-problem-for-semantic-fields">The regress problem for
+semantic fields</h4>
+<p>Neoclassical structure cannot explain how a word retains aspects of
+its meaning across different <em>semantic fields</em>. Either its
+conceptual constituents must themselves have neoclassical structure, and
+so on, or else no structure is needed at all. To understand this
+methodological objection pushed vigorously by <span class="citation"
+data-cites="Fodor1998">Fodor (1998)</span> (<span class="citation"
+data-cites="Fodor1998">(1998, p . 50)</span>), here is an example:</p>
+<ul>
+<li><p>Harry kept the bird in the cage</p></li>
+<li><p>Sam kept the crowd happy</p></li>
+</ul>
+<p>In these two sentences, Jackendoff would argue that on one hand there
+is the intuition that the same word is used (<span
+class="smallcaps">Keep</span>), on the other that the sense of <span
+class="smallcaps">Keep</span> is different in the two cases. The
+definition of <span class="smallcaps">Keep</span> as would account for
+the feeling that <span class="smallcaps">Keep</span> is univocal, while
+the differences are explained by the different <em>semantic fields</em>,
+each of which has its own particular inferential patterns <span
+class="citation" data-cites="Jackendoff1995">(Jackendoff 1995)</span>.
+Fodor objects to this explanation by questioning the assumption that the
+constituent of the definition (i.e. <span class="smallcaps">Cause,
+State, Time, Endure</span>) must also themselves be univocal. He
+suggests that Jackendoff logic runs into a paradox when attempting to
+assess if <span class="smallcaps">Cause</span> is polysemic. If it is,
+then the definition of <span class="smallcaps">Keep</span> is no longer
+univocal and the argument in favor of definitions is lost. If it is not,
+then what explains the univocality of <span
+class="smallcaps">Cause</span> across <em>semantic fields</em>? Fodor
+suggests that there are only dead ends from here. Either a new univocal
+concept X is needed for the definition of <span
+class="smallcaps">Cause</span>, which would lead to an infinite regress
+(what guarantees the univocality of X?), or just accept that <span
+class="smallcaps">Cause</span> is univical because it always means
+<em>cause</em>, in which case then the same could be said for <span
+class="smallcaps">Keep</span> and no theory is needed at all.</p>
+<h3 data-number="2.1.5" id="conceptual-atomism"><span
+class="header-section-number">2.1.5</span> Conceptual Atomism</h3>
+<div class="mycolorbox">
+<p>Lexical concepts have no hierarchy or structure, thus they cannot be
+broken down</p>
+</div>
+<p>Conceptual Atomism (CA) is different from previous theories because,
+rather than arguing a particular structure, it questions the fundamental
+assumption of conceptual structure itself. Because CA assumes no
+structure, it is able to sidestep most problems discussed for other
+theories. The theory mainly provides an account for how the concept
+references are determined, that is Asymmetric Dependance Theory. There
+is an asymmetric dependency between laws such as , ,’ etc., and the law
+. This is because the latter law does not depend on any of the <span
+class="math inline"><em>Y</em><sub>1</sub></span>, <span
+class="math inline"><em>Y</em><sub>2</sub></span>, ..., <span
+class="math inline"><em>Y</em><sub><em>n</em></sub></span> laws in the
+same way. The intuition here is that <span
+class="math inline"><em>X̂</em></span> will only be caused by the
+question because dogs (X) cause instances of <span
+class="math inline"><em>X̂</em></span>. Instances of foxes causing
+instances of <span class="math inline"><em>X̂</em></span> are only due to
+them being mistaken for dogs and dogs causing instances of <span
+class="math inline"><em>X̂</em></span>.</p>
+<p>Two important implications of this theory are the rejection of mental
+images and the rejection of context-sensitive meaning. First, while
+other theories might argue that a particular concept is represented by a
+mental image, CA rejects this idea and instead suggests that the concept
+is merely a reference to an external object or situation. Second, while
+other theories might allow for context-sensitive meaning (i.e.,
+different meanings of words depending on the context), CA rejects this
+idea as well and instead suggests that all meanings of atoms are fixed
+and will not vary based on context.</p>
+<p>Overall, CA offers an interesting alternative to traditional theories
+of conceptual structure, since it does away with many of their
+complexities and assumptions about mental images and context-sensitive
+meanings. While it obviously has its critics (who argue that it fails to
+account for more complex concepts), it offers an interesting look at how
+language might work.</p>
+<p>There are however several issues with CA, discussed below.</p>
+<h4 class="unnumbered" id="the-problem-of-radical-nativism">The problem
+of radical nativism</h4>
+<p>According to CA, . According to Fodor, there is only one way that
+cognitive science can explain how an idea is learned, and that is by
+speculating on a mechanism by which a brand-new, complex concept is
+constructed from its constituent parts. For example one can learn the
+concept of <span class="smallcaps">Mother</span> by combining the
+concepts <span class="smallcaps">Female</span> and <span
+class="smallcaps">Parent</span>. This process assumes that one already
+possesses the concepts <span class="smallcaps">Female</span> and <span
+class="smallcaps">Parent</span>, so when we ask about how these concepts
+were acquired, the answer might be that they are themselves composed of
+simpler concepts, but eventually this has to stop. So if there are no
+other explanations about how concepts are learned, one must conclude
+that there are some primitive concepts that are <em>innate</em>.</p>
+<h4 class="unnumbered" id="the-problem-of-explanatory-impotence">The
+problem of explanatory impotence</h4>
+<p>CA cannot explain psychological phenomena such as categorization. If
+concepts lack structure, atomists have no way to make sense of the
+empirical evidence about typicality effects, documented in psychology by
+<span class="citation" data-cites="Rosch1975 Rosch1978">(Rosch and
+Mervis 1975; Rosch 1978)</span>. Although Fodor acknowledges the
+significance of prototypes, he disputes their role in the semantic
+structure of concepts.</p>
+<h4 class="unnumbered" id="sec:the-problem-of-analytic-data">The problem
+of analytic data</h4>
+<p>CA lacks for . <span class="citation" data-cites="Rey1993">(Rey
+1993)</span> has put together a case against conceptual atomism based on
+the fact that NT’s partial definitions provide an explanation about
+analytic data. He asserts that, regardless of whether there are any
+analytical truths, individuals undoubtedly have intuitions about what is
+analytical. According to Rey, these intuitions emerge from the
+relationships that are formed among concepts. We therefore have an
+argument against CA and an argument in favor of NT: as Rey points out,
+there is no plausible atomistic alternative.</p>
+<h4 class="unnumbered" id="the-problem-of-compositionality">The problem
+of compositionality</h4>
+<p>In a sense CA has no issue with combining concepts, but primarily
+because the theory is centered around lexical concepts. If we extend CA
+to a comprehensive theory of concepts, then some familiar issues still
+arise. In this context, . For example consider the concept <span
+class="smallcaps">Grandfathers whose granddaughters are friends with
+politicians</span>. It is unlikely that this concept stands in a lawful
+dependency relation with the property of being . In other words, just
+like in PT and the <span class="smallcaps">pet fish</span> example, the
+asymmetric dependence relations of complex concepts are not a function
+of the asymmetric dependence relations of their constituents.</p>
+<h3 data-number="2.1.6" id="summary"><span
+class="header-section-number">2.1.6</span> Summary</h3>
+<p>The theories in this section, summarized in Table <a
+href="2-Litreview.html#tab:tocs" data-reference-type="ref"
+data-reference="tab:tocs">2.1</a>, provide a foundation for
+understanding the relationship between technology and creativity, which
+is explored further in the next section. The assumption is that when
+these concept theories are mechanized, their advantages and problems
+impact the creative interaction. Thus, examining how different concept
+ontologies in various implementations affect the creative process
+becomes valuable.</p>
+<div class="centering">
+<div id="tab:tocs">
+<table>
+<caption>This table summarizes the theories of concepts discussed in
+this section.</caption>
+<thead>
+<tr>
+<th style="text-align: left;">Theory</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Problems</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Classical Theory</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><ol>
+<li><p>Plato’s problem</p></li>
+<li><p>The problem of analyticity</p></li>
+<li><p>The problem of typicality effect</p></li>
+<li><p>The problem of psychological reality</p></li>
+<li><p>The problem of ignorance and error</p></li>
+<li><p>The problem of conceptual fuzziness</p></li>
+</ol></td>
+</tr>
+<tr>
+<td style="text-align: left;">Prototype<br />
+Theory</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><ol>
+<li><p>The problem of prototypical primes</p></li>
+<li><p>The problem of ignorance and error</p></li>
+<li><p>The missing prototypes problem</p></li>
+<li><p>The problem of compositionality</p></li>
+</ol></td>
+</tr>
+<tr>
+<td style="text-align: left;">Theory-Theory</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><ol>
+<li><p>The problem of ignorance and error</p></li>
+<li><p>The problem of stability</p></li>
+<li><p>Problem</p></li>
+</ol></td>
+</tr>
+<tr>
+<td style="text-align: left;">Neoclassical Theory</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><ol>
+<li><p>The problem of completing definitions</p></li>
+<li><p>The problem of ignorance and error</p></li>
+<li><p>The regress problem for semantic fields</p></li>
+</ol></td>
+</tr>
+<tr>
+<td style="text-align: left;">Conceptual Atomism</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><ol>
+<li><p>The problem of radical nativism</p></li>
+<li><p>The problem of explanatory impotence</p></li>
+<li><p>The problem of analytic data</p></li>
+<li><p>The problem of compositionality</p></li>
+</ol></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h2 data-number="2.2" id="sec:technology-and-creativity"><span
+class="header-section-number">2.2</span> Technology and creativity</h2>
+<p>This section reviews some key literature streams discussing the
+relationship between humans, technology and creativity. The first two
+subsections address the perspective of philosophy of technology, which
+will serve as a starting point for the inquiry into the history of
+computation and creativity. In the following subsections an overview of
+a series of milestones that link computing technology and creativity are
+presented in parallel. The purpose of this arrangement is to highlight
+the trans-disciplinary spillover of ideas that interconnects the
+theories of concepts discussed in the previous section with research in
+artificial intelligence as well as art and design. The objective of this
+review is to explore the possibility of framing computational creativity
+and the current trend of data-driven AI within the post-phenomenological
+view of technology, which constitutes the starting point of this thesis’
+methodology discussed in Chapter 3.</p>
+<h3 data-number="2.2.1" id="philosophy-of-technology"><span
+class="header-section-number">2.2.1</span> Philosophy of technology</h3>
+<p>Philosophy of technology is an interdisciplinary field that combines
+insights from philosophy, sociology, history, and cultural studies to
+investigate the complex relationship between humans and technology <span
+class="citation" data-cites="Ihde1993">(Ihde 1993)</span>. It raises
+questions about the nature, purpose, and impact of technology on human
+existence, ethics, and values. By examining technology’s historical
+development, the philosophy of technology seeks to understand how
+technology has transformed human lives and societies. Three main themes
+can be found in literature:</p>
+<ul>
+<li><p><strong>Technicity:</strong> The concept of technicity refers to
+the idea that technology is not merely a tool but a condition of human
+existence <span class="citation" data-cites="Feenberg1991">(Feenberg
+1991)</span>. Technicity highlights the inseparable relationship between
+humans and technology, emphasizing that technology is not just an
+external object but an integral part of human experience.</p></li>
+<li><p><strong>Technological Determinism:</strong> Technological
+determinism is the belief that technology drives social change, often
+leading to unintended consequences <span class="citation"
+data-cites="Smith1994">(Smith and Marx 1994)</span>. This perspective
+suggests that technological innovations have their own logic and
+inevitability, which can lead to both positive and negative
+outcomes.</p></li>
+<li><p><strong>Technological Mediation:</strong> Technological mediation
+refers to the role of technology as a mediator between humans and the
+world <span class="citation" data-cites="Verbeek2005">(Verbeek
+2005)</span>. This concept emphasizes that technology does not simply
+represent an external reality but shapes human perceptions and
+experiences.</p></li>
+</ul>
+<p>Technology is a relatively young topic in Philosophy, yet most
+authors start their inquiry by looking at how Greek philosophers
+addressed it in relation to nature. For example, Aristotle deemed technē
+to be deeply interrelated with the notion of physis. In Physics, he
+states:</p>
+<blockquote>
+<p>action for an end is present in things which come to be and are by
+nature</p>
+<p><span class="citation" data-cites="Atwill2009">(Atwill
+2009)</span></p>
+</blockquote>
+<p>and therefore technē is the perfect example of action for a purpose.
+According to Aristotle, what sets physis and technē apart is that physis
+is itself its own efficient cause, whereas technē requires an external
+cause to be set in motion. In other words, physis is self-realizing
+towards its final cause, just as much as technē is, and the only
+difference is that physis is set in motion by itself, whereas technē
+requires an external driving force. According to Aristotle, technē is
+not understood as imitation of physis</p>
+<blockquote>
+<p>form</p>
+</blockquote>
+<p>, but its action: it is creating for a purpose:</p>
+<blockquote>
+<p>Further, where a series has a completion, all the preceding steps are
+for the sake of that. Now surely as in intelligent action, so in nature;
+and as in nature, so it is in each action, if nothing interferes. Now
+intelligent action is for the sake of an end; therefore the nature of
+things also is so. Thus if a house, e.g. had been a thing made by
+nature, it would have been made in the same way as it is now by art; and
+if things made by nature were made also by art, they would come to be in
+the same way as by nature. Each step then in the series is for the sake
+of the next; and generally art partly completes what nature cannot bring
+to a finish, and partly imitates her. If, therefore, artificial products
+are for the sake of an end, so clearly also are natural products.</p>
+<p><span class="citation" data-cites="Aristotle1983">(Aristotle 1983,
+Physics, Book II, Part 8)</span></p>
+</blockquote>
+<p>It is interesting to notice how in translation, technē is referred to
+as art. In fact the semantic area covered by the word technē in ancient
+Greek is overlapping substantially with the idea of craftsmanship and
+fine arts, which is arguably far away from the notion of technology we
+have today. To understand this semantic gap, when must address the
+fundamental change in the relationship between man and nature introduced
+by the Copernican Revolution.</p>
+<p>By adopting the scientific method, humans transitioned from being
+mere observers of an unchangeable world, as the ancient Greeks were, to
+actively probing nature for answers through technology (e.g., the
+telescope). This transformation drastically altered the way humans
+perceived their surroundings. The ancient Greeks deemed themselves
+vastly inferior to nature, which resulted in a humble and submissive
+attitude towards the natural world <span class="citation"
+data-cites="Galimberti1989">(Galimberti 1989)</span>. This modest
+perspective was also mirrored in Greek mythology, where the gods rarely
+concerned themselves with human affairs, and when they did intervene, it
+was driven by their own interests rather than concern for mortals.</p>
+<p>Centuries later, the Judaic-Christian tradition altered this dynamic,
+portraying nature as God’s gift to humankind so that they could prosper
+and fulfill God’s plan<span class="citation"
+data-cites="Galimberti1989">(Galimberti 1989)</span>. This
+anthropocentric view of the world encouraged a different attitude
+towards nature, positioning it in service of humans rather than
+something to be feared. Nevertheless, the divine mysteries restrained
+human knowledge, as God’s plan might not be fully comprehended by humans
+who simply had to accept it <span class="citation"
+data-cites="Galimberti1989">(Galimberti 1989)</span>.</p>
+<p>Galileo and the Copernican revolution challenged this worldview,
+demonstrating that, with technology and rational thought, mankind could
+investigate the mysteries of nature without the mediation of gods. The
+Age of Enlightenment placed human rationality at the center, while
+nature was no longer a humbling source of awe and wonder but instead
+viewed as something to be understood and controlled <span
+class="citation" data-cites="Ihde1990 Galimberti1989">(Ihde 1990;
+Galimberti 1989)</span>. The role of technology in this dynamic is
+crucial because it is through technology that humans exert this
+control.</p>
+<p>These ideas are captured in Heidegger’s thought as pointed out by
+Lovitt:</p>
+<h3 data-number="2.2.2" id="phenomenology-and-post-phenomenology"><span
+class="header-section-number">2.2.2</span> Phenomenology and
+post-phenomenology</h3>
+<p>Modern philosophical views of technology cannot avoid discussing the
+thought of Heidegger. Martin Heidegger was a German philosopher and a
+seminal thinker in the continental tradition of philosophy. He is best
+known for his contributions to phenomenology, hermeneutics, and
+existentialism. Heidegger’s work has had a profound influence on
+20th-century philosophy, particularly on the fields of existentialism,
+deconstruction, and postmodernism. He is also infamously known for being
+involved with Nazism, which makes him a controversial author to discuss.
+However, this thesis is mainly concerned with his critiques of
+technology and modernity, rather than his political views. If the reader
+has any issue with this philosopher, they are welcome to reach out to me
+with their observations.</p>
+<p>Heidegger’s view of technology is complex and multifaceted. In he
+deems the Greek definition (technē) unfit to describe modern technology:
+. He then points out a mutual relationship:</p>
+<blockquote>
+<p>It is said that modern technology is something incomparably different
+from all earlier technologies because it is based on modern physics as
+an exact science. Meanwhile we have come to understand more clearly that
+the reverse holds true as well: modern physics, as experimental, is
+dependent upon technical apparatus and upon progress in the building of
+apparatus.</p>
+<p><span class="citation" data-cites="Heidegger1977">(Heidegger 1977,
+14)</span></p>
+</blockquote>
+<p>He suggested that technology is as a way of understanding the world
+that shapes the human experience. The <em>modus operandi</em> of
+scientific progress habituates us to look at the world in terms of how
+it can be used and transformed, according to Heidegger, it is never
+neutral <span class="citation" data-cites="Heidegger1977">(Heidegger
+1977)</span>. For example:</p>
+<blockquote>
+<p>[t]he forester who, in the wood, measures the felled timber and to
+all appearances walks the same forest path in the same way as did his
+grandfather is today commanded by profit-making in the lumber industry,
+whether he knows it or not. He is made subordinate to the orderability
+of cellulose, which for its part is challenged forth by the need for
+paper, which is then delivered to newspapers and illustrated magazines.
+The latter, in their turn, set public opinion to swallowing what is
+printed, so that a set configuration of opinion becomes available on
+demand.</p>
+<p><span class="citation" data-cites="Heidegger1977">(Heidegger 1977,
+18)</span></p>
+</blockquote>
+<p>He also points out how modern technology can change the essence of
+nature:</p>
+<blockquote>
+<p>In the context of the interlocking processes pertaining to the
+orderly disposition of electrical energy, even the Rhine itself appears
+as something at our command. The hydroelectric plant is not built into
+the Rhine River as was the old wooden bridge that joined bank with bank
+for hundreds of years. Rather the river is dammed up into the power
+plant. What the river is now, namely, a water power supplier, derives
+from out of the essence of the power station.</p>
+<p><span class="citation" data-cites="Heidegger1977">(Heidegger 1977,
+16)</span></p>
+</blockquote>
+<p>Heidegger’s view of technology is a rather pessimistic one. Several
+philosophers have commented and continued the work of Heidegger
+attempting to reconcile the human and non-human in different forms.
+Among them, Don Ihde, an American philosopher, revisits Heidegger’s
+thought on technology in his book <span class="citation"
+data-cites="Ihde1990">(1990)</span> offering an new perspective on the
+control we have on technology. According to Ihde,</p>
+<blockquote>
+<p>[t]he reason technology cannot be <em>controlled</em> is because the
+question is wrongly framed. It either assumes that technologies are
+<em>merely</em> instrumental and thus implicitly neutral, or it assumes
+that technologies are fully determinative and thus uncontrollable. Both
+extremities are involved in the current debates, but both miss the point
+of the human-technology and the culture-technology relativities that
+would reconstitute the debate</p>
+<p><span class="citation" data-cites="Ihde1990">(Ihde 1990,
+140)</span></p>
+</blockquote>
+<p>In other words, Ihde’s reframes the question into .</p>
+<p>Ihde points to the interdependence that exists between culture and
+technology observing that . As an example he discusses how different
+writing instruments affect the style of the composition. An ink pen, a
+typewriter, and the word processor each present varying speed of writing
+and ease of editing, which in turn affect the writing style <span
+class="citation" data-cites="Ihde1990">(Ihde 1990, 142)</span>. In the
+case of the word processor, Ihde points out that . A similar point was
+made by Heim <span class="citation" data-cites="Heim1999">(1999)</span>
+as he argued in his book that writing with the aid of computers implies
+a completely different notion of the writing task itself. Along the
+lines of this post-phenomenological definition of technology, scholars
+such as Bruno Latour and Peter-Paul Verbeek bring their attention to the
+mediating role of technology.</p>
+<p>Bruno Latour is a French philosopher, anthropologist and sociologist.
+He is best known for his work in the field of science and technology
+studies. Latour argues that technology is <span class="citation"
+data-cites="Latour1990">(Latour 1990)</span> in the sense that a purely
+<em>social</em> world can never exist. The assemblage of a heterogeneous
+network of humans and non-humans is what produces stability. The example
+he brings up is that of a door. If a door is removed, a significant
+amount of work would be required by the human to fulfill the same
+purpose. A new hole would need to be made and bricked back up to go
+indoors. With the door, one is able to walk in through the combined
+efforts of both the human and the non-human. To go through, the door
+must present itself in a way that it can be opened <em>AND</em> the
+human must interact with it in a specific way to open it. According to
+Latour, the symmetry of this encounter is what creates stability in
+society.</p>
+<p>Peter-Paul Verbeek is a Dutch philosopher who also has written
+extensively on the role of technology in society, following Ihde’s lead.
+In his book , Verbeek proposes an ethical framework for designing
+technologies which takes into account both human values and
+technological capabilities <span class="citation"
+data-cites="Verbeek2011">(Verbeek 2011)</span>. He argues that
+technologies should not only serve utilitarian purposes but also take
+into account moral considerations such as justice, fairness, autonomy
+and responsibility. By doing so, he believes we can create more
+meaningful relationships between humans and their environment through
+technology.</p>
+<p>Both philosophers revisit the idea already present in Heidegger and
+Ihde, that technology is not just a means to an end, but it also shapes
+the way we live in society, thereby defining our reality. According to
+this post-phenomenological view of technology, there is no separation
+between the human and the non-human, rather a mediation. Under these
+assumptions, what can be said about computing technology? In what
+mediating relationship do humans and computers stand in the context of
+creative practices? In what way does the mediation afforded by a brush
+differ from that afforded by a computer? The next subsections address
+these question with particular focus on the impact that different
+approaches to computation affect the creative process.</p>
+<h3 data-number="2.2.3" id="sec:good-old-fashioned-ai"><span
+class="header-section-number">2.2.3</span> Good old-fashioned AI</h3>
+<figure id="fig:turingm" data-latex-placement="!t">
+<div class="center">
+<img src="figures/turingm.jpg" />
+</div>
+<figcaption>Physical representation of Turing’s machine, an iconic
+device that exemplifies the principles of early computing.</figcaption>
+</figure>
+<p>The debate about whether machines can produce anything new at all
+dates back to Charles Babbage’s invention. According to a famous passage
+from Ada Lovelace’s notes:</p>
+<blockquote>
+<p>[t]he Analytical Engine has no pretensions whatever to originate
+anything. It can do whatever we know how to order it to perform</p>
+<p><span class="citation" data-cites="Menabrea1843">(Menabrea et al.
+1843, Note G)</span></p>
+</blockquote>
+<p>On the other hand, <span class="citation"
+data-cites="Turing1950">(Turing 1950)</span> thought that ultimately,
+robots might be able to simulate human-<em>like</em> reasoning to the
+point that a human would not be able to tell the difference. <span
+class="citation" data-cites="Turing1950">Turing (1950)</span>’s
+prototypical computer, much like Babbage’s analytical engine, is a
+symbol manipulator (<a href="#fig:turingm" data-reference-type="ref"
+data-reference="fig:turingm">2.1</a>). It adheres to the operator’s set
+of rules (i.e. program) when reading and writing characters to an
+infinitely long tape. Its working effectively embodies CT, in the sense
+that crisp rules govern the process to a unique conclusion or result
+that is deduced analytically from the premises.</p>
+<p>Even today, it is not uncommon to hear the analogy between a computer
+and a human mind. In the early days of computer history, Turing was
+perhaps the first to assimilate human thinking as computation: a man
+provided with paper, pencil, and rubber, and subject to strict
+discipline, is in effect a universal machine <span class="citation"
+data-cites="Turing1937">(Turing 1937)</span>. After him, many were
+fascinated by the possibility that through this new technology we could
+automate even a part of our cognitive processes. Turing’s vision
+launched an entirely new area of study known as Artificial Intelligence
+(AI).</p>
+<p>The origins of AI are widely attributed to the Dartmouth College
+Conference, which took place during the summer of 1956. This gathering
+brought together a group of notable scientists, including John McCarthy,
+Marvin Minsky, Nathaniel Rochester, and Claude Shannon, to explore the
+possibility of creating machines that could emulate human thought
+processes. The conference was grounded in the philosophical concepts put
+forth by Turing, which posited that computers could be programmed to
+solve problems using methods akin to those employed by humans. The ideas
+generated at this event laid the foundation for much of the subsequent
+research in the field of AI.</p>
+<p>The era of AI research that followed the Dartmouth College Conference
+is commonly known as Good Old-Fashioned Artificial Intelligence (GOFAI).
+During this period, researchers focused on symbolic reasoning and
+problem-solving. The outcomes of their investigations laid the
+groundwork for modern AI technologies, which have found application in
+various domains. However, the GOFAI approach also encountered opposition
+and criticism. Some scholars raised objections, particularly in light of
+the emergence of PT and the fallacies of CT that it exposed. In fact,
+some of the issues associated with CT are directly linked to those
+presented by GOFAI.</p>
+<ol>
+<li><p>According to <span class="citation"
+data-cites="Searle1980">(Searle 1980)</span> and his Chinese room
+thought experiment, symbolic systems just need knowledge of the proper
+rules of manipulation rather than necessarily requiring comprehension of
+the symbolic references.</p></li>
+<li><p>Since it is unable to determine how each new piece of information
+connects to a particular idea, GOFAI is constrained in its ability to
+update its opinions about preexisting concepts. As the number of
+concepts grows, the combinatorial explosion makes the issue impossible
+to solve with logic alone. This is referred to as the <em>frame
+problem</em> <span class="citation" data-cites="Dennett1984">(Dennett
+1984)</span> and is an epistemological byproduct of Plato’s problem,
+discussed in <a href="2-Litreview.html#sec:platosproblem"
+data-reference-type="ref"
+data-reference="sec:platosproblem">[sec:platosproblem]</a> and the
+problem of ignorance and error.</p></li>
+<li><p>Symbolic reasoning</p>
+<blockquote>
+<p>sustains no creative inductions, no genuinely new knowledge, and no
+conceptual discoveries</p>
+<p><span class="citation" data-cites="Gaerdenfors2000">(Gärdenfors 2000,
+211)</span></p>
+</blockquote>
+<p>This is because . This echoes Lovelace’s intuition that the machine
+only can produce what we ask it to, it does not question if the
+instructions have a valid reference to the world.</p></li>
+<li><p>The rigidity of the definitional approach adopted by GOFAI and
+its reliance on analytic processes makes it unfit to model conceptual
+fuzziness and graded categorization. The first prototype theorists <span
+class="citation" data-cites="Oden1977 Rosch1975">(Oden 1977; Rosch and
+Mervis 1975)</span> suggest fuzzy-set theory as a complementary theory
+to PT that could better model such phenomena.</p></li>
+</ol>
+<p>Overall, the successes of GOFAI are still to be praised. Perhaps
+among the many achievements of the program, the most remarkable was to
+beat a human at chess. It is the case of IBM’s Deep Blue, a
+supercomputer that was first defeated by Kasparov 4-2 in 1996, but then
+won in a rematch only a year later by 3½–2½.</p>
+<p>GOFAI’s attempts at generating original media are numerous and span
+multiple domains. For example, it is widely accepted that the 1957
+string quartet composition Illiac Suite, later known as String Quartet
+No. 4, was the first musical score created using an electronic computer.
+Lejaren Hiller and Leonard Isaacson worked together to create the
+compositional material using the ILLIAC I computer at the University of
+Illinois at Urbana-Champaign, where both authors were professors <span
+class="citation" data-cites="Hillier1959">(Hillier and Isaacson
+1959)</span>.</p>
+<p>The piece is divided into four movements, each of which corresponds
+to one of four experiments: the first movement deals with the creation
+of <em>cantus firmi</em>, the second with the generation of four-voice
+segments using a variety of rules, the third with rhythm, dynamics, and
+playing instructions, and the fourth with a variety of models and
+probabilities for generative grammars and Markov chains <span
+class="citation" data-cites="Hillier1959">(Hillier and Isaacson
+1959)</span>. The use of pseudo-randomness combined with rules is one of
+the ways in which GOFAI is able to explore novel combinations while
+still maintaining an overall structure. The same approach is also found
+in the visual arts, where some of the philosophical ideas attuned to
+GOFAI and CT set in motion a new movement.</p>
+<h3 data-number="2.2.4" id="sec:the-birth-of-generative-art"><span
+class="header-section-number">2.2.4</span> The birth of generative
+art</h3>
+<p>In parallel to the AI advancements discussed in the previous section,
+the visual arts community also embraced forms of computation. The
+<em>Generative Art</em> movement began in the 1960s and has since become
+an important part of contemporary art. It is a form of art that uses
+computer algorithms to create unique works, often with unpredictable
+(but deterministic) results. Its origin is specifically linked with the
+appearance of the programmable plotter, a machine capable of drawing on
+paper following procedural instructions.</p>
+<figure id="fig:graphomat" data-latex-placement="!t">
+<div class="center">
+<img src="figures/zuse.png" />
+</div>
+<figcaption>Image of the Zuse Graphomat Z64 plotter, a versatile device
+originally designed for technical drawing and other industrial
+applications. However, some artists and designers repurposed the plotter
+for creating generative art, a style of art that relies on algorithms
+and mathematical formulas to generate complex patterns and
+designs.</figcaption>
+</figure>
+<p>The main exponents of generative art are artists such as Manfred
+Mohr, Frieder Nake, Georg Nees, and A. Michael Noll. The movement
+started in the late 1960s when these artists began experimenting with
+plotters to create visual art, inspired by the philosophy of German
+philosopher and mathematician Max Bense. His work focused on the idea
+that art should be generated and evaluated with mathematical principles
+<span class="citation" data-cites="Nake2012">(Nake 2012)</span>. Rather
+than relying on traditional artistic sensitivity, he advocates for
+<em>information aesthetics</em>, an interdisciplinary concept of
+developing exact, scientific measures for introducing objectivity into
+aesthetics <span class="citation"
+data-cites="Nake2012 Kluetsch2012">(Nake 2012; Klütsch 2012)</span>. He
+argued that this approach would allow for greater creativity and
+expression in art, as well as providing an opportunity to explore new
+forms of aesthetic experience.</p>
+<figure id="fig:genart" data-latex-placement="!h">
+<div class="center">
+<p><img src="figures/NakeKlee65.png" style="width:40.0%" alt="image" />
+<img src="figures/wtraster.png" style="width:40.0%" alt="image" /> <img
+src="figures/neesecke.png" style="width:40.0%" alt="image" /> <img
+src="figures/neesschotter.png" style="width:40.0%" alt="image" /></p>
+</div>
+<figcaption>From left to right, top to bottom: by Frieder Nake (1965),
+by Frieder Nake (1966), by Georg Nees (1965), by Georg Nees (1968).
+These four artworks are a selection of some of the landmarks in the
+history of computer-generated art, featuring intricate geometric
+patterns and designs generated by algorithms programmed by the artists.
+The artworks represent a significant milestone in the development of
+digital art and design, showcasing the potential of computers as a tool
+for artistic expression.</figcaption>
+</figure>
+<p>Early in 1965, Bense’s lecture rooms hosted the first-ever display of
+computer-generated art, featuring a dozen or so abstract,
+black-and-white designs created algorithmically by Nees on the recently
+released Zuse Graphomat Z64 plotter (fig. <a href="#fig:graphomat"
+data-reference-type="ref" data-reference="fig:graphomat">2.2</a>) <span
+class="citation" data-cites="Kluetsch2012">(Klütsch 2012)</span>. Just
+as those lithic tools from 40 kyr ago <span class="citation"
+data-cites="RodriguezVidal2014">(<span class="nocase">Rodrı́guez-Vidal et
+al.</span> 2014)</span>, the plotter has been repurposed for
+non-utilitarian use, an analogy that holds in the form but perhaps not
+in the content. Ihde would argue that a lithic tool affords a
+substantially different mediation from that of a plotter. Indeed the
+rock would not carve a wall without being attached to a hand, yet for a
+plotter it is only necessary to input the code and press a button. In
+other words, the actions of the author on the plotter affect the output
+only indirectly.</p>
+<p>A post-phenomenological reflection is due here. GOFAI and the trend
+of symbolic reasoning offer a new way to see the world: as computation.
+Analytical thinking is in many ways married to CT as discussed earlier,
+so Bense’s attempt to define aesthetics objectively <span
+class="citation" data-cites="Nake2012 Kluetsch2012">(Nake 2012; Klütsch
+2012)</span> falls perfectly in line with the program. He is seeking a
+formal definition of <span class="smallcaps">Beauty</span>, with
+necessary conditions for its application. The generative art movement is
+set out to expose the aesthetics of mathematics, logic and
+computation.</p>
+<p>Conceptually, this was perceived both as strength and weakness in the
+early days of generative art. The innovative aspect in these artistic
+designs was the focus on the process, as Nake puts it: . However, to the
+audience this may not be obvious by just looking at the output (some
+examples presented in Figure <a href="#fig:genart"
+data-reference-type="ref" data-reference="fig:genart">2.3</a>) and at
+Bense’s exhibitions the reactions were intense <span class="citation"
+data-cites="Kluetsch2012">(Klütsch 2012)</span>. To appreciate this kind
+of artwork one must understand the relationship between the author, the
+program and the machine that produced it.</p>
+<p>While the human-technology relation in generative art is not entirely
+dissimilar to the combination, the programmable plotter introduces a
+level of abstraction (i.e. the program) that is understood by the
+functioning of the plotter. Much like Latour’s door <span
+class="citation" data-cites="Latour1990">(Latour 1990)</span>, it is
+through the effort of both the human symbolic abstraction and the
+machine’s embedded compatibility with it that these generative designs
+come into being. It is important to note that computer code is a
+necessary abstraction when using a plotter: it is perfectly possible to
+draw geometrical shapes using a pencil without knowing a formal
+procedure that generates them, but the same is not true for a plotter.
+This necessity shifts the attention towards the technology itself,
+leaving the output as an indirect byproduct of the interaction.</p>
+<h3 data-number="2.2.5" id="a-bio-inspired-mind"><span
+class="header-section-number">2.2.5</span> A bio-inspired mind</h3>
+<p>Alongside GOFAI another stream of research was concerned with a
+different agenda: modeling the biology of a human brain as a network of
+its primary components, the neurons. The <em>perceptron</em>, developed
+by <span class="citation" data-cites="Rosenblatt1958">(Rosenblatt
+1958)</span>, is considered to be the first formalization of a neural
+network, although at the time it did not receive much attention. Two
+decades later, in light of the criticisms directed towards CT and the
+GOFAI approach, a new stream of researchers set out to explore the use
+of neural networks as alternative implementation of human cognition.
+This scientific agenda is known as connectionism, a branch of cognitive
+science that emerged in the 1980s. Connectionism is based on the idea
+that mental processes can be implemented as networks of interconnected
+neurons. Some of the main exponents of connectionism are David
+Rumelhart, James McClelland, and Geoffrey Hinton.</p>
+<figure id="fig:neuron">
+<div class="center">
+<img src="figures/perceptron.png" style="width:90.0%" />
+</div>
+<figcaption>Image of <span class="citation"
+data-cites="Rosenblatt1958">Rosenblatt (1958)</span>’s first model of
+artificial neural network, a groundbreaking concept in the field of AI.
+The image showcases the basic architecture of the model, which comprises
+input nodes, output nodes, and hidden nodes that process and transmit
+information between them. The model was designed to simulate the
+behavior of biological neurons, and has since become a foundational
+concept in the development of machine learning and neural
+networks.</figcaption>
+</figure>
+<p>Connectionism embraces a biologically-inspired framework of the mind,
+diverging from the logical model prevalent in GOFAI. The primary
+objective of this research endeavor is to comprehend human cognitive
+processes through simulation rather than the development of thinking
+machines. This perspective, commonly known as weak-AI, stands in
+contrast to strong-AI, which is dedicated to attaining Artificial
+General Intelligence (AGI).</p>
+<p>Within a neural network, each neuron operates autonomously, resulting
+in decisions that are inherently local. Consequently, interpreting the
+values of individual neurons becomes challenging. This intrinsic
+locality attribute contributes to the limited dependability of neural
+networks in performing logical operations, a limitation that persists to
+this day. For example, <span class="citation"
+data-cites="Brown2020">(Brown et al. 2020)</span>, state . This should
+not be surprising because GPT is not intended to be used as a
+calculator, rather capture probabilistic features of language tokens and
+their relationships with other tokens.</p>
+<p>Connectionism asserts that cognition can be understood as an emergent
+property of neural networks, which can learn to recognize patterns in
+data through backpropagation. This process involves adjusting the
+weights between neurons to minimize prediction errors. According to
+connectionists, this type of learning enables neural networks to
+generalize from examples, making them more powerful than traditional
+symbolic models that rely on explicit rules.</p>
+<p>These claims have been supported by numerous studies conducted over
+the past few decades. For example, <span class="citation"
+data-cites="Rumelhart1987">(Rumelhart et al. 1987)</span> demonstrated
+how backpropagation could be used to train a network to recognize
+handwritten digits with high accuracy. Similarly, <span class="citation"
+data-cites="Waibel1989">(Waibel et al. 1989)</span> showed how neural
+networks could be used to recognize phonemes for speech recognition.
+Finally, McClelland et al (<span class="citation"
+data-cites="Rumelhart1987">(1987)</span>) demonstrated how a network
+could be trained to recognize the structure of sentences in natural
+language. These studies provide evidence that neural networks can learn
+complex patterns from data and generalize them to new situations, making
+them powerful tools for solving cognitive tasks.</p>
+<p>Parallel distributed processing, as advocated by McClelland and
+Rumelhart, defines a different computing paradigm that contrasts the
+established GOFAI approach. Much like CT and PT, the two schools rely on
+different assumptions about how concepts should be represented. In
+practical terms, the GOFAI approach was at the time much more developed
+and established due to its commercialization, while parallel processing
+hardware was complex, expensive and relegated to research. The first
+wave of excitement about neural networks was primarily due their
+scientific explanatory power into the biology of the brain, but the high
+computational cost, their complexity and unpredictability kept the
+enthusiasm at bay, at least until the early ’00s.</p>
+<h3 data-number="2.2.6" id="sec:hybrid-theories"><span
+class="header-section-number">2.2.6</span> Hybrid theories</h3>
+<p>A compelling hybrid theory has been proposed by <span
+class="citation" data-cites="Gaerdenfors2000">(Gärdenfors 2000)</span>.
+The author posits that concept formation cannot be accurately depicted
+by either the GOFAI or connectionist approach, as neither adequately
+addresses the concept of <em>similarity</em>. Gärdenfors recommends
+incorporating a third intermediate layer that utilizes geometric
+structures to better model similarity relations. In this framework,
+concept formation is closely associated with identifying convex regions
+in space, as demonstrated in Figure <a href="#fig:colorspindle"
+data-reference-type="ref" data-reference="fig:colorspindle">2.5</a>.
+While convex regions arise from physical properties such as <span
+class="smallcaps">color</span> or <span class="smallcaps">shape</span>
+for raw perceptual dimensions, the same cannot be assured for abstract
+dimensions like <span class="smallcaps">Justice</span> or <span
+class="smallcaps">Honesty</span>. The fact that convex regions are found
+for a given conceptual space validates the conceptual-space and its
+dimensions, but this might lead to confirmation bias (see the swans
+example in Section <a
+href="2-Litreview.html#sec:the-problem-of-ignorance-and-error"
+data-reference-type="ref"
+data-reference="sec:the-problem-of-ignorance-and-error">[sec:the-problem-of-ignorance-and-error]</a>).</p>
+<figure id="fig:colorspindle">
+<div class="center">
+<img src="figures/colorspindle.png" style="width:40.0%" />
+</div>
+<figcaption>Image illustrating <span class="citation"
+data-cites="Gaerdenfors2000">Gärdenfors (2000)</span>’s conceptual space
+of colors, a theoretical model that organizes colors based on their
+perceptual and conceptual properties. The image focuses on the convex
+subset region that represents the diverse range of skin tones,
+highlighting the potential of the model for understanding and analyzing
+color perception and representation.</figcaption>
+</figure>
+<p>In spite of its shortcomings, <span class="citation"
+data-cites="Gaerdenfors2000">(Gärdenfors 2000)</span> theory of
+conceptual spaces still provides great insights into modern AI. A
+growing number of authors made attempts to integrate symbolic reasoning
+and deep learning, employing different strategies which, can be grouped
+into . Some of these architectures, such as the neuro-symbolic concept
+learner by <span class="citation" data-cites="Mao2019">(Mao et al.
+2019)</span>, may be considered almost direct implementations of <span
+class="citation" data-cites="Gaerdenfors2000">Gärdenfors (2000)</span>’
+framework.</p>
+<p>The intuition that concepts may be described by topological
+properties finds at least partial confirmation in the reliance of modern
+<em>deep learning</em> on the idea of <em>latent space</em>. <em>Latent
+spaces</em> are in fact topological entities that encode training data
+to a space with less dimensions, a process that may be considered a form
+of <em>compression</em> and <em>abstraction</em>. The last decade has
+seen remarkable development in the understanding of <em>latent
+spaces</em> and their application.</p>
+<h3 data-number="2.2.7" id="sec:deep-learning"><span
+class="header-section-number">2.2.7</span> Deep learning</h3>
+<p>A new wave of research on neural networks came around in the early
+2010s, also known as Deep Learning (DL). DL is a subset of Machine
+Learning (ML) that uses neural networks with numerous layers to learn
+from data and make decisions. Since then, it has become one of the most
+popular and influential fields in AI research, with an exponential
+growth in the number of papers published every year <span
+class="citation" data-cites="Krenn2022">(Krenn et al. 2022)</span>.
+Geoffrey Hinton, Yann LeCun and Yoshua Bengio were credited as its
+founding fathers and received the ACM A.M. Turing Award in 2018 for
+their contribution.</p>
+<p>Deep Learning algorithms are used for various tasks such as image
+recognition, natural language processing (NLP), speech recognition,
+autonomous driving and robotics. The major achievements of DL include
+breakthroughs in computer vision tasks such as object detection and
+segmentation; NLP tasks such as machine translation; speech recognition
+tasks such as automatic speech recognition; and reinforcement learning
+tasks such as game playing.</p>
+<p>One of the most influential papers in the field was published by
+<span class="citation" data-cites="Hinton2006">Hinton et al.
+(2006)</span> in <span class="citation"
+data-cites="Hinton2006">(2006)</span> titled . This paper introduced a
+new algorithm called <em>deep belief nets</em> which allowed for faster
+training times than traditional neural networks. This paper laid the
+foundation for many subsequent advances in deep learning research.</p>
+<p><span class="citation" data-cites="Krizhevsky2012">(Krizhevsky et al.
+2012)</span> published a paper titled which introduced the AlexNet
+architecture. This paper demonstrated that deep learning could be used
+to achieve state-of-the-art performance on image classification tasks.
+This breakthrough was followed by many other papers in the field, such
+as <span class="citation" data-cites="Szegedy2014">Szegedy et al.
+(2014)</span>’s <span class="citation"
+data-cites="Szegedy2014">(2014)</span> paper and <span class="citation"
+data-cites="He2015">He et al. (2015)</span>’s <span class="citation"
+data-cites="He2015">(2015)</span> paper , which further improved the
+performance of deep learning models on image recognition tasks.</p>
+<p>In 2016, Google Brain researchers published a foundational paper
+titled which proposed a new type of neural network called Transformer
+<span class="citation" data-cites="Vaswani2017">(Vaswani et al.
+2017)</span>. This model was able to achieve state-of-the-art results on
+various NLP tasks such as machine translation and text summarization
+without using any recurrent layers or convolutions. One of the key
+aspects that this architecture introduces is the concept of
+self-attention. Self-attention layers learn how different elements in a
+sequence are related (or unrelated) to other elements. Compared to
+recursive neural networks (RNNs) the transformer-attention architecture
+processes sentences all at once, rather than word by word, which allows
+for better parallelization, leading to more efficient training and
+inference time.</p>
+<p>In light of what has been discussed about compositionality in the
+previous section, it is worth noting that self-attention in seq2seq
+(transformers) models seems to capture at least some aspects of language
+compositionality. From a theoretical standpoint, token embedding
+dimensions as intended in DL could be assimilated to Jackendoff’s
+<em>semantic fields</em> that are described by probability
+distributions. Self-attention in neural networks is able to capture only
+salient relationships between tokens in a sequence therefore enabling
+specific inter-dependent predictions starting from any pair of
+tokens.</p>
+<p>These achievements mark a trend that has been on rise for almost two
+decades. One of the factors that contributed to this upward trend is
+also the increased accessibility of hardware that can afford the kind of
+computation neural networks require. In the early 2000s a small number
+of academics began looking into the use of graphics processing units
+(GPUs) for DL algorithms (another <em>lithic tool</em> gets
+repurposed!). These devices are well suited for it despite being
+initially created for rendering graphics because they are engineered to
+run mathematical operations of linear algebra (matrix multiplications,
+vector dot products, etc...) leveraging parallel computation.</p>
+<p>Another fundamental contributing factor is the availability of large
+amounts of data and metadata in digital form accessible through the
+internet. The Web 2.0 era allowed for users to become producers of their
+own media through mobile phones, flooding the internet with user
+generated content. This perhaps commercially driven push towards
+ML-based data analysis stimulated innovation aimed at dealing with the
+scale and magnitude of the accumulated information. In fact, a defining
+characteristic of popular DL tools of today is precisely that they have
+been learning at massive scale. Such is the case for GPT3, trained on
+ 45TB of text data, or Stable Diffusion, trained on  5.85B images.</p>
+<p>These factors, and possibly many others, have lead us to the tools we
+have today which are based on deep learning. Of particular interest for
+creativity studies is the subfield of Generative Deep Learning (GDL),
+which is particularly concerned with deep learning models that can
+generate output rather than simply classify data.</p>
+<p>GDL offers a novel method for creating unique artifacts. The
+generated content retains a consistent set of characteristics, such as a
+face, while allowing for variations from the original training dataset,
+such as altering the hairstyle or transforming a frown into a smile
+<span class="citation" data-cites="Pumarola2019">(Pumarola et al.
+2019)</span>. An additional advantage of GDL is that these large
+unsupervised models can extract features without requiring an annotated
+dataset. For instance, the authors of StyleGAN2 assert: . In practice,
+unsupervised learning enables Deep Neural Networks (DNNs) to process
+extensive corpora of text, images, or sounds and acquire a set of
+<em>parameters</em> that can be modified and employed for synthesizing
+new outputs.</p>
+<p>The precise nature of these <em>parameters</em> learned by DNNs
+remains somewhat elusive, particularly given the challenges that TOCs
+face in defining concepts and their properties. At the most basic level,
+it can be inferred that these parameters represent the properties and
+compositional relations (utilizing self-attention) of the input data
+they aim to replicate. However, questions arise regarding how DNNs
+extract these dimensions, the meaning of concept learning in this
+context, and whether this process can be deemed inherently creative
+<span class="citation" data-cites="Hoorn2023">(Hoorn 2023)</span>.</p>
+<h3 data-number="2.2.8" id="sec:non-human-creativity"><span
+class="header-section-number">2.2.8</span> Non-human creativity</h3>
+<p>The creative process requires a medium: when we create, we always
+create <em>something</em>. Creative artifacts exist in relation to their
+supporting technology and are therefore bound to the support’s
+affordances. When a new technology emerges, the exploration of its novel
+affordances might bring disruption in what an audience believes it means
+to be creative. In many cases, the introduction of a new technology also
+produces a shift in the aesthetic sensitivity, and sometimes even
+assembles a new community of reference. As the progress of technology
+becomes part of the background of our society, the audience will
+naturally shift the selection criteria for what is considered novel and
+valuable.</p>
+<p>Indeed, any attempt to create an <em>intensional</em> definition for
+the term <em>creativity</em> may necessitate an <em>audience of
+reference</em> responsible for evaluating specific attributes such as
+<em>novelty</em> or <em>value</em> <span class="citation"
+data-cites="Newell1959 Rhodes1961 Boden2003">(Newell et al. 1959; Rhodes
+1961; Boden 2003)</span>. Similar to Meno (see Section <a
+href="2-Litreview.html#sec:platosproblem" data-reference-type="ref"
+data-reference="sec:platosproblem">[sec:platosproblem]</a>), the
+audience may encounter difficulties in formulating such definitions.
+Consequently, differing perceptions of <em>novelty</em> and
+<em>value</em> may arise among various audiences. It appears nearly
+inescapable that, when discussing creativity, we must accept an
+<em>extensional</em> definition and acknowledge that evaluations of
+creative output will invariably reflect human bias <span
+class="citation" data-cites="Hoorn2023">(Hoorn 2023)</span>.</p>
+<p>Over the past two decades, advancements in computing technology have
+led to several modifications in how creativity is assessed. The
+Computational Creativity (CC) community has revisited the concept of
+creativity to accommodate non-human artifacts:</p>
+<blockquote>
+<p>[t]he performance of tasks which, if performed by a human, would be
+deemed creative</p>
+<p><span class="citation" data-cites="Wiggins2006">(Wiggins 2006a,
+451)</span></p>
+</blockquote>
+<p>This criterion is agent-agnostic and focuses solely on the output.
+The underlying assumption is that different instances of the creative
+process will generate artifacts with varying creative value. <span
+class="citation" data-cites="Colton2008">Colton (2008)</span> also
+asserts:</p>
+<blockquote>
+<p>While it is not a necessary requirement, there is an implicit
+assumption that to produce the most pleasing artefacts, aspects of human
+creative behaviour will have to be simulated</p>
+<p><span class="citation" data-cites="Colton2008">(Colton 2008,
+1)</span></p>
+</blockquote>
+<p>However, a certain ambiguity arises when attributing creative
+qualities to artificial agents based solely on their output. Notably,
+AlphaGo’s <span class="citation" data-cites="Silver2016">(Silver et al.
+2016)</span> move 37 was met with astonishment by commentators, the
+audience, and Sedol himself. This move could arguably be considered
+creative, but it did not originate from a simulation of human Go-playing
+strategies<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>. AlphaGo Zero <span class="citation"
+data-cites="Silver2017">(Silver et al. 2017)</span> surpassed AlphaGo by
+eliminating human bias and relying solely on self-play to develop its
+strategies. Nevertheless, an agent must incorporate a minimal set of
+assumptions about the world, which will determine the potential or
+desired outcomes. Even in the case of AlphaGo Zero, which was not
+exposed to human gameplay during training, the rules of Go constitute
+the minimal instructions required for task performance. Once this space
+is defined and explored by an agent without human intervention,
+non-human solutions that could be deemed creative may emerge.</p>
+<p>As counter argument, it is then fair to ask whether AlphaGo’s move 37
+can be deemed as not creative. After all it is the algorithm’s goal to
+explore game-winning strategies, the fact that it came up with its own
+distinctive ones is in line with the instructions it was given, how is
+this surprising? From this perspective, move 37 may be considered just a
+display of an <em>alien</em> way of thinking <span class="citation"
+data-cites="Fazi2018">(Fazi 2018)</span> that perhaps just is to be
+deemed as <em>intelligent</em> rather than <em>creative</em>.
+Furthermore, AlphaGo’s <em>alien</em> strategies may not be of any value
+to humans, since we do not have the computing power in our brains to
+come up with those moves ourselves.</p>
+<p>We meet here at an ontological fork in the road. What does it mean
+for a technology to be described as creative? Is it something about the
+form of its internal processes? Or is it just about the judgment of its
+output by experts? How does the human interaction with technology come
+into play? The field of CC has been trying to address these theoretical
+questions and provide space for technical solutions to be shared and
+discussed. In order to better understand the discourse around
+computational creativity and its reception of the probabilistic turn, a
+systematic literature review has been conducted.</p>
+<h3 data-number="2.2.9"
+id="computational-creativity-a-systematic-literature-review"><span
+class="header-section-number">2.2.9</span> Computational creativity: a
+systematic literature review</h3>
+<p>The systematic literature review presented in this section has two
+main purposes. The first one is to identify the research questions and
+topics discussed in the field and the second is to expose the effects of
+current shift towards probabilistic models in CC.</p>
+<p>The corpus of 386 papers under review has been retrieved from Scopus
+search using the query string
+<code>KEY("computational creativity")</code> as of March 2023. The full
+reference, abstract and number of citations of each paper has been
+retrieved via API using custom code provided in Appendix A. The papers
+in the corpus were categorized according to three dimensions:</p>
+<ul>
+<li><p>The medium addressed in the paper. The list of possible choices
+of medium has been defined as:</p>
+<ul>
+<li><p>No medium</p></li>
+<li><p>Visual, images and movies</p></li>
+<li><p>Music and musical composition</p></li>
+<li><p>Design, urban design, architecture</p></li>
+<li><p>Writing, narrative and language</p></li>
+<li><p>Game design</p></li>
+<li><p>Concepts</p></li>
+<li><p>Culinary recipes</p></li>
+<li><p>Multi-modal</p></li>
+</ul></li>
+<li><p>The theoretical scope of the paper:</p>
+<ul>
+<li><p><strong>Evaluation</strong>: the paper discusses the evaluation
+of artifacts.</p></li>
+<li><p><strong>Theory</strong>: the paper discusses a particular theory
+or hypothesis about creativity.</p></li>
+<li><p><strong>System</strong>: the paper presents a technical
+implementation of a specific creative system.</p></li>
+<li><p><strong>Other</strong>: the scope of the paper does not fit any
+of the other categories.</p></li>
+</ul></li>
+<li><p>The computational approach adopted or discussed in the paper:</p>
+<ul>
+<li><p><strong>Rule-based</strong>: these are methods that follow
+deterministic rules and definitions, such as expert systems.</p></li>
+<li><p><strong>Evolutionary algorithms</strong>: genetic algorithms and
+other methods inspired by evolution.</p></li>
+<li><p><strong>Data-driven</strong>: this includes deep learning,
+machine learning and other probability based approaches.</p></li>
+<li><p><strong>Other</strong>: the paper does not belong to any of the
+above or there is no specific approach.</p></li>
+</ul></li>
+</ul>
+<p>The categorization process utilized can be summarized as follows:</p>
+<ol>
+<li><p>Skim all papers and identify the categories listed
+above.</p></li>
+<li><p>Ask GPT3.5 to categorize each paper and provide an explanation
+for its choices.</p></li>
+<li><p>Review categorization, assess accuracy, adjust if
+necessary.</p></li>
+</ol>
+<figure id="fig:litrevscope">
+<div class="centering">
+<img src="figures/litrevscope.png" />
+</div>
+<figcaption>Horizontal bar chart depicting the distribution of
+<em>Scope</em> in the systematic literature review. The X-axis
+represents the frequency of occurrences. The chart highlights the
+variation in the distribution of <em>Scope</em> among the papers
+reviewed, providing insights into research focus of the literature in
+the field.</figcaption>
+</figure>
+<figure id="fig:litrevmedium">
+<div class="centering">
+<img src="figures/litrevmedium.png" />
+</div>
+<figcaption>Horizontal bar chart depicting the distribution of
+<em>Medium</em> in the systematic literature review. The X-axis
+represents the frequency of occurrences. The chart highlights the
+variation in the distribution of <em>Medium</em> among the papers
+reviewed, providing insights into the domains and topics of the
+literature in the field.</figcaption>
+</figure>
+<p>The use of GPT3.5 to support the categorization task is to be
+considered mostly as an exploration of the capabilities of this tool,
+rather than a validation. In fact, a preliminary categorization exercise
+was already performed in early 2020 at the beginning of my doctoral
+journey. The addition of this intermediate step was inspired by the
+curiosity of how accurate GPT’s categorization might be, given that
+traditional methods such as topic modeling did not yield satisfying
+results. GPT was tasked with assigning to each paper a value for each of
+the dimensions specified above (the prompt used can be found in appendix
+<a href="9-AppendixA.html#AppendixA" data-reference-type="ref"
+data-reference="AppendixA">9</a>). After reviewing the assigned, GPT’s
+classification was given a score from 0 to 3 based on how many
+dimensions were considered correct. According to this measurement, GPT’s
+accuracy over the whole corpus was <span class="math inline">≈</span>
+88%. Considering that GPT did not have visibility over the full text of
+each paper and that some abstracts did not have all the information
+required to make an accurate judgment, this method proved to be rather
+effective in assisting to categorize the corpus, especially for those
+cases that are relatively straightforward.</p>
+<p>Figure <a href="#fig:litrevscope" data-reference-type="ref"
+data-reference="fig:litrevscope">2.6</a> and <a href="#fig:litrevmedium"
+data-reference-type="ref" data-reference="fig:litrevmedium">2.7</a>
+summarize the number of papers by scope and media respectively. Over
+half (<span class="math inline">≈</span>55%) of the papers examined
+discuss the implementation of a specific system, indicating that the
+community provides space for practical experimentation. The rest of the
+papers address theoretical issues regarding either creativity itself
+(<span class="math inline">≈</span>26%), the topic of evaluation of
+creativity (<span class="math inline">≈</span>8%), and other topics such
+as reviews of the field or historical perspectives (<span
+class="math inline">≈</span>10%). As for the media distribution, the top
+three are unsurprisingly language (<span
+class="math inline">≈</span>25%), images (<span
+class="math inline">≈</span>18%) and music (<span
+class="math inline">≈</span>11%), followed closely by design (<span
+class="math inline">≈</span>8%), game design (<span
+class="math inline">≈</span>8%) and concepts (<span
+class="math inline">≈</span>6%, mostly discussing conceptual blending).
+Not all papers discuss creativity within the context of a specific
+medium, 16% of them take a more abstract approach and focus on exploring
+creativity purely from a theoretical standpoint. Further analysis of the
+breakdown shown in Figure <a href="#fig:litrev0"
+data-reference-type="ref" data-reference="fig:litrev0">2.8</a>
+summarizes the medium based on each of the identified scopes. As
+expected, most theory papers do not discuss a specific medium, rather
+tackle the topic of creativity as an abstract process, disentangled from
+a specific application. The majority of papers discussing evaluation of
+creativity, however, seem to be primarily situated in a specific domain,
+with only 5 papers identified as addressing the topic without focusing
+on a medium.</p>
+<figure id="fig:litrev0">
+<img src="figures/litrev0.png" />
+<figcaption>Vertical bar chart illustrating the breakdown of each
+<em>Scope</em> by <em>Medium</em> in the corpus of papers. The chart
+reveals trends and patterns in the literature based on
+<em>Scope</em>.</figcaption>
+</figure>
+<p>Figure <a href="#fig:litrev1" data-reference-type="ref"
+data-reference="fig:litrev1">2.9</a> displays the number of papers
+adopting a specific approach, broken down by year. This chart is
+particularly interesting in relation to the probabilistic trend emerging
+in recent years. The sharp decline of rule-based approach papers makes
+space to new discussions around data-driven methods. This trend also
+produces a shift in the scope of the papers, as shown in <a
+href="#fig:litrev3" data-reference-type="ref"
+data-reference="fig:litrev3">2.10</a>. It seems that not as many new
+system implementations have been produced in the last 4 years as in the
+previous years, but instead the discussion seems to have shifted towards
+theory and evaluation of systems that are not built by the community but
+are publicly available, such as GPT <span class="citation"
+data-cites="Radford2019">(Radford et al. 2019)</span>. The different
+ratio between the amount of systems and the amount of papers discussing
+theory or evaluation across different approaches is also noticeable in
+the breakdown presented in <a href="#fig:litrev2"
+data-reference-type="ref" data-reference="fig:litrev2">2.11</a>, which
+seems to confirm this intuition.</p>
+<figure id="fig:litrev1">
+<img src="figures/litrev1.png" />
+<figcaption>Vertical bar chart illustrating the breakdown of each
+computational <em>Approach</em> by <em>Year</em> in the corpus of
+papers. The chart reveals trends and patterns in the literature based on
+<em>Approach</em> over time, providing insights into the evolution and
+focus of computational methods in the field.</figcaption>
+</figure>
+<figure id="fig:litrev3">
+<div class="centering">
+<img src="figures/litrev3.png" />
+</div>
+<figcaption>Vertical bar chart illustrating the breakdown of each
+<em>Scope</em> by <em>Year</em> in the corpus of papers. The chart
+reveals trends and patterns in the literature based on <em>Scope</em>
+over time, providing insights into the evolution and focus of the
+field.</figcaption>
+</figure>
+<figure id="fig:litrev2">
+<div class="centering">
+<img src="figures/litrev2.png" />
+</div>
+<figcaption>Vertical bar chart illustrating the breakdown of each
+computational <em>Approach</em> by <em>Scope</em> in the corpus of
+papers. The chart reveals trends and patterns of research focus based on
+computational <em>Approach</em>.</figcaption>
+</figure>
+<p>What does this mean for the CC community and the future of research
+in this field? If this trend continues, it is plausible that the
+community will develop a deeper understanding of how DL systems fit into
+the creative process. It is also possible that the ecosystem of
+computational creativity will display less diversity in the range of
+tools used, as the big players converge towards a fully multi-modal
+experience, such as the one offered by GPT4. Perhaps this will allow the
+community to focus on questions regarding the implications of using
+these tools in our everyday life. In any case, it seems evident from
+this data that, in the last 4 years, the field has witnessed a sharp
+turn towards a new form of computational creativity, which is not
+implemented directly by the community itself. Academic research is
+perhaps now chasing the forefront of development rather than leading
+it.</p>
+<h2 data-number="2.3" id="summary-1"><span
+class="header-section-number">2.3</span> Summary</h2>
+<p>This literature review addressed several bodies of work in different
+fields with broad strokes, attempting to find trans-disciplinary links
+between them. It highlighted possible links between the study of
+conceptual categorization in humans, different approaches to AI and the
+post-phenomenological view of technology. It also exposed the DL trend
+that is unfolding in the field of CC, which arguably embeds a theory of
+concept of its own. This review also shows the possibility for a
+fruitful encounter between the post-phenomenological view of technology
+and non-human creativity theory, which so far has not been explored, to
+the best of my knowledge. In the next chapter I will attempt to frame
+the different approaches to AI and their underlying assumptions about
+what concepts are under the post-phenomenological interpretation, with
+specific focus on technologies that mediate human creativity.</p>
+<div class="savequote">
+<p>Definitions get you into that time trap, and I’m very much more
+process-focused. Take Lucy, for example. Lucy is famous largely because
+she has almost a total skeleton. The more sophisticated we get with
+instruments, the more we can find out. Through CT scans of her skeleton,
+they now think she died falling out of a tree because of the way her
+bones are broken. If nineteenth and twentieth century technologies can
+retroactively transform our bodiment, what then do the technologies we
+now use do?</p>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This may be the reason for AlphaGo’s success and why
+these moves were considered <em>novel</em><a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
