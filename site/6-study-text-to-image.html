@@ -10,9 +10,6 @@
     div.sitenav { display: flex; flex-direction: row; flex-wrap: wrap; }
     span.navlink { flex: 1; }
     span.navlink-label { display: inline-block; min-width: 4em; }
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -30,16 +27,60 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Concept Formation in Computational Creativity — a PhD dissertation by Giovanni Lion (PolyU, 2025) on how rule-based and data-driven AI shape creative practice, read through post-phenomenology and theories of concepts." />
+  <meta name="author" content="Giovanni Lion" />
+  <meta name="keywords" content="computational creativity, generative AI, concept formation, post-phenomenology, mediation theory, Stable Diffusion, theories of concepts, dataset curation, PhD dissertation, Giovanni Lion" />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="theme-color" content="#0a0e14" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Concept Formation in Computational Creativity" />
+  <meta property="og:title" content="Concept Formation in Computational Creativity" />
+  <meta property="og:description" content="A PhD dissertation by Giovanni Lion (PolyU, 2025) on how rule-based and data-driven AI shape creative practice." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Concept Formation in Computational Creativity" />
+  <meta name="twitter:description" content="A PhD dissertation by Giovanni Lion (PolyU, 2025) on how AI shapes creative practice." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Thesis",
+    "name": "Concept Formation in Computational Creativity",
+    "headline": "Concept Formation in Computational Creativity",
+    "inSupportOf": "Doctor of Philosophy in Design",
+    "author": {
+      "@type": "Person",
+      "name": "Giovanni Lion",
+      "url": "https://venetanji.com",
+      "sameAs": "https://orcid.org/0000-0003-4526-0642"
+    },
+    "datePublished": "2025",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "CollegeOrUniversity",
+      "name": "The Hong Kong Polytechnic University"
+    },
+    "about": [
+      "Computational creativity",
+      "Generative artificial intelligence",
+      "Post-phenomenology",
+      "Theories of concepts"
+    ],
+    "abstract": "This thesis investigates the relationship between creativity and machines through the lens of mediation theory, reviewing theories of concepts and their influence on rule-based and data-driven computational approaches in creative practice."
+  }
+  </script>
 </head>
 <body>
 <div class="sitebar">
   <a class="home" href="index.html">Concept Formation in Computational Creativity</a>
+  <span class="spacer"></span>
+  <a class="ext" href="https://venetanji.com" rel="author">venetanji.com ↗</a>
   <a class="pdf" href="thesis.pdf">Download PDF</a>
 </div>
 <nav id="sitenav">
 <div class="sitenav">
 <span class="navlink">
-<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity-1.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
+<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
 </span>
 <span class="navlink">
 <span class="navlink-label">Top:</span> <a href="index.html" accesskey="t" rel="top">Concept Formation in Computational Creativity</a>
@@ -73,15 +114,18 @@ follows an exponential pattern, and there is a negative correlation
 between expectations of text-image alignment and the Tolerance for
 Ambiguity (TA) personality trait <span class="citation"
 data-cites="Norton1975 Furnham2013 ZENASNI2008 Herman2010">(<a
-href="-bibliography.html#ref-Norton1975">Norton 1975</a>; <a
-href="-bibliography.html#ref-Furnham2013">Furnham and Marks 2013</a>; <a
-href="-bibliography.html#ref-ZENASNI2008">Zenasni et al. 2008</a>; <a
-href="-bibliography.html#ref-Herman2010">Herman et al. 2010</a>)</span>.
-These findings constitute some preliminary evidence suggesting that the
-adoption pattern of this new technology is dependent on social factors.
-Additionally, the findings suggest that expectations regarding this
-technology could be linked to TA, potentially resulting from an
-individual’s attunement to a specific TOC.</p>
+href="-bibliography.html#ref-Norton1975" role="doc-biblioref">Norton
+1975</a>; <a href="-bibliography.html#ref-Furnham2013"
+role="doc-biblioref">Furnham and Marks 2013</a>; <a
+href="-bibliography.html#ref-ZENASNI2008" role="doc-biblioref">Zenasni,
+Besançon, and Lubart 2008</a>; <a
+href="-bibliography.html#ref-Herman2010" role="doc-biblioref">Herman et
+al. 2010</a>)</span>. These findings constitute some preliminary
+evidence suggesting that the adoption pattern of this new technology is
+dependent on social factors. Additionally, the findings suggest that
+expectations regarding this technology could be linked to TA,
+potentially resulting from an individual’s attunement to a specific
+TOC.</p>
 <h2 data-number="6.1" id="scope-2"><span
 class="header-section-number">6.1</span> Scope</h2>
 <p>Text-to-image technology made a substantial impact in the field of
@@ -89,13 +133,13 @@ computer vision since its inception. On Jan 6, 2021, OpenAI released
 CLIP, a model that was trained on 400 million image-text pairs, able to
 create a joint <em>latent space</em> combining visual and textual
 information <span class="citation" data-cites="Radford2021">(<a
-href="-bibliography.html#ref-Radford2021">Radford et al.
-2021</a>)</span>. CLIP works in both directions, in the sense that it is
-not only capable of identifying objects in a picture, but also to guide
-the generation of images starting from text. Since the public release of
-CLIP, many open-source implementations of image generators based on its
-capabilities have been released, and their generated output has started
-to flood the internet.</p>
+href="-bibliography.html#ref-Radford2021" role="doc-biblioref">Radford
+et al. 2021</a>)</span>. CLIP works in both directions, in the sense
+that it is not only capable of identifying objects in a picture, but
+also to guide the generation of images starting from text. Since the
+public release of CLIP, many open-source implementations of image
+generators based on its capabilities have been released, and their
+generated output has started to flood the internet.</p>
 <p>CLIP and, more generally, the idea that we can control a generative
 model by conditioning its output on text (or, more precisely, token
 embeddings) constitutes a dramatic interface improvement. As it should
@@ -161,24 +205,25 @@ style="width:42.0%" alt="image" /></p>
 <p>After the release of CLIP, the ML community began exploring its
 capabilities in various directions. Ryan Murdock combined CLIP with
 BigGAN <span class="citation" data-cites="Brock2018">(<a
-href="-bibliography.html#ref-Brock2018">Brock et al. 2018</a>)</span> to
-create BigSleep<a href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a>, which was one of the first publicly
-available tools in this space. Katherine Crowson experimented with CLIP
-guidance in a novel method for image synthesis known as diffusion, as
-proposed by <span class="citation" data-cites="Dhariwal2021">(<a
-href="-bibliography.html#ref-Dhariwal2021">Dhariwal and Nichol
-2021</a>)</span>. As 2021 drew to a close, numerous forums and user
-groups devoted to generative art began discussing image generation and
-their workflows as Python scripts that could be run on Google’s Colab, a
-platform that provides free (or nearly free) GPU computing time. Many of
-these Colab scripts utilized Crowson’s work, with Disco Diffusion<a
-href="#fn2" class="footnote-ref" id="fnref2"
+href="-bibliography.html#ref-Brock2018" role="doc-biblioref">Brock,
+Donahue, and Simonyan 2018</a>)</span> to create BigSleep<a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>,
+which was one of the first publicly available tools in this space.
+Katherine Crowson experimented with CLIP guidance in a novel method for
+image synthesis known as diffusion, as proposed by <span
+class="citation" data-cites="Dhariwal2021">(<a
+href="-bibliography.html#ref-Dhariwal2021" role="doc-biblioref">Dhariwal
+and Nichol 2021</a>)</span>. As 2021 drew to a close, numerous forums
+and user groups devoted to generative art began discussing image
+generation and their workflows as Python scripts that could be run on
+Google’s Colab, a platform that provides free (or nearly free) GPU
+computing time. Many of these Colab scripts utilized Crowson’s work,
+with Disco Diffusion<a href="#fn2" class="footnote-ref" id="fnref2"
 role="doc-noteref"><sup>2</sup></a> proving particularly popular among
 the pioneers. As the community continued to experiment with CLIP and its
 potential applications, its impact on the field of ML and beyond
 remained a topic of ongoing interest and discussion.</p>
-<figure id="fig:procgenart" data-latex-placement="H">
+<figure id="fig:procgenart">
 <img src="figures/procgenart.png" />
 <figcaption>Bar chart illustrating the number of posts per day in the
 Facebook group (<a href="https://www.facebook.com/groups/procgenart"
@@ -213,10 +258,10 @@ admins who were struggling to keep up with the moderation demands.</p>
 class="header-section-number">6.3</span> Stable Diffusion</h2>
 <p>On August 22nd 2022, Stability.ai released to the public Stable
 Diffusion (SD) v1.4 <span class="citation" data-cites="Rombach2021">(<a
-href="-bibliography.html#ref-Rombach2021">Rombach et al.
-2021</a>)</span>, a LDM that was trained on LAION-5B, a . While OpenAI,
-Google, Meta, and Microsoft have all made public releases of their
-research and development efforts, it is rare to see them share
+href="-bibliography.html#ref-Rombach2021" role="doc-biblioref">Rombach
+et al. 2021</a>)</span>, a LDM that was trained on LAION-5B, a . While
+OpenAI, Google, Meta, and Microsoft have all made public releases of
+their research and development efforts, it is rare to see them share
 pre-trained models with the public. These companies defend their
 position by citing the potential dangers of unmanaged use, and at the
 same time safeguard their investments from the competition. Training
@@ -288,10 +333,11 @@ interpreting keywords</p></li>
 text</p></li>
 <li><p><em>Tolerance for Ambiguity</em> (TA) scale <span
 class="citation" data-cites="Norton1975 Herman2010 Furnham2013">(<a
-href="-bibliography.html#ref-Norton1975">Norton 1975</a>; <a
-href="-bibliography.html#ref-Herman2010">Herman et al. 2010</a>; <a
-href="-bibliography.html#ref-Furnham2013">Furnham and Marks
-2013</a>)</span></p></li>
+href="-bibliography.html#ref-Norton1975" role="doc-biblioref">Norton
+1975</a>; <a href="-bibliography.html#ref-Herman2010"
+role="doc-biblioref">Herman et al. 2010</a>; <a
+href="-bibliography.html#ref-Furnham2013" role="doc-biblioref">Furnham
+and Marks 2013</a>)</span></p></li>
 </ul>
 <p>The purpose of including these measures was to explore whether any of
 these factors was correlated with the usage patterns observed in the
@@ -320,12 +366,12 @@ id="fnref13" role="doc-noteref"><sup>13</sup></a> interface offered by
 the back-end supports queuing, making it possible for several users to
 use the same bot simultaneously, a crucial feature in a workshop
 setting.</p>
-<figure id="fig:prompt" data-latex-placement="b">
+<figure id="fig:prompt">
 <img src="figures/prompt.png" style="width:70.0%" />
 <figcaption>An example of the <code>/image</code> <em>slashcommand</em>
 used in the interface.</figcaption>
 </figure>
-<figure id="fig:output" data-latex-placement="t">
+<figure id="fig:output">
 <img src="figures/output.png" />
 <figcaption>An example of the output generated by the
 <code>/image</code> command.</figcaption>
@@ -362,7 +408,7 @@ data-reference-type="ref" data-reference="fig:interpolate">6.5</a>. This
 method can be used to experiment with visual conceptual blending as it
 provides combinations that span the whole range of ratios between two
 concepts.</p>
-<figure id="fig:interpolate" data-latex-placement="!t">
+<figure id="fig:interpolate">
 <img src="figures/interpolate.png" />
 <figcaption>An example of the <code>/interpolate</code>
 <em>slashcommand</em> interpolating between <em>blackhole</em> and
@@ -395,7 +441,7 @@ outlier cases visible in the charts have been removed with a filter on
 number of generated images with condition <span
 class="math inline"> &lt;  = 400</span>.</p></li>
 </ol>
-<figure id="fig:knowledgedesc" data-latex-placement="h">
+<figure id="fig:knowledgedesc">
 <p><img src="figures/understandDesc.png" style="width:49.0%"
 alt="image" /> <img src="figures/imagineDesc.png" style="width:49.0%"
 alt="image" /><br />
@@ -408,13 +454,14 @@ expectation of alignment.</figcaption>
 </figure>
 <p>Compared to earlier studies <span class="citation"
 data-cites="Herman2010 Furnham2013">(<a
-href="-bibliography.html#ref-Herman2010">Herman et al. 2010</a>; <a
-href="-bibliography.html#ref-Furnham2013">Furnham and Marks
-2013</a>)</span>, the TA scale was found to be slightly less reliable,
-which may be partly attributed to the impact of the COVID-19 pandemic.
-For instance, responses to certain items such as and may have deviated
-from the rest of the scale due to travel and gathering restrictions that
-have been in place in recent years.</p>
+href="-bibliography.html#ref-Herman2010" role="doc-biblioref">Herman et
+al. 2010</a>; <a href="-bibliography.html#ref-Furnham2013"
+role="doc-biblioref">Furnham and Marks 2013</a>)</span>, the TA scale
+was found to be slightly less reliable, which may be partly attributed
+to the impact of the COVID-19 pandemic. For instance, responses to
+certain items such as and may have deviated from the rest of the scale
+due to travel and gathering restrictions that have been in place in
+recent years.</p>
 <p>The two outliers identified also reveal an interesting story. After
 an informal conversation with one of them, they explained the situation.
 They are a couple who run an Instagram page and the reason they had
@@ -435,14 +482,14 @@ a social network. It is worth noting that there is no significant
 correlation between usage and any other measured variables in the data
 collected, indicating that external factors may be influencing
 participants’ use of the bot.</p>
-<figure id="fig:taqq" data-latex-placement="h!">
+<figure id="fig:taqq">
 <p><img src="figures/qqplotsTA.png" style="width:49.0%" alt="image" />
 <img src="figures/qqplotsTAe.png" style="width:49.0%" alt="image" /></p>
 <figcaption>Q-Q plots for tolerance for ambiguity. Left: normal
 distribution. Right (values adjusted to be in a positive range after
 recoding): exponential distribution.</figcaption>
 </figure>
-<figure id="fig:usagedesc" data-latex-placement="h!">
+<figure id="fig:usagedesc">
 <p><img src="figures/qqplotsusage.png" style="width:49.0%"
 alt="image" /> <img src="figures/qqplotUsage.png" style="width:49.0%"
 alt="image" /></p>
@@ -458,13 +505,9 @@ relationship that warrants further investigation. To evaluate this
 interaction, a linear regression analysis was conducted using SPSS, with
 the findings illustrated in Figure <a href="#fig:regression"
 data-reference-type="ref" data-reference="fig:regression">6.9</a>.</p>
-<figure id="fig:regression" data-latex-placement="h!">
-<div class="minipage">
+<figure id="fig:regression">
 <img src="figures/regressCoeff.png" />
-</div>
-<div class="minipage">
 <img src="figures/regressRsquare.png" />
-</div>
 <figcaption>Results for linear regression on <em>Expectation of
 Alignment</em> with <em>Tolerance of Ambiguity</em> and <em>Expectation
 of Human Compatibility</em> as independent variables.</figcaption>
@@ -535,8 +578,8 @@ the non-analytic nature of <span class="math inline"><em>D</em>[]</span>
 can be considered an asset, echoing the hypothesis that <span
 class="math inline"><em>D</em>[]</span> is an inherently creative
 operator, as <span class="citation" data-cites="Hoorn2023">(<a
-href="-bibliography.html#ref-Hoorn2023">Hoorn 2023</a>)</span>
-suggests.</p>
+href="-bibliography.html#ref-Hoorn2023" role="doc-biblioref">Hoorn
+2023</a>)</span> suggests.</p>
 <p>Moreover, the initial evidence discovered in this study suggesting
 the hypothesis of a socially driven adoption of this tool, remains
 inconclusive. The absence of correlation between number of images

@@ -10,9 +10,6 @@
     div.sitenav { display: flex; flex-direction: row; flex-wrap: wrap; }
     span.navlink { flex: 1; }
     span.navlink-label { display: inline-block; min-width: 4em; }
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -30,16 +27,60 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Concept Formation in Computational Creativity — a PhD dissertation by Giovanni Lion (PolyU, 2025) on how rule-based and data-driven AI shape creative practice, read through post-phenomenology and theories of concepts." />
+  <meta name="author" content="Giovanni Lion" />
+  <meta name="keywords" content="computational creativity, generative AI, concept formation, post-phenomenology, mediation theory, Stable Diffusion, theories of concepts, dataset curation, PhD dissertation, Giovanni Lion" />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="theme-color" content="#0a0e14" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Concept Formation in Computational Creativity" />
+  <meta property="og:title" content="Concept Formation in Computational Creativity" />
+  <meta property="og:description" content="A PhD dissertation by Giovanni Lion (PolyU, 2025) on how rule-based and data-driven AI shape creative practice." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Concept Formation in Computational Creativity" />
+  <meta name="twitter:description" content="A PhD dissertation by Giovanni Lion (PolyU, 2025) on how AI shapes creative practice." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Thesis",
+    "name": "Concept Formation in Computational Creativity",
+    "headline": "Concept Formation in Computational Creativity",
+    "inSupportOf": "Doctor of Philosophy in Design",
+    "author": {
+      "@type": "Person",
+      "name": "Giovanni Lion",
+      "url": "https://venetanji.com",
+      "sameAs": "https://orcid.org/0000-0003-4526-0642"
+    },
+    "datePublished": "2025",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "CollegeOrUniversity",
+      "name": "The Hong Kong Polytechnic University"
+    },
+    "about": [
+      "Computational creativity",
+      "Generative artificial intelligence",
+      "Post-phenomenology",
+      "Theories of concepts"
+    ],
+    "abstract": "This thesis investigates the relationship between creativity and machines through the lens of mediation theory, reviewing theories of concepts and their influence on rule-based and data-driven computational approaches in creative practice."
+  }
+  </script>
 </head>
 <body>
 <div class="sitebar">
   <a class="home" href="index.html">Concept Formation in Computational Creativity</a>
+  <span class="spacer"></span>
+  <a class="ext" href="https://venetanji.com" rel="author">venetanji.com ↗</a>
   <a class="pdf" href="thesis.pdf">Download PDF</a>
 </div>
 <nav id="sitenav">
 <div class="sitenav">
 <span class="navlink">
-<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity-1.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
+<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
 </span>
 <span class="navlink">
 <span class="navlink-label">Top:</span> <a href="index.html" accesskey="t" rel="top">Concept Formation in Computational Creativity</a>
@@ -61,9 +102,9 @@ of matter and vibrations. Yet, music can feel organic and deeply tied to
 our inner emotional experience. Evidence suggests that specific ratios
 between frequencies are at least culturally recognized by human brains
 <span class="citation" data-cites="Jacoby2019">(<a
-href="-bibliography.html#ref-Jacoby2019">Jacoby et al. 2019</a>)</span>.
-These physical properties lay out multiple dimensions of expression
-accessible through combination making.</p>
+href="-bibliography.html#ref-Jacoby2019" role="doc-biblioref">Jacoby et
+al. 2019</a>)</span>. These physical properties lay out multiple
+dimensions of expression accessible through combination making.</p>
 <h2 data-number="4.1" id="scope"><span
 class="header-section-number">4.1</span> Scope</h2>
 <p>Prior to the invention of recordings, the transient nature of sound
@@ -71,12 +112,13 @@ limited the exploration of the conceptual space of musical composition
 to those who had the ability to perform. The first musical instrument is
 considered to be a flute made of bone, dating back some 35,000 years ago
 <span class="citation" data-cites="Conard2009">(<a
-href="-bibliography.html#ref-Conard2009">Conard et al. 2009</a>)</span>.
-The instrument was capable of producing a set of tones to which humans
-presumably could sing or dance along. The earliest known system for
-musical notation dates back to the Greeks in the 5th century BC. This
-system allowed composers to notate rhythms and melodies, and eventually
-enabled others to perform works composed by someone else.</p>
+href="-bibliography.html#ref-Conard2009" role="doc-biblioref">Conard,
+Malina, and Münzel 2009</a>)</span>. The instrument was capable of
+producing a set of tones to which humans presumably could sing or dance
+along. The earliest known system for musical notation dates back to the
+Greeks in the 5th century BC. This system allowed composers to notate
+rhythms and melodies, and eventually enabled others to perform works
+composed by someone else.</p>
 <p>The invention of recording technology enabled us to explore this
 conceptual space even further by allowing us to capture and store sound
 indefinitely. Music has gone through many iterations since then, from
@@ -160,10 +202,10 @@ Music Track)</p></li>
 <em>alterity</em> relations, bearing in mind that the D[] operator will
 appear somewhere. For example, MusicVAE from Magenta, a DL-based toolkit
 for music generation developed by Google <span class="citation"
-data-cites="Roberts2018">(<a
-href="-bibliography.html#ref-Roberts2018">Roberts et al.
-2018</a>)</span>, can predict possible continuations of a sequence of
-notes. The mediation provided by this tool can be described as:</p>
+data-cites="Roberts2018">(<a href="-bibliography.html#ref-Roberts2018"
+role="doc-biblioref">Roberts et al. 2018</a>)</span>, can predict
+possible continuations of a sequence of notes. The mediation provided by
+this tool can be described as:</p>
 <ul>
 <li><p>I → MusicVAE / (Model → D[InitialSequence]) (— Sequence
 continuation)</p></li>
@@ -195,7 +237,7 @@ different periods of her life. In hindsight, this was an extremely
 ambitious goal, given the technological constraints and my limited
 knowledge of the field at the time. However, it proved to be a
 motivating objective that set in motion a fruitful collaboration.</p>
-<figure id="fig:vicky1" data-latex-placement="!t">
+<figure id="fig:vicky1">
 <img src="figures/vicky1.jpg" />
 <figcaption>A compilation of album covers featuring Canto-pop melodies
 composed by Vicky. The images showcase the creativity and impact of
@@ -228,14 +270,15 @@ audio files did not yield acceptable results. We ultimately created the
 MIDI files by hand after several failed attempts. Once we had a clean
 set, our first attempt utilized two models provided in the Magenta
 toolkit <span class="citation" data-cites="Roberts2018 Huang2018">(<a
-href="-bibliography.html#ref-Roberts2018">Roberts et al. 2018</a>; <a
-href="-bibliography.html#ref-Huang2018">Huang et al. 2018</a>)</span>,
-namely MusicVAE and Music Transformer. The MusicVAE 2-bar model was
-fine-tuned with 40 of Vicky’s songs so that we could generate novel
-melodies in the same style. These 2-bar samples were then fed into Music
-Transformer for expansion and harmonization. The entire architecture can
-be visualized in Figure <a href="#fig:vickyModel1"
-data-reference-type="ref" data-reference="fig:vickyModel1">4.2</a>.</p>
+href="-bibliography.html#ref-Roberts2018" role="doc-biblioref">Roberts
+et al. 2018</a>; <a href="-bibliography.html#ref-Huang2018"
+role="doc-biblioref">C.-Z. A. Huang et al. 2018</a>)</span>, namely
+MusicVAE and Music Transformer. The MusicVAE 2-bar model was fine-tuned
+with 40 of Vicky’s songs so that we could generate novel melodies in the
+same style. These 2-bar samples were then fed into Music Transformer for
+expansion and harmonization. The entire architecture can be visualized
+in Figure <a href="#fig:vickyModel1" data-reference-type="ref"
+data-reference="fig:vickyModel1">4.2</a>.</p>
 <figure id="fig:vickyModel1">
 <img src="figures/vickyModel1.png" />
 <figcaption>Schematic representation of the generation pipeline used in
@@ -294,7 +337,7 @@ of new associations and combinations during inference. In
 post-phenomenological notation our iterations would map to:</p>
 <ul>
 <li><p><span
-class="math inline"><em>M</em><em>u</em><em>s</em><em>i</em><em>c</em><em>T</em><em>r</em><em>a</em><em>n</em><em>s</em><em>f</em><em>o</em><em>r</em><em>m</em><em>e</em><em>r</em> → <em>D</em><sub><em>p</em><em>r</em><em>e</em><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em><em>e</em><em>d</em></sub>[(<em>M</em><em>i</em><em>d</em><em>i</em><em>M</em><em>e</em> → <em>D</em><sub><em>v</em><em>i</em><em>c</em><em>k</em><em>y</em></sub>[<em>C</em><em>o</em><em>r</em><em>p</em><em>u</em><em>s</em>])]</span></p></li>
+class="math inline"><em>M</em><em>u</em><em>s</em><em>i</em><em>c</em><em>T</em><em>r</em><em>a</em><em>n</em><em>s</em><em>f</em><em>o</em><em>r</em><em>m</em><em>e</em><em>r</em> → <em>D</em><sub><em>p</em><em>r</em><em>e</em><em>t</em><em>r</em><em>a</em><em>i</em><em>n</em><em>e</em><em>d</em></sub>[(<em>M</em><em>i</em><em>d</em><em>i</em><em>M</em><em>e</em>→<em>D</em><sub><em>v</em><em>i</em><em>c</em><em>k</em><em>y</em></sub>[<em>C</em><em>o</em><em>r</em><em>p</em><em>u</em><em>s</em>])]</span></p></li>
 <li><p><span
 class="math inline"><em>X</em><em>T</em><em>r</em><em>a</em><em>n</em><em>s</em><em>f</em><em>o</em><em>r</em><em>m</em><em>e</em><em>r</em> → <em>D</em><sub><em>v</em><em>i</em><em>c</em><em>k</em><em>y</em></sub>[<em>C</em><em>o</em><em>r</em><em>p</em><em>u</em><em>s</em>]</span></p></li>
 </ul></li>
@@ -307,7 +350,7 @@ steps of the pipeline, which was automated through a computer script
 (<span class="math inline"><em>R</em><sub>1</sub></span>):</p>
 <ul>
 <li><p><span
-class="math inline"><em>V</em><em>i</em><em>c</em><em>k</em><em>y</em> → (<em>I</em> → <em>R</em><sub>1</sub>[<em>D</em><sub>1</sub>, <em>D</em><sub>2</sub>, ..., <em>D</em><sub><em>n</em></sub>]) − <em>A</em><em>u</em><em>d</em><em>i</em><em>o</em><em>F</em><em>i</em><em>l</em><em>e</em><em>s</em></span></p></li>
+class="math inline"><em>V</em><em>i</em><em>c</em><em>k</em><em>y</em> → (<em>I</em>→<em>R</em><sub>1</sub>[<em>D</em><sub>1</sub>,<em>D</em><sub>2</sub>,...,<em>D</em><sub><em>n</em></sub>]) − <em>A</em><em>u</em><em>d</em><em>i</em><em>o</em><em>F</em><em>i</em><em>l</em><em>e</em><em>s</em></span></p></li>
 </ul></li>
 </ul>
 <p>For both of us, this exploration led to a deeper understanding of the
@@ -381,8 +424,8 @@ exists in music. The effectiveness of self-attention and scale might
 hint at the need to expand existing TOCs in this direction. While
 musical theory can be expressed by formal rules, it is not obvious how
 we develop these intuitions. This relates back to <span class="citation"
-data-cites="Rey1993">(<a href="-bibliography.html#ref-Rey1993">Rey
-1993</a>)</span> (see Section <a
+data-cites="Rey1993">(<a href="-bibliography.html#ref-Rey1993"
+role="doc-biblioref">Rey 1993</a>)</span> (see Section <a
 href="2-Litreview.html#sec:the-problem-of-analytic-data"
 data-reference-type="ref"
 data-reference="sec:the-problem-of-analytic-data">[sec:the-problem-of-analytic-data]</a>),
