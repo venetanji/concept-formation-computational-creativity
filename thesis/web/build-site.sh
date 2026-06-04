@@ -21,6 +21,7 @@ pandoc _web.tex \
   --number-sections \
   --split-level=1 \
   --css=styles.css \
+  --include-in-header=web/head.html \
   --include-before-body=web/banner.html \
   --metadata title="Concept Formation in Computational Creativity" \
   --metadata author="Giovanni Lion" \

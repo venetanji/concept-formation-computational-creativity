@@ -10,9 +10,6 @@
     div.sitenav { display: flex; flex-direction: row; flex-wrap: wrap; }
     span.navlink { flex: 1; }
     span.navlink-label { display: inline-block; min-width: 4em; }
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -30,16 +27,60 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Concept Formation in Computational Creativity — a PhD dissertation by Giovanni Lion (PolyU, 2025) on how rule-based and data-driven AI shape creative practice, read through post-phenomenology and theories of concepts." />
+  <meta name="author" content="Giovanni Lion" />
+  <meta name="keywords" content="computational creativity, generative AI, concept formation, post-phenomenology, mediation theory, Stable Diffusion, theories of concepts, dataset curation, PhD dissertation, Giovanni Lion" />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="theme-color" content="#0a0e14" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Concept Formation in Computational Creativity" />
+  <meta property="og:title" content="Concept Formation in Computational Creativity" />
+  <meta property="og:description" content="A PhD dissertation by Giovanni Lion (PolyU, 2025) on how rule-based and data-driven AI shape creative practice." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Concept Formation in Computational Creativity" />
+  <meta name="twitter:description" content="A PhD dissertation by Giovanni Lion (PolyU, 2025) on how AI shapes creative practice." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Thesis",
+    "name": "Concept Formation in Computational Creativity",
+    "headline": "Concept Formation in Computational Creativity",
+    "inSupportOf": "Doctor of Philosophy in Design",
+    "author": {
+      "@type": "Person",
+      "name": "Giovanni Lion",
+      "url": "https://giovannilion.link",
+      "sameAs": "https://orcid.org/0000-0003-4526-0642"
+    },
+    "datePublished": "2025",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "CollegeOrUniversity",
+      "name": "The Hong Kong Polytechnic University"
+    },
+    "about": [
+      "Computational creativity",
+      "Generative artificial intelligence",
+      "Post-phenomenology",
+      "Theories of concepts"
+    ],
+    "abstract": "This thesis investigates the relationship between creativity and machines through the lens of mediation theory, reviewing theories of concepts and their influence on rule-based and data-driven computational approaches in creative practice."
+  }
+  </script>
 </head>
 <body>
 <div class="sitebar">
   <a class="home" href="index.html">Concept Formation in Computational Creativity</a>
+  <span class="spacer"></span>
+  <a class="ext" href="https://giovannilion.link" rel="author">giovannilion.link ↗</a>
   <a class="pdf" href="thesis.pdf">Download PDF</a>
 </div>
 <nav id="sitenav">
 <div class="sitenav">
 <span class="navlink">
-<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity-1.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
+<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
 </span>
 <span class="navlink">
 <span class="navlink-label">Top:</span> <a href="index.html" accesskey="t" rel="top">Concept Formation in Computational Creativity</a>
@@ -87,16 +128,16 @@ do not exist in a vacuum. Artists and designers often have a degree of
 visibility into other methods and products, previous and contemporary,
 which might consciously or unconsciously affect them. Boden’s <span
 class="citation" data-cites="Boden2003">(<a
-href="-bibliography.html#ref-Boden2003">2003</a>)</span> account of
-<em>combinational</em> and <em>exploratory</em> creativity aptly
-describe this process of repurposing and representing old elements in a
-new way. Bruno Latour also points out the inherent <em>remedial</em>
-nature of design: . What artists and designers do in their practice is
-perhaps better understood not as <em>creation</em>, but as
-<em>selection</em> of the old, <em>abstraction</em> and
-<em>combination</em>, to put in ACASIA terms. The emphasis here is on
-the <em>selection</em> of something as input which is then decomposed
-and reconstructed anew.</p>
+href="-bibliography.html#ref-Boden2003"
+role="doc-biblioref">2003</a>)</span> account of <em>combinational</em>
+and <em>exploratory</em> creativity aptly describe this process of
+repurposing and representing old elements in a new way. Bruno Latour
+also points out the inherent <em>remedial</em> nature of design: . What
+artists and designers do in their practice is perhaps better understood
+not as <em>creation</em>, but as <em>selection</em> of the old,
+<em>abstraction</em> and <em>combination</em>, to put in ACASIA terms.
+The emphasis here is on the <em>selection</em> of something as input
+which is then decomposed and reconstructed anew.</p>
 <p>Putting together a large-scale dataset can be a daunting task, let
 alone having the resources to train a model at the scale we are
 witnessing in the recent years. It is remarkable that, as the scale
@@ -110,17 +151,18 @@ difficulty, as presented in the first two studies.</p>
 <p>The response of the open-source community to this problem has perhaps
 shown a possible solution to this issue, both in practical and
 theoretical terms. For example, textual-inversion <span class="citation"
-data-cites="Gal2022">(<a href="-bibliography.html#ref-Gal2022">Gal et
-al. 2022</a>)</span> provides a way to add token-embeddings and
-hyper-networks based on as little as 3-4 images. These custom-trained
-concepts can then be combined with other tokens to generate virtually
-infinite visual . Dreambooth <span class="citation"
-data-cites="Ruiz2022">(<a href="-bibliography.html#ref-Ruiz2022">Ruiz et
-al. 2022</a>)</span> provides a way to also fine-tune SD with custom
-visual content, yet this results in an entirely new model, which is
-inconvenient for sharing and makes merging with other models difficult.
-Low-rank adaptation of LLMs, or LoRA <span class="citation"
-data-cites="Hu2021">(<a href="-bibliography.html#ref-Hu2021">Hu et al.
+data-cites="Gal2022">(<a href="-bibliography.html#ref-Gal2022"
+role="doc-biblioref">Gal et al. 2022</a>)</span> provides a way to add
+token-embeddings and hyper-networks based on as little as 3-4 images.
+These custom-trained concepts can then be combined with other tokens to
+generate virtually infinite visual . Dreambooth <span class="citation"
+data-cites="Ruiz2022">(<a href="-bibliography.html#ref-Ruiz2022"
+role="doc-biblioref">Ruiz et al. 2022</a>)</span> provides a way to also
+fine-tune SD with custom visual content, yet this results in an entirely
+new model, which is inconvenient for sharing and makes merging with
+other models difficult. Low-rank adaptation of LLMs, or LoRA <span
+class="citation" data-cites="Hu2021">(<a
+href="-bibliography.html#ref-Hu2021" role="doc-biblioref">Hu et al.
 2021</a>)</span>, was applied to SD and released in February 2023. LoRA
 has solved the issue of having to re-release the whole model when
 fine-tuning, while also providing a way for users to extend SD concept
@@ -133,11 +175,12 @@ interoperability across user-defined visual concepts. This opens up the
 possibility for community powered compositionality of user-trained
 models. In a sense, such configuration is not unlike what <span
 class="citation" data-cites="Jackendoff1989">(<a
-href="-bibliography.html#ref-Jackendoff1989">Jackendoff 1989</a>)</span>
-and his neo-classical theory would predict: a set of core concepts (SD
-base model) and a series of semantic-fields (user trained models) which
-adjust and complete the base model incorporating examples that are more
-personal and specific (see Section <a
+href="-bibliography.html#ref-Jackendoff1989"
+role="doc-biblioref">Jackendoff 1989</a>)</span> and his neo-classical
+theory would predict: a set of core concepts (SD base model) and a
+series of semantic-fields (user trained models) which adjust and
+complete the base model incorporating examples that are more personal
+and specific (see Section <a
 href="2-Litreview.html#sec:the-regress-problem-for-semantic-fields"
 data-reference-type="ref"
 data-reference="sec:the-regress-problem-for-semantic-fields">[sec:the-regress-problem-for-semantic-fields]</a>).</p>
@@ -188,11 +231,12 @@ own <em>alien</em><a href="#fn2" class="footnote-ref" id="fnref2"
 role="doc-noteref"><sup>2</sup></a> abstraction (as data compression),
 so then associations and combinations can happen in <em>latent
 space</em>. The modularity of the ACASIA <span class="citation"
-data-cites="Hoorn2014">(<a href="-bibliography.html#ref-Hoorn2014">Hoorn
-2014</a>)</span> meta-model of creativity is particularly useful here
-because it allows us to compare the two approaches by looking how
-individual modules are implemented. The studies suggested that, while in
-<span class="math inline"><em>R</em>[]</span> contextualizations the
+data-cites="Hoorn2014">(<a href="-bibliography.html#ref-Hoorn2014"
+role="doc-biblioref">Hoorn 2014</a>)</span> meta-model of creativity is
+particularly useful here because it allows us to compare the two
+approaches by looking how individual modules are implemented. The
+studies suggested that, while in <span
+class="math inline"><em>R</em>[]</span> contextualizations the
 abstraction has already been performed by humans defining analytical
 rules, in <span class="math inline"><em>D</em>[]</span>, high-level
 human-compatible abstraction is achieved through large-scale datasets
@@ -217,7 +261,8 @@ for creative endeavors. With intimate knowledge of the creative
 <em>Process</em> of a specific technology is possible experiment with
 its boundaries, in search for unexpected behaviors <span
 class="citation" data-cites="Hoorn2023">(<a
-href="-bibliography.html#ref-Hoorn2023">Hoorn 2023</a>)</span>.</p>
+href="-bibliography.html#ref-Hoorn2023" role="doc-biblioref">Hoorn
+2023</a>)</span>.</p>
 <h2 data-number="7.2" id="sec:language-as-interface-for-concepts"><span
 class="header-section-number">7.2</span> Language as interface for
 concepts</h2>
@@ -226,64 +271,70 @@ a powerful interface for visual concepts. Similar types of text
 conditioning have been successfully applied to audio <span
 class="citation"
 data-cites="Borsos2022 Huang2023 Liu2023 Huang2023a Dong2023 Ghosal2023">(<a
-href="-bibliography.html#ref-Borsos2022">Borsos et al. 2022</a>; <a
-href="-bibliography.html#ref-Huang2023">R. Huang et al. 2023</a>; <a
-href="-bibliography.html#ref-Liu2023">Liu et al. 2023</a>; <a
-href="-bibliography.html#ref-Huang2023a">J. Huang et al. 2023</a>; <a
-href="-bibliography.html#ref-Dong2023">Dong et al. 2023</a>; <a
-href="-bibliography.html#ref-Ghosal2023">Ghosal et al. 2023</a>)</span>
-and music <span class="citation"
+href="-bibliography.html#ref-Borsos2022" role="doc-biblioref">Borsos et
+al. 2022</a>; <a href="-bibliography.html#ref-Huang2023"
+role="doc-biblioref">R. Huang et al. 2023</a>; <a
+href="-bibliography.html#ref-Liu2023" role="doc-biblioref">H. Liu et al.
+2023</a>; <a href="-bibliography.html#ref-Huang2023a"
+role="doc-biblioref">J. Huang et al. 2023</a>; <a
+href="-bibliography.html#ref-Dong2023" role="doc-biblioref">Dong et al.
+2023</a>; <a href="-bibliography.html#ref-Ghosal2023"
+role="doc-biblioref">Ghosal et al. 2023</a>)</span> and music <span
+class="citation"
 data-cites="Agostinelli2023 Schneider2023 Chen2023 Melechovsky2023">(<a
-href="-bibliography.html#ref-Agostinelli2023">Agostinelli et al.
-2023</a>; <a href="-bibliography.html#ref-Schneider2023">Schneider et
-al. 2023</a>; <a href="-bibliography.html#ref-Chen2023">Chen et al.
-2023</a>; <a href="-bibliography.html#ref-Melechovsky2023">Melechovsky
-et al. 2023</a>)</span>, which suggests that language can be used to
-interface in a multi-modal way to multiple forms of perception. However,
-as the literature review has thoroughly exposed, it would be wrong to
-state that we can describe the nature of concepts only in linguistic
-terms. Doing so would require to either rely on formal definitions,
-hence falling into all the problems of CT, or limiting the study of
-concepts to lexical concepts, one of the limitations of NT. Reflecting
-on the studies conducted, it became clear that having language as
-interface for conditioning DL models was a tremendous asset, which
-unlocked the immense creative potential existing in <em>latent
-space</em>. A hypothesis that could follow from these ideas is to think
-of language as a technology in itself, so we could write:</p>
+href="-bibliography.html#ref-Agostinelli2023"
+role="doc-biblioref">Agostinelli et al. 2023</a>; <a
+href="-bibliography.html#ref-Schneider2023"
+role="doc-biblioref">Schneider et al. 2023</a>; <a
+href="-bibliography.html#ref-Chen2023" role="doc-biblioref">K. Chen et
+al. 2023</a>; <a href="-bibliography.html#ref-Melechovsky2023"
+role="doc-biblioref">Melechovsky et al. 2023</a>)</span>, which suggests
+that language can be used to interface in a multi-modal way to multiple
+forms of perception. However, as the literature review has thoroughly
+exposed, it would be wrong to state that we can describe the nature of
+concepts only in linguistic terms. Doing so would require to either rely
+on formal definitions, hence falling into all the problems of CT, or
+limiting the study of concepts to lexical concepts, one of the
+limitations of NT. Reflecting on the studies conducted, it became clear
+that having language as interface for conditioning DL models was a
+tremendous asset, which unlocked the immense creative potential existing
+in <em>latent space</em>. A hypothesis that could follow from these
+ideas is to think of language as a technology in itself, so we could
+write:</p>
 <ul>
 <li><p><span
-class="math inline">(<em>I</em> − <em>L</em><em>a</em><em>n</em><em>g</em><em>u</em><em>a</em><em>g</em><em>e</em>) → <em>S</em><em>p</em><em>e</em><em>e</em><em>c</em><em>h</em></span></p></li>
+class="math inline">(<em>I</em>−<em>L</em><em>a</em><em>n</em><em>g</em><em>u</em><em>a</em><em>g</em><em>e</em>) → <em>S</em><em>p</em><em>e</em><em>e</em><em>c</em><em>h</em></span></p></li>
 </ul>
 <p><span class="citation" data-cites="Ihde1993">(<a
-href="-bibliography.html#ref-Ihde1993">Ihde 1993</a>)</span> is cautious
-about addressing language as a technology and argues that because
-language involves human intentionality and meaning-making processes -
-something he calls - it cannot simply be treated as an objectified tool
-like other forms of technology. Instead, understanding how people use
-language requires an appreciation for the cultural contexts in which
-they operate, including shared assumptions about meanings and values.
-Ihde notes that unlike most technologies which have specific functions
-and purposes (e.g., a hammer is designed for pounding nails), language
-has an open-endedness and flexibility in terms of what it can express.
-This means that while we use language to achieve particular ends (such
-as conveying information or persuading someone), there is no limit to
-what we might say using this medium. Ihde also warns that addressing
-language purely as a technology risks missing out on its deeper
-dimensions such as creativity, playfulness, and poetic expression.</p>
+href="-bibliography.html#ref-Ihde1993" role="doc-biblioref">Ihde
+1993</a>)</span> is cautious about addressing language as a technology
+and argues that because language involves human intentionality and
+meaning-making processes - something he calls - it cannot simply be
+treated as an objectified tool like other forms of technology. Instead,
+understanding how people use language requires an appreciation for the
+cultural contexts in which they operate, including shared assumptions
+about meanings and values. Ihde notes that unlike most technologies
+which have specific functions and purposes (e.g., a hammer is designed
+for pounding nails), language has an open-endedness and flexibility in
+terms of what it can express. This means that while we use language to
+achieve particular ends (such as conveying information or persuading
+someone), there is no limit to what we might say using this medium. Ihde
+also warns that addressing language purely as a technology risks missing
+out on its deeper dimensions such as creativity, playfulness, and poetic
+expression.</p>
 <p>Researchers in other fields such as biolinguistics <span
 class="citation" data-cites="Koster2009">(<a
-href="-bibliography.html#ref-Koster2009">Koster 2009</a>)</span> and
-evolutionary linguistics <span class="citation"
-data-cites="Mufwene2013">(<a
-href="-bibliography.html#ref-Mufwene2013">Mufwene 2013</a>)</span> also
-brought forward the idea that language can be seen as technology. These
-views typically follow from <span class="citation"
-data-cites="Chomsky1957">(<a
-href="-bibliography.html#ref-Chomsky1957">Chomsky 1957</a>)</span> and
-his theory that language is an innate ability that humans are born with
-- it is part of our genetic makeup or universal grammar. Assessing
-language as a technology heavily depends on what we intend by <span
-class="smallcaps">Language</span> and <span
+href="-bibliography.html#ref-Koster2009" role="doc-biblioref">Koster
+2009</a>)</span> and evolutionary linguistics <span class="citation"
+data-cites="Mufwene2013">(<a href="-bibliography.html#ref-Mufwene2013"
+role="doc-biblioref">Mufwene 2013</a>)</span> also brought forward the
+idea that language can be seen as technology. These views typically
+follow from <span class="citation" data-cites="Chomsky1957">(<a
+href="-bibliography.html#ref-Chomsky1957" role="doc-biblioref">Chomsky
+1957</a>)</span> and his theory that language is an innate ability that
+humans are born with - it is part of our genetic makeup or universal
+grammar. Assessing language as a technology heavily depends on what we
+intend by <span class="smallcaps">Language</span> and <span
 class="smallcaps">Technology</span>, which are both quite expansive and
 controversial concepts themselves, but as it should be evident since
 Section <a href="2-Litreview.html#sec:platosproblem"
@@ -302,9 +353,9 @@ formalize how language is acting as an interface for concepts as
 follows:</p>
 <ul>
 <li><p><span
-class="math inline"><em>I</em> → <em>M</em><em>a</em><em>t</em><em>h</em><em>e</em><em>m</em><em>a</em><em>t</em><em>i</em><em>c</em><em>s</em>/(<em>L</em><sub><em>M</em></sub> → <em>R</em>[<em>C</em><sub>1</sub>, <em>C</em><sub>2</sub>, ..., <em>C</em><sub><em>n</em></sub>])(−<em>R</em><em>e</em><em>s</em><em>u</em><em>l</em><em>t</em>)</span></p></li>
+class="math inline"><em>I</em> → <em>M</em><em>a</em><em>t</em><em>h</em><em>e</em><em>m</em><em>a</em><em>t</em><em>i</em><em>c</em><em>s</em>/(<em>L</em><sub><em>M</em></sub>→<em>R</em>[<em>C</em><sub>1</sub>,<em>C</em><sub>2</sub>,...,<em>C</em><sub><em>n</em></sub>])(−<em>R</em><em>e</em><em>s</em><em>u</em><em>l</em><em>t</em>)</span></p></li>
 <li><p><span
-class="math inline"><em>I</em> → <em>S</em><em>t</em><em>o</em><em>r</em><em>y</em><em>t</em><em>e</em><em>l</em><em>l</em><em>i</em><em>n</em><em>g</em>/(<em>L</em><sub><em>S</em></sub> → <em>D</em>[<em>C</em><sub>1</sub>, <em>C</em><sub>2</sub>, ..., <em>C</em><sub><em>n</em></sub>])(−<em>S</em><em>t</em><em>o</em><em>r</em><em>y</em>)</span></p></li>
+class="math inline"><em>I</em> → <em>S</em><em>t</em><em>o</em><em>r</em><em>y</em><em>t</em><em>e</em><em>l</em><em>l</em><em>i</em><em>n</em><em>g</em>/(<em>L</em><sub><em>S</em></sub>→<em>D</em>[<em>C</em><sub>1</sub>,<em>C</em><sub>2</sub>,...,<em>C</em><sub><em>n</em></sub>])(−<em>S</em><em>t</em><em>o</em><em>r</em><em>y</em>)</span></p></li>
 </ul>
 <p>Where <span
 class="math inline"><em>L</em><sub><em>x</em></sub></span> is a form of
@@ -320,9 +371,9 @@ class="math inline"><em>D</em>[]</span> in the second example highlights
 the <em>synthetic</em> nature of storytelling, a process influenced by
 the author’s experience and cultural context. In both examples the
 <em>hermeneutic intentionality</em> <span class="citation"
-data-cites="Ihde1993">(<a href="-bibliography.html#ref-Ihde1993">Ihde
-1993</a>)</span> sets the concept contextualization required by the
-specific form of language.</p>
+data-cites="Ihde1993">(<a href="-bibliography.html#ref-Ihde1993"
+role="doc-biblioref">Ihde 1993</a>)</span> sets the concept
+contextualization required by the specific form of language.</p>
 <p>It could be argued that for the storytelling example there are some
 elements of <span class="math inline"><em>R</em>[]</span> as well. A
 more obvious case is that of a poem that follows a specific meter, such
@@ -331,11 +382,11 @@ and <span class="math inline"><em>D</em>[]</span> can happily coexist in
 the same mediation. It is perfectly possible to have:</p>
 <ul>
 <li><p><span
-class="math inline"><em>I</em> → <em>P</em><em>o</em><em>e</em><em>t</em><em>r</em><em>y</em>/(<em>L</em><sub><em>P</em></sub> → (<em>R</em>[<em>M</em><em>e</em><em>t</em><em>e</em><em>r</em>] − <em>D</em>[<em>T</em><em>h</em><em>e</em><em>m</em><em>e</em>]))(−<em>S</em><em>o</em><em>n</em><em>n</em><em>e</em><em>t</em>)</span></p></li>
+class="math inline"><em>I</em> → <em>P</em><em>o</em><em>e</em><em>t</em><em>r</em><em>y</em>/(<em>L</em><sub><em>P</em></sub>→(<em>R</em>[<em>M</em><em>e</em><em>t</em><em>e</em><em>r</em>]−<em>D</em>[<em>T</em><em>h</em><em>e</em><em>m</em><em>e</em>]))(−<em>S</em><em>o</em><em>n</em><em>n</em><em>e</em><em>t</em>)</span></p></li>
 <li><p><span
-class="math inline"><em>I</em> → <em>M</em><em>u</em><em>s</em><em>i</em><em>c</em>/(<em>L</em><sub><em>M</em><em>u</em></sub> → (<em>R</em>[<em>T</em><em>e</em><em>m</em><em>p</em><em>o</em>] − <em>D</em>[<em>T</em><em>h</em><em>e</em><em>m</em><em>e</em>])(−<em>S</em><em>o</em><em>n</em><em>g</em>)</span></p></li>
+class="math inline"><em>I</em> → <em>M</em><em>u</em><em>s</em><em>i</em><em>c</em>/(<em>L</em><sub><em>M</em><em>u</em></sub> → (<em>R</em>[<em>T</em><em>e</em><em>m</em><em>p</em><em>o</em>]−<em>D</em>[<em>T</em><em>h</em><em>e</em><em>m</em><em>e</em>])(−<em>S</em><em>o</em><em>n</em><em>g</em>)</span></p></li>
 <li><p><span
-class="math inline"><em>I</em> → <em>A</em><em>r</em><em>c</em><em>h</em><em>i</em><em>t</em><em>e</em><em>c</em><em>t</em><em>u</em><em>r</em><em>e</em>/(<em>L</em><sub><em>A</em></sub> → (<em>R</em>[<em>M</em><em>a</em><em>t</em><em>e</em><em>r</em><em>i</em><em>a</em><em>l</em><em>s</em>] − <em>D</em>[<em>A</em><em>e</em><em>s</em><em>t</em><em>h</em><em>e</em><em>t</em><em>i</em><em>c</em><em>s</em>]))(−<em>B</em><em>u</em><em>i</em><em>l</em><em>d</em><em>i</em><em>n</em><em>g</em>)</span></p></li>
+class="math inline"><em>I</em> → <em>A</em><em>r</em><em>c</em><em>h</em><em>i</em><em>t</em><em>e</em><em>c</em><em>t</em><em>u</em><em>r</em><em>e</em>/(<em>L</em><sub><em>A</em></sub>→(<em>R</em>[<em>M</em><em>a</em><em>t</em><em>e</em><em>r</em><em>i</em><em>a</em><em>l</em><em>s</em>]−<em>D</em>[<em>A</em><em>e</em><em>s</em><em>t</em><em>h</em><em>e</em><em>t</em><em>i</em><em>c</em><em>s</em>]))(−<em>B</em><em>u</em><em>i</em><em>l</em><em>d</em><em>i</em><em>n</em><em>g</em>)</span></p></li>
 </ul>
 <p>Once again, language is intended here very broadly as a compositional
 system, grounded in concept tokens and a representation of their
@@ -373,42 +424,43 @@ there are many concerns regarding whether the output of image generators
 such as Dall-E or SD is to be considered derivative work because it
 relies on existing visual content that has been taken from the internet
 without explicit consent from the authors <span class="citation"
-data-cites="Brittain2023">(<a
-href="-bibliography.html#ref-Brittain2023">Brittain 2023</a>)</span>.
-There are also many cases in which using these tools can be considered
-as fair use, especially when there is substantial tweaking of the
-generation parameters, custom datasets or manual post-processing
-efforts. In all studies presented, the boundaries of human and non-human
-efforts are being twisted and blurred in different ways. This section
-addresses the implications of this ambiguity and how existing creativity
-theories might adjust to accommodate for it.</p>
+data-cites="Brittain2023">(<a href="-bibliography.html#ref-Brittain2023"
+role="doc-biblioref">Brittain 2023</a>)</span>. There are also many
+cases in which using these tools can be considered as fair use,
+especially when there is substantial tweaking of the generation
+parameters, custom datasets or manual post-processing efforts. In all
+studies presented, the boundaries of human and non-human efforts are
+being twisted and blurred in different ways. This section addresses the
+implications of this ambiguity and how existing creativity theories
+might adjust to accommodate for it.</p>
 <p>In the attempt to frame CC systems under the four Ps of creativity,
 <span class="citation" data-cites="Jordanous2016">(<a
-href="-bibliography.html#ref-Jordanous2016">Jordanous 2016</a>)</span>
-suggests to change Person into Producer, in order to accommodate
-non-human agents as potential actors or co-actors. While this extension
-is welcome, it perhaps also leaves out other aspects that are
-characteristic of CC, for example how a specific technology
-(<em>Process</em>) might affect the criteria that the audience adopts to
-deem an artifact as creative (<em>Press</em>). Furthermore, communities
-of practice (<em>Press</em>) might foster individual learning
-(<em>Person</em>), which in turn will affect the way technology is used
-or even its core functioning, as seen in numerous open-source projects
-spawned after the release of SD (<em>Process</em>). Separating the
-different perspectives might have its benefits, but also promotes a
-reductionist view of creativity, which gives an incomplete picture.</p>
+href="-bibliography.html#ref-Jordanous2016"
+role="doc-biblioref">Jordanous 2016</a>)</span> suggests to change
+Person into Producer, in order to accommodate non-human agents as
+potential actors or co-actors. While this extension is welcome, it
+perhaps also leaves out other aspects that are characteristic of CC, for
+example how a specific technology (<em>Process</em>) might affect the
+criteria that the audience adopts to deem an artifact as creative
+(<em>Press</em>). Furthermore, communities of practice (<em>Press</em>)
+might foster individual learning (<em>Person</em>), which in turn will
+affect the way technology is used or even its core functioning, as seen
+in numerous open-source projects spawned after the release of SD
+(<em>Process</em>). Separating the different perspectives might have its
+benefits, but also promotes a reductionist view of creativity, which
+gives an incomplete picture.</p>
 <p>The ACASIA meta-model by <span class="citation"
-data-cites="Hoorn2014">(<a href="-bibliography.html#ref-Hoorn2014">Hoorn
-2014</a>)</span> does not, by definition, take into consideration the
-nature of the <em>agent</em> performing each module. ACASIA’s agnostic
-take on the nature of the agent performing the tasks in each module
-makes the model better suited to describe these interactions. I believe
-that it might be valuable to express more specifically how the
-interaction between the human and the non-human shapes the creative
-process, within ACASIA modules. For example, in the third study, the
-interaction loop happened much faster compared to the first two studies
-in which the technology only allowed two iterations in total. As
-discussed in Section <a
+data-cites="Hoorn2014">(<a href="-bibliography.html#ref-Hoorn2014"
+role="doc-biblioref">Hoorn 2014</a>)</span> does not, by definition,
+take into consideration the nature of the <em>agent</em> performing each
+module. ACASIA’s agnostic take on the nature of the agent performing the
+tasks in each module makes the model better suited to describe these
+interactions. I believe that it might be valuable to express more
+specifically how the interaction between the human and the non-human
+shapes the creative process, within ACASIA modules. For example, in the
+third study, the interaction loop happened much faster compared to the
+first two studies in which the technology only allowed two iterations in
+total. As discussed in Section <a
 href="6-study-text-to-image.html#sec:results-and-discussion"
 data-reference-type="ref"
 data-reference="sec:results-and-discussion">6.5</a>, the shorter
@@ -475,13 +527,14 @@ role="doc-endnotes">
 <ol>
 <li id="fn1"><p>In the sense of <em>hermeneutic intentionality</em>
 described by <span class="citation" data-cites="Ihde1990">(<a
-href="-bibliography.html#ref-Ihde1990">Ihde 1990</a>)</span>.<a
-href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="-bibliography.html#ref-Ihde1990" role="doc-biblioref">Ihde
+1990</a>)</span>.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>The word <em>alien</em> is used here figuratively,
 referencing the metaphor used by <span class="citation"
-data-cites="Fazi2018">(<a href="-bibliography.html#ref-Fazi2018">Fazi
-2018</a>)</span>.<a href="#fnref2" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
+data-cites="Fazi2018">(<a href="-bibliography.html#ref-Fazi2018"
+role="doc-biblioref">Fazi 2018</a>)</span>.<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 </body>

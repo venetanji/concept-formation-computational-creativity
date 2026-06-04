@@ -10,9 +10,6 @@
     div.sitenav { display: flex; flex-direction: row; flex-wrap: wrap; }
     span.navlink { flex: 1; }
     span.navlink-label { display: inline-block; min-width: 4em; }
-    /* Default styles provided by pandoc.
-    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -30,16 +27,60 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Concept Formation in Computational Creativity — a PhD dissertation by Giovanni Lion (PolyU, 2025) on how rule-based and data-driven AI shape creative practice, read through post-phenomenology and theories of concepts." />
+  <meta name="author" content="Giovanni Lion" />
+  <meta name="keywords" content="computational creativity, generative AI, concept formation, post-phenomenology, mediation theory, Stable Diffusion, theories of concepts, dataset curation, PhD dissertation, Giovanni Lion" />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="theme-color" content="#0a0e14" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Concept Formation in Computational Creativity" />
+  <meta property="og:title" content="Concept Formation in Computational Creativity" />
+  <meta property="og:description" content="A PhD dissertation by Giovanni Lion (PolyU, 2025) on how rule-based and data-driven AI shape creative practice." />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Concept Formation in Computational Creativity" />
+  <meta name="twitter:description" content="A PhD dissertation by Giovanni Lion (PolyU, 2025) on how AI shapes creative practice." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Thesis",
+    "name": "Concept Formation in Computational Creativity",
+    "headline": "Concept Formation in Computational Creativity",
+    "inSupportOf": "Doctor of Philosophy in Design",
+    "author": {
+      "@type": "Person",
+      "name": "Giovanni Lion",
+      "url": "https://giovannilion.link",
+      "sameAs": "https://orcid.org/0000-0003-4526-0642"
+    },
+    "datePublished": "2025",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "CollegeOrUniversity",
+      "name": "The Hong Kong Polytechnic University"
+    },
+    "about": [
+      "Computational creativity",
+      "Generative artificial intelligence",
+      "Post-phenomenology",
+      "Theories of concepts"
+    ],
+    "abstract": "This thesis investigates the relationship between creativity and machines through the lens of mediation theory, reviewing theories of concepts and their influence on rule-based and data-driven computational approaches in creative practice."
+  }
+  </script>
 </head>
 <body>
 <div class="sitebar">
   <a class="home" href="index.html">Concept Formation in Computational Creativity</a>
+  <span class="spacer"></span>
+  <a class="ext" href="https://giovannilion.link" rel="author">giovannilion.link ↗</a>
   <a class="pdf" href="thesis.pdf">Download PDF</a>
 </div>
 <nav id="sitenav">
 <div class="sitenav">
 <span class="navlink">
-<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity-1.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
+<span class="navlink-label">Up:</span> <a href="0-concept-formation-in-computational-creativity.html" accesskey="u" rel="up">Concept Formation in Computational Creativity</a>
 </span>
 <span class="navlink">
 <span class="navlink-label">Top:</span> <a href="index.html" accesskey="t" rel="top">Concept Formation in Computational Creativity</a>
@@ -88,24 +129,26 @@ in post-phenomenology, a philosophy of technology that understands
 technologies in light of how they mediate human-world relations by
 co-constituting the subjectivity and objectivity of experience <span
 class="citation" data-cites="Rosenberger2015">(<a
-href="-bibliography.html#ref-Rosenberger2015">Rosenberger and Verbeek
-2015</a>)</span>. As discussed in the previous chapter, addressing
-computational creativity under this perspective proves valuable, as it
-offers a robust framework for analyzing and interpreting the intricate
-relationships between technology, human experience, and the social
-context. Moreover, it can accommodate a wide variety of possible
-relations between humans, technology, and the creative process.</p>
+href="-bibliography.html#ref-Rosenberger2015"
+role="doc-biblioref">Rosenberger and Verbeek 2015</a>)</span>. As
+discussed in the previous chapter, addressing computational creativity
+under this perspective proves valuable, as it offers a robust framework
+for analyzing and interpreting the intricate relationships between
+technology, human experience, and the social context. Moreover, it can
+accommodate a wide variety of possible relations between humans,
+technology, and the creative process.</p>
 <p>In this section, the application of mediation theory is explored as a
 means to provide a comprehensive understanding of both the GOFAI-CT
 (Good Old-Fashioned Artificial Intelligence and Classical Theory)
 paradigm and the PT-DL (Prototype Theory and Deep Learning) approach.
 Mediation theory, as proposed by <span class="citation"
-data-cites="Ihde1990">(<a href="-bibliography.html#ref-Ihde1990">Ihde
-1990</a>)</span>, offers a systematic framework to analyze the
-interaction between human cognition, technology, and the world, making
-it a suitable lens through which to examine these two distinct paradigms
-in the field of artificial intelligence and cognitive science. Ihde’s
-schematization of mediation can be summarized as follows:</p>
+data-cites="Ihde1990">(<a href="-bibliography.html#ref-Ihde1990"
+role="doc-biblioref">Ihde 1990</a>)</span>, offers a systematic
+framework to analyze the interaction between human cognition,
+technology, and the world, making it a suitable lens through which to
+examine these two distinct paradigms in the field of artificial
+intelligence and cognitive science. Ihde’s schematization of mediation
+can be summarized as follows:</p>
 <ul>
 <li><p>Unmediated perception: I—World</p></li>
 <li><p>Mediated perception: I—Technology—World</p></li>
@@ -139,14 +182,14 @@ heating installations, the notification sounds from cellphones during a
 conversation.</p>
 <div class="centering">
 <div class="tabular">
-<p><span> p |p |p |p </span> Name &amp; Form &amp; Definition &amp;
+<p><span> p<span>.18</span> |p<span>.18</span> |p<span>.34</span>
+|p<span>.30</span> </span> Name &amp; Form &amp; Definition &amp;
 Examples<br />
-Mediated<br />
-Embodied &amp; (I — T) → W &amp; Broaden the area of sensitivity of our
-bodies to the world &amp; Glasses, a dental probe, a paintbrush<br />
-Mediated<br />
-Hermeneutic &amp; I → (T — W) &amp; Provide a representation of the
-world that we need to interpret &amp; Thermometer, watch<br />
+Mediated Embodied &amp; (I — T) → W &amp; Broaden the area of
+sensitivity of our bodies to the world &amp; Glasses, a dental probe, a
+paintbrush<br />
+Mediated Hermeneutic &amp; I → (T — W) &amp; Provide a representation of
+the world that we need to interpret &amp; Thermometer, watch<br />
 Alterity &amp; I → T (— W) &amp; Humans are related to or with
 technology as a quasi-other &amp; ATM, robots<br />
 Background &amp; I (— T / W) &amp; Shapes the context of our experience
@@ -191,20 +234,19 @@ technology to exhibit some form of autonomy, or else there is no
 possibility of interaction with a <em>quasi-other</em>. In literature,
 this idea has been discussed in various forms by different authors.
 <span class="citation" data-cites="Eede2010">(<a
-href="-bibliography.html#ref-Eede2010">Eede 2010</a>)</span> provides an
-overview of the different notions of <em>transparency</em> and
-<em>opacity</em>, as discussed in various strands of
-post-phenomenology.</p>
+href="-bibliography.html#ref-Eede2010" role="doc-biblioref">Eede
+2010</a>)</span> provides an overview of the different notions of
+<em>transparency</em> and <em>opacity</em>, as discussed in various
+strands of post-phenomenology.</p>
 <p>Discussing Ihde, the author suggests that . <span class="citation"
-data-cites="Eede2010">Eede (<a
-href="-bibliography.html#ref-Eede2010">2010</a>)</span> continues: .
-This technological opacity is effectively overlapping with the idea of
-autonomy in the sense that if a technology is experienced as a
-<em>quasi-other</em> then the human does not need to see through it.
-Furthermore, . By looking at what is acting in the <em>background</em>
-of <em>alterity</em> relations we can gain a more detailed understanding
-of how the technology interprets human behavior. Here is a potential
-expansion:</p>
+data-cites="Eede2010">Eede (<a href="-bibliography.html#ref-Eede2010"
+role="doc-biblioref">2010</a>)</span> continues: . This technological
+opacity is effectively overlapping with the idea of autonomy in the
+sense that if a technology is experienced as a <em>quasi-other</em> then
+the human does not need to see through it. Furthermore, . By looking at
+what is acting in the <em>background</em> of <em>alterity</em> relations
+we can gain a more detailed understanding of how the technology
+interprets human behavior. Here is a potential expansion:</p>
 <ul>
 <li><p>I → Computer / (CPU → [Computation]) (— Result)</p></li>
 <li><p>I → Plotter / (PlotterSoftware → [Design]) (— Printed
@@ -272,23 +314,24 @@ Answer)</p></li>
 Description]</strong>) (— Generated Image)</p></li>
 </ul>
 <p>In prior studies addressing this matter, <span class="citation"
-data-cites="Benjamin2021">(<a
-href="-bibliography.html#ref-Benjamin2021">Benjamin et al.
-2021</a>)</span> put forward an extension of the post-phenomenological
-approach to characterizing machine learning, inspired by Heidegger,
-<span class="citation" data-cites="Ihde1990">(<a
-href="-bibliography.html#ref-Ihde1990">Ihde 1990</a>)</span>, and <span
-class="citation" data-cites="Rosenberger2015">(<a
-href="-bibliography.html#ref-Rosenberger2015">Rosenberger and Verbeek
-2015</a>)</span>. They suggest that, compared to other forms of
-technological mediation, ML embeds an interpretation of the world within
-the context of data. For example, the original version of CLIP has been
-trained on . As a result, the alignment between image and text produced
-by that version is dependent on how the dataset is constructed and what
-it contains. If there are no examples in Chinese, then D[Chinese] would
-simply silently, in the sense that it would still generate an image, but
-the output will be poorly aligned with the input prompt, as the system
-cannot make a well-informed guess.</p>
+data-cites="Benjamin2021">(<a href="-bibliography.html#ref-Benjamin2021"
+role="doc-biblioref">Benjamin et al. 2021</a>)</span> put forward an
+extension of the post-phenomenological approach to characterizing
+machine learning, inspired by Heidegger, <span class="citation"
+data-cites="Ihde1990">(<a href="-bibliography.html#ref-Ihde1990"
+role="doc-biblioref">Ihde 1990</a>)</span>, and <span class="citation"
+data-cites="Rosenberger2015">(<a
+href="-bibliography.html#ref-Rosenberger2015"
+role="doc-biblioref">Rosenberger and Verbeek 2015</a>)</span>. They
+suggest that, compared to other forms of technological mediation, ML
+embeds an interpretation of the world within the context of data. For
+example, the original version of CLIP has been trained on . As a result,
+the alignment between image and text produced by that version is
+dependent on how the dataset is constructed and what it contains. If
+there are no examples in Chinese, then D[Chinese] would simply silently,
+in the sense that it would still generate an image, but the output will
+be poorly aligned with the input prompt, as the system cannot make a
+well-informed guess.</p>
 <p>Building upon the previous examples, it is possible to identify two
 distinct archetypes of technological mediation that broadly correspond
 to the two computing paradigms under investigation:</p>
@@ -323,46 +366,50 @@ explored and analyzed various ways to frame creativity. On one hand,
 some authors have discussed creativity as a non-anthropocentric
 idealized process, such as search or formal combination making <span
 class="citation" data-cites="Wiggins2006 Hoorn2014 Besold2017">(<a
-href="-bibliography.html#ref-Wiggins2006">Wiggins 2006a</a>; <a
-href="-bibliography.html#ref-Hoorn2014">Hoorn 2014</a>; <a
-href="-bibliography.html#ref-Besold2017">Besold 2017</a>)</span>, while
-others have focused on the interaction between human and non-human
-elements, addressing topics such as co-creation and evaluation <span
-class="citation"
+href="-bibliography.html#ref-Wiggins2006" role="doc-biblioref">Wiggins
+2006a</a>; <a href="-bibliography.html#ref-Hoorn2014"
+role="doc-biblioref">Hoorn 2014</a>; <a
+href="-bibliography.html#ref-Besold2017" role="doc-biblioref">Besold
+2017</a>)</span>, while others have focused on the interaction between
+human and non-human elements, addressing topics such as co-creation and
+evaluation <span class="citation"
 data-cites="Saunders2012 Jordanous2012 Davis2016 Kantosalo2019">(<a
-href="-bibliography.html#ref-Saunders2012">Saunders 2012</a>; <a
-href="-bibliography.html#ref-Jordanous2012">Jordanous 2012</a>; <a
-href="-bibliography.html#ref-Davis2016">Davis 2016</a>; <a
-href="-bibliography.html#ref-Kantosalo2019">Kantosalo 2019</a>)</span>.
-Many of these authors refer to well-known creativity theories in their
-arguments, attempting to re-contextualize them for non-human creativity.
-For this doctoral thesis, it is crucial not only to mention these
-foundational theories but also to connect them with the
-post-phenomenological interpretation of technology. The following
-sections will discuss three theories to establish a foundational layer
-for the studies presented in the subsequent chapters. Although these
-three theories represent only a limited subset of the available
-theories, they offer a well-rounded overview of how creativity has been
-conceptualized by recognized experts in the field.</p>
+href="-bibliography.html#ref-Saunders2012" role="doc-biblioref">Saunders
+2012</a>; <a href="-bibliography.html#ref-Jordanous2012"
+role="doc-biblioref">Jordanous 2012</a>; <a
+href="-bibliography.html#ref-Davis2016" role="doc-biblioref">Davis
+2016</a>; <a href="-bibliography.html#ref-Kantosalo2019"
+role="doc-biblioref">Kantosalo 2019</a>)</span>. Many of these authors
+refer to well-known creativity theories in their arguments, attempting
+to re-contextualize them for non-human creativity. For this doctoral
+thesis, it is crucial not only to mention these foundational theories
+but also to connect them with the post-phenomenological interpretation
+of technology. The following sections will discuss three theories to
+establish a foundational layer for the studies presented in the
+subsequent chapters. Although these three theories represent only a
+limited subset of the available theories, they offer a well-rounded
+overview of how creativity has been conceptualized by recognized experts
+in the field.</p>
 <h3 data-number="3.2.1" id="rhodes-four-ps-of-creativity"><span
 class="header-section-number">3.2.1</span> Rhodes’ four Ps of
 creativity</h3>
 <p>According to <span class="citation" data-cites="Rhodes1961">(<a
-href="-bibliography.html#ref-Rhodes1961">Rhodes 1961</a>)</span>, there
-are four perspectives on creativity: the person, the process, the
-product, and the press. When Rhodes talks about <em>perspective</em> in
-the context of creativity, he means a way of looking at or understanding
-creativity. The four perspectives that Rhodes identifies each emphasize
-different aspects of creativity and provide unique insights into how it
-works. By considering all four perspectives together, researchers and
-practitioners can develop a more nuanced understanding of what drives
-creative thinking and how it can be fostered in individuals, communities
-and organizations. I present below a non-exhaustive list of authors and
-theories addressing each perspective. It is rare for an author to
-discuss only one perspective, in fact most of the researchers mentioned
-below developed comprehensive theories which cover more than one. The
-purpose of this list is to identify each perspective and its scope,
-rather than give a full account of each author’s theory.</p>
+href="-bibliography.html#ref-Rhodes1961" role="doc-biblioref">Rhodes
+1961</a>)</span>, there are four perspectives on creativity: the person,
+the process, the product, and the press. When Rhodes talks about
+<em>perspective</em> in the context of creativity, he means a way of
+looking at or understanding creativity. The four perspectives that
+Rhodes identifies each emphasize different aspects of creativity and
+provide unique insights into how it works. By considering all four
+perspectives together, researchers and practitioners can develop a more
+nuanced understanding of what drives creative thinking and how it can be
+fostered in individuals, communities and organizations. I present below
+a non-exhaustive list of authors and theories addressing each
+perspective. It is rare for an author to discuss only one perspective,
+in fact most of the researchers mentioned below developed comprehensive
+theories which cover more than one. The purpose of this list is to
+identify each perspective and its scope, rather than give a full account
+of each author’s theory.</p>
 <h4 data-number="3.2.1.1" id="person"><span
 class="header-section-number">3.2.1.1</span> Person</h4>
 <p>The <strong>person</strong> perspective focuses on the individual
@@ -380,17 +427,17 @@ certain personality characteristics, such as openness to experience and
 non-conformity, are more likely to be creative than others <span
 class="citation"
 data-cites="Csikszentmihalyi1990 Csikszentmihalyi1996">(<a
-href="-bibliography.html#ref-Csikszentmihalyi1990">Csikszentmihalyi
-1990</a>, <a
-href="-bibliography.html#ref-Csikszentmihalyi1996">1996</a>)</span>.</p></li>
+href="-bibliography.html#ref-Csikszentmihalyi1990"
+role="doc-biblioref">Csikszentmihalyi 1990</a>, <a
+href="-bibliography.html#ref-Csikszentmihalyi1996"
+role="doc-biblioref">1996</a>)</span>.</p></li>
 <li><p>Teresa Amabile: Amabile is a professor at Harvard Business School
 who has conducted extensive research on creativity in the workplace. She
 argues that intrinsic motivation plays an important role in fostering
 creativity, and that individuals who feel passionate about their work
 are more likely to generate creative ideas <span class="citation"
-data-cites="Amabile1997">(<a
-href="-bibliography.html#ref-Amabile1997">Amabile
-1997</a>)</span>.</p></li>
+data-cites="Amabile1997">(<a href="-bibliography.html#ref-Amabile1997"
+role="doc-biblioref">Amabile 1997</a>)</span>.</p></li>
 <li><p>Dean Keith Simonton: Simonton is a psychology professor who has
 studied the relationship between intelligence and creativity. He
 suggests that while high intelligence is necessary for creative
@@ -398,9 +445,11 @@ thinking, it may not be sufficient on its own; other personal factors,
 such as openness to experience and perseverance, also play an important
 role <span class="citation"
 data-cites="Simonton1985 Simonton1994 Simonton1999">(<a
-href="-bibliography.html#ref-Simonton1985">Simonton 1985</a>; <a
-href="-bibliography.html#ref-Simonton1994">Simonton 1994</a>, <a
-href="-bibliography.html#ref-Simonton1999">1999</a>)</span>.</p></li>
+href="-bibliography.html#ref-Simonton1985" role="doc-biblioref">Dean K.
+Simonton 1985</a>; <a href="-bibliography.html#ref-Simonton1994"
+role="doc-biblioref">Dean Keith Simonton 1994</a>, <a
+href="-bibliography.html#ref-Simonton1999"
+role="doc-biblioref">1999</a>)</span>.</p></li>
 </ol>
 <h4 data-number="3.2.1.2" id="process"><span
 class="header-section-number">3.2.1.2</span> Process</h4>
@@ -413,10 +462,10 @@ perspective:</p>
 <ol>
 <li><p>Graham Wallas: Wallas was an early theorist of the creative
 process and his book (<span class="citation" data-cites="Wallas1926">(<a
-href="-bibliography.html#ref-Wallas1926">1926</a>)</span>), is
-considered a classic in the field. He proposed that there are four
-stages to the creative process: preparation, incubation, illumination,
-and verification.</p></li>
+href="-bibliography.html#ref-Wallas1926"
+role="doc-biblioref">1926</a>)</span>), is considered a classic in the
+field. He proposed that there are four stages to the creative process:
+preparation, incubation, illumination, and verification.</p></li>
 <li><p>Robert Sternberg: Sternberg is a psychologist who has studied
 creativity extensively throughout his career. He has proposed a number
 of models of the creative process over time; one influential model
@@ -425,15 +474,17 @@ problem-finding, problem-definition, idea generation (using divergent
 thinking), idea evaluation (using convergent thinking), implementation
 planning and taking action <span class="citation"
 data-cites="Sternberg1988 Sternberg2003">(<a
-href="-bibliography.html#ref-Sternberg1988">Sternberg 1988</a>, <a
-href="-bibliography.html#ref-Sternberg2003">2003</a>)</span>.</p></li>
+href="-bibliography.html#ref-Sternberg1988"
+role="doc-biblioref">Sternberg 1988</a>, <a
+href="-bibliography.html#ref-Sternberg2003"
+role="doc-biblioref">2003</a>)</span>.</p></li>
 <li><p>Mihaly Csikszentmihalyi: Csikszentmihalyi’s work on flow also
 encompasses aspects of the creative process; he suggests that
 individuals often experience flow states during periods of intense focus
 on a task or problem-solving challenge <span class="citation"
 data-cites="Csikszentmihalyi1990">(<a
-href="-bibliography.html#ref-Csikszentmihalyi1990">Csikszentmihalyi
-1990</a>)</span>.</p></li>
+href="-bibliography.html#ref-Csikszentmihalyi1990"
+role="doc-biblioref">Csikszentmihalyi 1990</a>)</span>.</p></li>
 </ol>
 <h4 data-number="3.2.1.3" id="product"><span
 class="header-section-number">3.2.1.3</span> Product</h4>
@@ -456,7 +507,8 @@ works. He suggests that experts can provide valuable feedback on the
 quality and originality of creative products, and that their judgments
 are often more reliable than those made by non-experts <span
 class="citation" data-cites="Runco2014">(<a
-href="-bibliography.html#ref-Runco2014">Runco 2014</a>)</span>.</p></li>
+href="-bibliography.html#ref-Runco2014" role="doc-biblioref">Runco
+2014</a>)</span>.</p></li>
 <li><p>James C Kaufman: Kaufman is another well-known researcher in the
 field of creativity who has studied the evaluation of creative products
 across domains including visual arts, music, writing and humor. One area
@@ -469,9 +521,9 @@ several measures for assessing creativity in different domains. These
 measures are designed to evaluate creative products based on criteria
 such as novelty, appropriateness and value <span class="citation"
 data-cites="Kaufman2019 Kaufman2016">(<a
-href="-bibliography.html#ref-Kaufman2019">Kaufman and Sternberg
-2019</a>; <a href="-bibliography.html#ref-Kaufman2016">Kaufman
-2016</a>)</span>.</p></li>
+href="-bibliography.html#ref-Kaufman2019" role="doc-biblioref">Kaufman
+and Sternberg 2019</a>; <a href="-bibliography.html#ref-Kaufman2016"
+role="doc-biblioref">Kaufman 2016</a>)</span>.</p></li>
 </ol>
 <h4 data-number="3.2.1.4" id="press"><span
 class="header-section-number">3.2.1.4</span> Press</h4>
@@ -484,29 +536,27 @@ climate and societal norms, in fostering creativity.</p>
 of collaboration and group dynamics in fostering creativity. He argues
 that social factors, such as trust and communication, can play an
 important role in promoting creative thinking <span class="citation"
-data-cites="Sawyer2017">(<a
-href="-bibliography.html#ref-Sawyer2017">Sawyer
-2017</a>)</span>.</p></li>
+data-cites="Sawyer2017">(<a href="-bibliography.html#ref-Sawyer2017"
+role="doc-biblioref">Sawyer 2017</a>)</span>.</p></li>
 <li><p>James C. Kaufman: Kaufman also studied cultural influences on
 creativity around the world. His research on this aspect of creativity
 suggests that different cultural values and norms can either encourage
 or discourage creative thinking, depending on how they prioritize
 individualism versus collectivism <span class="citation"
-data-cites="Kaufman2019">(<a
-href="-bibliography.html#ref-Kaufman2019">Kaufman and Sternberg
-2019</a>)</span>.</p></li>
+data-cites="Kaufman2019">(<a href="-bibliography.html#ref-Kaufman2019"
+role="doc-biblioref">Kaufman and Sternberg 2019</a>)</span>.</p></li>
 <li><p>Teresa M. Amabile: Amabile has also written extensively about the
 social and organizational factors that can influence creativity. Her
 research emphasizes the importance of providing individuals with
 autonomy, resources, and support in order to foster creative thinking
 <span class="citation" data-cites="Amabile1996">(<a
-href="-bibliography.html#ref-Amabile1996">Amabile 1996</a>)</span>.
-Furthermore, in their book (<span class="citation"
-data-cites="Amabile2014">(<a
-href="-bibliography.html#ref-Amabile2014">2014</a>)</span>) Amabile and
-Kramer describe how organizational factors like positive feedback,
-social support, and meaningful work help people stay motivated and
-engaged in creative work.</p></li>
+href="-bibliography.html#ref-Amabile1996" role="doc-biblioref">Amabile
+1996</a>)</span>. Furthermore, in their book (<span class="citation"
+data-cites="Amabile2014">(<a href="-bibliography.html#ref-Amabile2014"
+role="doc-biblioref">2014</a>)</span>) Amabile and Kramer describe how
+organizational factors like positive feedback, social support, and
+meaningful work help people stay motivated and engaged in creative
+work.</p></li>
 <li><p>Richard Florida: Richard Florida is a well-known urbanist and
 social scientist who has studied the role of creativity in economic
 development. His work focuses on how cities can attract and retain
@@ -518,9 +568,8 @@ housing, access to cultural amenities) are more likely to attract
 creative professionals than those that do not. He also suggests that
 cities with strong social networks and diverse populations are more
 likely to foster innovation and creativity <span class="citation"
-data-cites="Florida2014">(<a
-href="-bibliography.html#ref-Florida2014">Florida
-2014</a>)</span>.</p></li>
+data-cites="Florida2014">(<a href="-bibliography.html#ref-Florida2014"
+role="doc-biblioref">Florida 2014</a>)</span>.</p></li>
 </ol>
 <h3 data-number="3.2.2" id="bodens-3-types-of-creativity"><span
 class="header-section-number">3.2.2</span> Boden’s 3 types of
@@ -530,8 +579,9 @@ has extensively studied creativity. According to her theory of
 creativity, there are three types of creativity: combinatorial,
 exploratory, and transformational <span class="citation"
 data-cites="Boden1996 Boden2003">(<a
-href="-bibliography.html#ref-Boden1996">Boden 1996</a>, <a
-href="-bibliography.html#ref-Boden2003">2003</a>)</span>.</p>
+href="-bibliography.html#ref-Boden1996" role="doc-biblioref">Boden
+1996</a>, <a href="-bibliography.html#ref-Boden2003"
+role="doc-biblioref">2003</a>)</span>.</p>
 <ol>
 <li><p>Combinatorial Creativity: This type of creativity involves taking
 existing elements, concepts, or ideas and combining them in a novel way
@@ -546,12 +596,12 @@ revolve around the nucleus.</p></li>
 exploring a conceptual space working within accepted rules of procedure
 looking for something that no one else has discovered before <span
 class="citation" data-cites="Miller2019">(<a
-href="-bibliography.html#ref-Miller2019">Miller 2019</a>)</span>.
-Exploratory creativity is often seen in scientific research or
-technological innovation where researchers push the limits of what we
-know by experimenting with new ideas and theories. For example, when
-Marie Curie discovered radium she was exploring an area that had not yet
-been fully understood by science.</p></li>
+href="-bibliography.html#ref-Miller2019" role="doc-biblioref">A. I.
+Miller 2019</a>)</span>. Exploratory creativity is often seen in
+scientific research or technological innovation where researchers push
+the limits of what we know by experimenting with new ideas and theories.
+For example, when Marie Curie discovered radium she was exploring an
+area that had not yet been fully understood by science.</p></li>
 <li><p>Transformational Creativity: This type of creativity involves
 fundamentally changing how we view or understand something.
 Transformational creativity often arises from challenging existing
@@ -570,11 +620,11 @@ creativity to create something novel within this new framework.</p>
 <p>Boden’s taxonomy is a recurring theme in creativity research, it is
 hard to find books or articles that do not mention it, for better or for
 worse. Among the critics, <span class="citation"
-data-cites="Hoorn2023">(<a href="-bibliography.html#ref-Hoorn2023">Hoorn
-2023</a>)</span> challenges Boden’s (and many before her) view that
-creativity is the . Hoorn argues with regards to combinatorial
-creativity: . This echoes what has already been discussed in Section <a
-href="2-Litreview.html#sec:non-human-creativity"
+data-cites="Hoorn2023">(<a href="-bibliography.html#ref-Hoorn2023"
+role="doc-biblioref">Hoorn 2023</a>)</span> challenges Boden’s (and many
+before her) view that creativity is the . Hoorn argues with regards to
+combinatorial creativity: . This echoes what has already been discussed
+in Section <a href="2-Litreview.html#sec:non-human-creativity"
 data-reference-type="ref"
 data-reference="sec:non-human-creativity">2.2.8</a> about the notions
 such as <em>novelty</em> and <em>value</em>: these criteria are
@@ -585,10 +635,10 @@ creativity that is non-anthropocentric and modular.</p>
 class="header-section-number">3.2.3</span> Hoorn’s ACASIA model</h3>
 <p>Hoorn’s ACASIA model of the creativity described in his book (<span
 class="citation" data-cites="Hoorn2014">(<a
-href="-bibliography.html#ref-Hoorn2014">2014</a>)</span>) is a
-relatively new theory attempting to describe the creative process as a
-set of six different components. These modules may be described as
-follows:</p>
+href="-bibliography.html#ref-Hoorn2014"
+role="doc-biblioref">2014</a>)</span>) is a relatively new theory
+attempting to describe the creative process as a set of six different
+components. These modules may be described as follows:</p>
 <ol>
 <li><p><strong>Association</strong>: This module refers to the capacity
 to generate images, words, meanings, and other semantically related
@@ -652,14 +702,14 @@ creative process.</p>
 class="math inline"><em>R</em>[]</span> and <span
 class="math inline"><em>D</em>[]</span>.</caption>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;"><strong>Module</strong></th>
 <th style="text-align: left;">Program → <strong>R</strong>[Input]</th>
 <th style="text-align: left;">Model → <strong>D</strong>[Input]</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">Association</td>
 <td style="text-align: left;">CT-based similarity models, such as fuzzy
 sets or semantic networks, typically employ search algorithms to produce
@@ -671,7 +721,7 @@ Associations turn out to be a reflection of the most probable
 associations found in the dataset, which may not be ideal for creative
 purposes.</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">Combination</td>
 <td style="text-align: left;">Crisp compositional rules can produce a
 large number of combinations which preserve a desired structure.
@@ -689,7 +739,7 @@ Section <a href="2-Litreview.html#sec:deep-learning"
 data-reference-type="ref"
 data-reference="sec:deep-learning">2.2.7</a>).</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">Abstraction</td>
 <td style="text-align: left;">Analytical methods are already
 <em>abstract</em>. Semantic networks are typically constructed by
@@ -702,7 +752,7 @@ data-reference="sec:deep-learning">2.2.7</a>). <em>Latent spaces</em>
 constitute an viable ground for making connections between concepts
 using geometrical methods in a multi-dimensional space.</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">Selection</td>
 <td style="text-align: left;">Selection criteria may be implemented
 formally (e.g. Max Bense’s aesthetic principles, see Section <a
@@ -720,7 +770,7 @@ makes the selection process very efficient, but also not quite
 explainable, because <em>latent space</em> is generated during training
 and it is not intelligible by humans.</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;">Integration</td>
 <td style="text-align: left;">In rule-based systems a set of
 instructions for integration must be provided. While it can be
@@ -734,7 +784,7 @@ depends on the size of the model (number of dimensions of the latent
 space). Attention algorithms can capture integration strategies that are
 typical in the training data.</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;">Adaptation</td>
 <td style="text-align: left;">Rule-based systems might employ fuzzy sets
 or other forms of graded adaptation to gain optimal similarity.</td>
@@ -743,7 +793,7 @@ adaptive as they rely on one or more loss function(s) that can guide the
 adaptation process during inference in a 0-shot learning scenario. For
 example, LDMs like Stable Diffusion can do this out-of-the-box.</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
@@ -778,9 +828,10 @@ Research (PR), a form of insider research, has emerged as a valid
 methodology of inquiry due to its ability to blend theory and practice,
 allowing for a more nuanced understanding of the field <span
 class="citation" data-cites="Candy2011">(<a
-href="-bibliography.html#ref-Candy2011">Candy 2011</a>)</span>. This
-section argues that PR is a valuable approach to studying computational
-creativity, given the fast pace of development in this field.</p>
+href="-bibliography.html#ref-Candy2011" role="doc-biblioref">Candy
+2011</a>)</span>. This section argues that PR is a valuable approach to
+studying computational creativity, given the fast pace of development in
+this field.</p>
 <p>PR is particularly relevant in computational creativity due to its
 emphasis on self-reflection. Through self-reflection in the form of
 rigorous doubt about one’s own way of practicing, it is possible to gain
@@ -792,36 +843,38 @@ self-reflection, examining their assumptions and biases and seeking to
 improve their practice through continuous reflection and
 experimentation.</p>
 <p>In , Ken Friedman (<span class="citation"
-data-cites="Friedman2003">(<a
-href="-bibliography.html#ref-Friedman2003">2003</a>)</span>) delves into
-the significance of practice-based research in design and its connection
-to theory construction. Friedman posits that design is an
-interdisciplinary field that intersects with various domains, including
-natural sciences, humanities, social and behavioral sciences, human
-professions and services, creative and applied arts, and technology and
-engineering. This interdisciplinary nature of design highlights the
-importance of practice-based research, as it enables designers to apply
-knowledge from different fields to solve specific design problems.
-Friedman (<span class="citation" data-cites="Friedman2003">(<a
-href="-bibliography.html#ref-Friedman2003">2003</a>)</span>) explains
-that practice-based research involves solving problems, creating new
-things, or transforming less desirable situations into preferred ones.
-However, understanding how things work and why requires analysis and
-explanation, which is the purpose of theory. Theory construction is
-crucial in design research as it provides a framework for understanding
-and interpreting design phenomena.</p>
+data-cites="Friedman2003">(<a href="-bibliography.html#ref-Friedman2003"
+role="doc-biblioref">2003</a>)</span>) delves into the significance of
+practice-based research in design and its connection to theory
+construction. Friedman posits that design is an interdisciplinary field
+that intersects with various domains, including natural sciences,
+humanities, social and behavioral sciences, human professions and
+services, creative and applied arts, and technology and engineering.
+This interdisciplinary nature of design highlights the importance of
+practice-based research, as it enables designers to apply knowledge from
+different fields to solve specific design problems. Friedman (<span
+class="citation" data-cites="Friedman2003">(<a
+href="-bibliography.html#ref-Friedman2003"
+role="doc-biblioref">2003</a>)</span>) explains that practice-based
+research involves solving problems, creating new things, or transforming
+less desirable situations into preferred ones. However, understanding
+how things work and why requires analysis and explanation, which is the
+purpose of theory. Theory construction is crucial in design research as
+it provides a framework for understanding and interpreting design
+phenomena.</p>
 <p>While practice-based research is essential in design, Friedman (<span
 class="citation" data-cites="Friedman2003">(<a
-href="-bibliography.html#ref-Friedman2003">2003</a>)</span>) argues that
-it is not enough on its own to develop theory. He explains that</p>
+href="-bibliography.html#ref-Friedman2003"
+role="doc-biblioref">2003</a>)</span>) argues that it is not enough on
+its own to develop theory. He explains that</p>
 <blockquote>
 <p>instead of developing theory from practice through articulation and
 inductive inquiry, some designers simply argue that practice is research
 and practice-based research is, in itself, a form of theory
 construction</p>
 <p><span class="citation" data-cites="Friedman2003">(<a
-href="-bibliography.html#ref-Friedman2003">Friedman 2003,
-519</a>)</span></p>
+href="-bibliography.html#ref-Friedman2003" role="doc-biblioref">Friedman
+2003, 519</a>)</span></p>
 </blockquote>
 <p>However, the author contends that this approach is insufficient as it
 fails to account for the critical inquiry and reflective insight
@@ -842,36 +895,40 @@ professional practice, rather than broader situations.</p>
 <p>In particular, practice-led research is a form of PR that focuses on
 the nature of practice and leads to new knowledge with operational
 significance for that practice <span class="citation"
-data-cites="Candy2006">(<a href="-bibliography.html#ref-Candy2006">Candy
-2006, 1</a>)</span>. This type of research includes practice as an
-integral part of its method and often falls within the general area of
-action research <span class="citation" data-cites="Candy2006">(<a
-href="-bibliography.html#ref-Candy2006">Candy 2006, 19</a>)</span>. It
-is essential to distinguish practice-led research from practice-based
-research, which emphasizes the use of creative artifacts as the basis of
-contribution to knowledge. In contrast, practice-led research results
-may be fully described in text form without the inclusion of a creative
-work <span class="citation" data-cites="Candy2006">(<a
-href="-bibliography.html#ref-Candy2006">Candy 2006, 1</a>)</span>.</p>
+data-cites="Candy2006">(<a href="-bibliography.html#ref-Candy2006"
+role="doc-biblioref">Candy 2006, 1</a>)</span>. This type of research
+includes practice as an integral part of its method and often falls
+within the general area of action research <span class="citation"
+data-cites="Candy2006">(<a href="-bibliography.html#ref-Candy2006"
+role="doc-biblioref">Candy 2006, 19</a>)</span>. It is essential to
+distinguish practice-led research from practice-based research, which
+emphasizes the use of creative artifacts as the basis of contribution to
+knowledge. In contrast, practice-led research results may be fully
+described in text form without the inclusion of a creative work <span
+class="citation" data-cites="Candy2006">(<a
+href="-bibliography.html#ref-Candy2006" role="doc-biblioref">Candy 2006,
+1</a>)</span>.</p>
 <p>The methodology of practice-led research involves using practice as
 an integral part of the research method <span class="citation"
-data-cites="Candy2006">(<a href="-bibliography.html#ref-Candy2006">Candy
-2006, 19</a>)</span>. Practice-based researchers should devise a clear
-set of methods and techniques for collecting and analyzing data <span
+data-cites="Candy2006">(<a href="-bibliography.html#ref-Candy2006"
+role="doc-biblioref">Candy 2006, 19</a>)</span>. Practice-based
+researchers should devise a clear set of methods and techniques for
+collecting and analyzing data <span class="citation"
+data-cites="Candy2006">(<a href="-bibliography.html#ref-Candy2006"
+role="doc-biblioref">Candy 2006, 19</a>)</span>. The personal process is
+a crucial element of practice-led research, and data collected should
+include initial starting points or motivation for the project or work,
+prior models or theories about how to create, perform or realize a
+creative artifact, time frame for the work or works to be created, role
+of the creative artifact in the creative process, environments and tools
+required to achieve the output, information to be gathered about the
+thinking, methods, tools, resources, support, collaboration, methods for
+collecting and collating data gathered, methods for analyzing collated
+data, expected outcomes of the research process, and the relationship of
+the practice outcomes to the argument of the thesis <span
 class="citation" data-cites="Candy2006">(<a
-href="-bibliography.html#ref-Candy2006">Candy 2006, 19</a>)</span>. The
-personal process is a crucial element of practice-led research, and data
-collected should include initial starting points or motivation for the
-project or work, prior models or theories about how to create, perform
-or realize a creative artifact, time frame for the work or works to be
-created, role of the creative artifact in the creative process,
-environments and tools required to achieve the output, information to be
-gathered about the thinking, methods, tools, resources, support,
-collaboration, methods for collecting and collating data gathered,
-methods for analyzing collated data, expected outcomes of the research
-process, and the relationship of the practice outcomes to the argument
-of the thesis <span class="citation" data-cites="Candy2006">(<a
-href="-bibliography.html#ref-Candy2006">Candy 2006, 19</a>)</span>.</p>
+href="-bibliography.html#ref-Candy2006" role="doc-biblioref">Candy 2006,
+19</a>)</span>.</p>
 <h2 data-number="3.4" id="sec:studies-overview"><span
 class="header-section-number">3.4</span> Studies overview</h2>
 <p>The studies presented in the next three chapters all focus on
@@ -943,12 +1000,12 @@ role="doc-endnotes">
 <ol>
 <li id="fn1"><p>It would be controversial to claim that machines
 experience anything at all. <span class="citation"
-data-cites="Colton2020">(<a
-href="-bibliography.html#ref-Colton2020">Colton et al. 2020</a>)</span>
-provides an interesting perspective on this particular issue, yet this
-is beyond the scope of this section. The term <em>experience</em> is
-only used as an analogy to facilitate the reader in understanding the
-different approaches that GOFAI and DL are bound to.<a href="#fnref1"
+data-cites="Colton2020">(<a href="-bibliography.html#ref-Colton2020"
+role="doc-biblioref">Colton et al. 2020</a>)</span> provides an
+interesting perspective on this particular issue, yet this is beyond the
+scope of this section. The term <em>experience</em> is only used as an
+analogy to facilitate the reader in understanding the different
+approaches that GOFAI and DL are bound to.<a href="#fnref1"
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
